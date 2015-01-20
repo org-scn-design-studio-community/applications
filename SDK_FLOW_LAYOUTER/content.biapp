@@ -1,0 +1,279 @@
+<bi:biapp bi:version="1400" xmlns:bi="http://xml.sap.com/2011/biml/biapp" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns="http://www.w3.org/TR/REC-html40" xmlns:h="http://www.w3.org/TR/REC-html40" xmlns:sdk1="org.scn.community.basics" sdk1:version="1.0" xmlns:sdk2="org.scn.community.utils" sdk2:version="1.0">
+	<bi:component name="APPLICATION_PROPERTIES" type="APPLICATION_PROPERTIES">
+		<bi:property name="THEME" value="sap_platinum"/>
+		<bi:property name="ON_STARTUP">
+			<bi:value><![CDATA[FLOWLAYOUTER_1.registerParentComponent(FLOW_LAYOUT_BORDER);
+
+FLOWLAYOUTER_1.registerComponent(PANEL_1);
+FLOWLAYOUTER_1.registerComponent(PANEL_2);
+FLOWLAYOUTER_1.registerComponent(PANEL_3);
+FLOWLAYOUTER_1.registerComponent(IMAGE_1);
+FLOWLAYOUTER_1.registerComponent(PANEL_4);
+FLOWLAYOUTER_1.registerComponent(PANEL_5);
+FLOWLAYOUTER_1.registerComponent(KPIVIEW_1);
+FLOWLAYOUTER_1.registerComponent(PANEL_6);
+FLOWLAYOUTER_1.registerComponent(IMAGE_2);
+FLOWLAYOUTER_1.registerComponent(PANEL_7);
+FLOWLAYOUTER_1.registerComponent(GRID_LAYOUT_1);
+FLOWLAYOUTER_1.registerComponent(PANEL_8);
+FLOWLAYOUTER_1.registerComponent(TABSTRIP_1);
+FLOWLAYOUTER_1.registerComponent(PANEL_9);
+FLOWLAYOUTER_1.registerComponent(PANEL_10);
+FLOWLAYOUTER_1.registerComponent(PANEL_11);
+FLOWLAYOUTER_1.registerComponent(PANEL_12);
+FLOWLAYOUTER_1.registerComponent(IMAGE_3);
+FLOWLAYOUTER_1.registerComponent(PANEL_13);
+FLOWLAYOUTER_1.registerComponent(PANEL_14);
+FLOWLAYOUTER_1.registerComponent(PANEL_15);
+FLOWLAYOUTER_1.registerComponent(IMAGE_4);
+FLOWLAYOUTER_1.registerComponent(PANEL_16);
+FLOWLAYOUTER_1.registerComponent(PANEL_17);
+FLOWLAYOUTER_1.registerComponent(PANEL_18);
+FLOWLAYOUTER_1.registerComponent(PANEL_19);
+]]></bi:value>
+		</bi:property>
+		<bi:property name="MESSAGE_TYPES" value="ALL"/>
+	</bi:component>
+	<bi:component name="ROOT" type="ABSOLUTE_LAYOUT_COMPONENT">
+		<bi:component name="FLOW_LAYOUT" type="PANEL_COMPONENT">
+			<bi:property name="WIDTH" value="auto"/>
+			<bi:property name="HEIGHT" value="auto"/>
+			<bi:property name="RIGHT_MARGIN" value="20"/>
+			<bi:property name="BOTTOM_MARGIN" value="20"/>
+			<bi:property name="TOP_MARGIN" value="20"/>
+			<bi:property name="LEFT_MARGIN" value="20"/>
+			<bi:component name="FLOW_LAYOUT_BORDER" type="PANEL_COMPONENT">
+				<bi:property name="LEFT_MARGIN" value="1"/>
+				<bi:property name="WIDTH" value="200"/>
+				<bi:property name="HEIGHT" value="200"/>
+				<bi:property name="CSS_STYLE" value="-border: solid 1px #000 !important;&#13;&#10;background: #f0f0f0 !important;&#13;&#10;"/>
+				<bi:property name="TOP_MARGIN" value="1"/>
+			</bi:component>
+			<bi:component name="CLIENTINFORMATION_1" type="org_scn_community_utils_ClientInformation">
+				<bi:property name="onSizeChanged">
+					<bi:value><![CDATA[FLOWLAYOUTER_1.setWidth(CLIENTINFORMATION_1.getOwnWidth());
+FLOWLAYOUTER_1.setHeight(CLIENTINFORMATION_1.getOwnHeight());
+
+FLOWLAYOUTER_1.reLayout();
+FLOW_LAYOUT.setVisible(true);]]></bi:value>
+				</bi:property>
+			</bi:component>
+			<bi:component name="FLOWLAYOUTER_1" type="org_scn_community_utils_FlowLayouter">
+				<bi:property name="WIDTH" value="auto"/>
+				<bi:property name="HEIGHT" value="auto"/>
+				<bi:property name="RIGHT_MARGIN" value="0"/>
+				<bi:property name="BOTTOM_MARGIN" value="0"/>
+				<bi:property name="hideOnOverlap" value=""/>
+				<bi:property name="splitSpace" value="20"/>
+			</bi:component>
+			<bi:component name="PANEL_3" type="PANEL_COMPONENT">
+				<bi:property name="WIDTH" value="200"/>
+				<bi:property name="HEIGHT" value="200"/>
+				<bi:property name="CSS_STYLE" value="background: red;"/>
+				<bi:property name="TOP_MARGIN" value="1"/>
+				<bi:property name="LEFT_MARGIN" value="1"/>
+			</bi:component>
+			<bi:component name="PANEL_2" type="PANEL_COMPONENT">
+				<bi:property name="LEFT_MARGIN" value="1"/>
+				<bi:property name="WIDTH" value="75"/>
+				<bi:property name="HEIGHT" value="200"/>
+				<bi:property name="CSS_STYLE" value="background: green;"/>
+				<bi:property name="TOP_MARGIN" value="1"/>
+			</bi:component>
+			<bi:component name="IMAGE_2" type="IMAGE_COMPONENT">
+				<bi:property name="WIDTH" value="200"/>
+				<bi:property name="HEIGHT" value="150"/>
+				<bi:property name="IMAGE" value="IMG.JPG"/>
+				<bi:property name="TOP_MARGIN" value="1"/>
+				<bi:property name="LEFT_MARGIN" value="1"/>
+			</bi:component>
+			<bi:component name="PANEL_1" type="PANEL_COMPONENT">
+				<bi:property name="LEFT_MARGIN" value="1"/>
+				<bi:property name="WIDTH" value="200"/>
+				<bi:property name="HEIGHT" value="100"/>
+				<bi:property name="CSS_STYLE" value="background: blue;"/>
+				<bi:property name="TOP_MARGIN" value="1"/>
+			</bi:component>
+			<bi:component name="PANEL_4" type="PANEL_COMPONENT">
+				<bi:property name="WIDTH" value="200"/>
+				<bi:property name="HEIGHT" value="200"/>
+				<bi:property name="CSS_STYLE" value="background: red;"/>
+				<bi:property name="TOP_MARGIN" value="1"/>
+				<bi:property name="LEFT_MARGIN" value="1"/>
+			</bi:component>
+			<bi:component name="PANEL_5" type="PANEL_COMPONENT">
+				<bi:property name="LEFT_MARGIN" value="1"/>
+				<bi:property name="WIDTH" value="75"/>
+				<bi:property name="HEIGHT" value="125"/>
+				<bi:property name="CSS_STYLE" value="background: green;"/>
+				<bi:property name="TOP_MARGIN" value="1"/>
+			</bi:component>
+			<bi:component name="IMAGE_3" type="IMAGE_COMPONENT">
+				<bi:property name="WIDTH" value="200"/>
+				<bi:property name="HEIGHT" value="100"/>
+				<bi:property name="IMAGE" value="IMG.JPG"/>
+				<bi:property name="TOP_MARGIN" value="1"/>
+				<bi:property name="LEFT_MARGIN" value="1"/>
+			</bi:component>
+			<bi:component name="PANEL_6" type="PANEL_COMPONENT">
+				<bi:property name="LEFT_MARGIN" value="1"/>
+				<bi:property name="WIDTH" value="200"/>
+				<bi:property name="HEIGHT" value="200"/>
+				<bi:property name="CSS_STYLE" value="background: blue;"/>
+				<bi:property name="TOP_MARGIN" value="1"/>
+			</bi:component>
+			<bi:component name="PANEL_7" type="PANEL_COMPONENT">
+				<bi:property name="WIDTH" value="200"/>
+				<bi:property name="HEIGHT" value="100"/>
+				<bi:property name="CSS_STYLE" value="background: red;"/>
+				<bi:property name="TOP_MARGIN" value="1"/>
+				<bi:property name="LEFT_MARGIN" value="1"/>
+			</bi:component>
+			<bi:component name="PANEL_8" type="PANEL_COMPONENT">
+				<bi:property name="LEFT_MARGIN" value="1"/>
+				<bi:property name="WIDTH" value="200"/>
+				<bi:property name="HEIGHT" value="200"/>
+				<bi:property name="CSS_STYLE" value="background: green;"/>
+				<bi:property name="TOP_MARGIN" value="1"/>
+			</bi:component>
+			<bi:component name="PANEL_9" type="PANEL_COMPONENT">
+				<bi:property name="LEFT_MARGIN" value="1"/>
+				<bi:property name="WIDTH" value="75"/>
+				<bi:property name="HEIGHT" value="200"/>
+				<bi:property name="CSS_STYLE" value="background: blue;"/>
+				<bi:property name="TOP_MARGIN" value="1"/>
+			</bi:component>
+			<bi:component name="PANEL_10" type="PANEL_COMPONENT">
+				<bi:property name="WIDTH" value="200"/>
+				<bi:property name="HEIGHT" value="125"/>
+				<bi:property name="CSS_STYLE" value="background: red;"/>
+				<bi:property name="TOP_MARGIN" value="1"/>
+				<bi:property name="LEFT_MARGIN" value="1"/>
+			</bi:component>
+			<bi:component name="PANEL_11" type="PANEL_COMPONENT">
+				<bi:property name="LEFT_MARGIN" value="1"/>
+				<bi:property name="WIDTH" value="200"/>
+				<bi:property name="HEIGHT" value="200"/>
+				<bi:property name="CSS_STYLE" value="background: green;"/>
+				<bi:property name="TOP_MARGIN" value="1"/>
+			</bi:component>
+			<bi:component name="PANEL_12" type="PANEL_COMPONENT">
+				<bi:property name="LEFT_MARGIN" value="1"/>
+				<bi:property name="WIDTH" value="200"/>
+				<bi:property name="HEIGHT" value="125"/>
+				<bi:property name="CSS_STYLE" value="background: blue;"/>
+				<bi:property name="TOP_MARGIN" value="1"/>
+			</bi:component>
+			<bi:component name="IMAGE_4" type="IMAGE_COMPONENT">
+				<bi:property name="HEIGHT" value="150"/>
+				<bi:property name="IMAGE" value="IMG.JPG"/>
+				<bi:property name="TOP_MARGIN" value="1"/>
+				<bi:property name="LEFT_MARGIN" value="1"/>
+			</bi:component>
+			<bi:component name="PANEL_13" type="PANEL_COMPONENT">
+				<bi:property name="LEFT_MARGIN" value="1"/>
+				<bi:property name="WIDTH" value="75"/>
+				<bi:property name="HEIGHT" value="100"/>
+				<bi:property name="CSS_STYLE" value="background: blue;"/>
+				<bi:property name="TOP_MARGIN" value="1"/>
+			</bi:component>
+			<bi:component name="PANEL_14" type="PANEL_COMPONENT">
+				<bi:property name="WIDTH" value="200"/>
+				<bi:property name="HEIGHT" value="200"/>
+				<bi:property name="CSS_STYLE" value="background: red;"/>
+				<bi:property name="TOP_MARGIN" value="1"/>
+				<bi:property name="LEFT_MARGIN" value="1"/>
+			</bi:component>
+			<bi:component name="PANEL_15" type="PANEL_COMPONENT">
+				<bi:property name="LEFT_MARGIN" value="1"/>
+				<bi:property name="HEIGHT" value="125"/>
+				<bi:property name="CSS_STYLE" value="background: green;"/>
+				<bi:property name="TOP_MARGIN" value="1"/>
+			</bi:component>
+			<bi:component name="PANEL_16" type="PANEL_COMPONENT">
+				<bi:property name="LEFT_MARGIN" value="1"/>
+				<bi:property name="WIDTH" value="200"/>
+				<bi:property name="HEIGHT" value="200"/>
+				<bi:property name="CSS_STYLE" value="background: blue;"/>
+				<bi:property name="TOP_MARGIN" value="1"/>
+			</bi:component>
+			<bi:component name="PANEL_17" type="PANEL_COMPONENT">
+				<bi:property name="WIDTH" value="200"/>
+				<bi:property name="HEIGHT" value="200"/>
+				<bi:property name="CSS_STYLE" value="background: red;"/>
+				<bi:property name="TOP_MARGIN" value="1"/>
+				<bi:property name="LEFT_MARGIN" value="1"/>
+			</bi:component>
+			<bi:component name="PANEL_18" type="PANEL_COMPONENT">
+				<bi:property name="LEFT_MARGIN" value="1"/>
+				<bi:property name="WIDTH" value="200"/>
+				<bi:property name="HEIGHT" value="200"/>
+				<bi:property name="CSS_STYLE" value="background: green;"/>
+				<bi:property name="TOP_MARGIN" value="1"/>
+			</bi:component>
+			<bi:component name="PANEL_19" type="PANEL_COMPONENT">
+				<bi:property name="LEFT_MARGIN" value="1"/>
+				<bi:property name="WIDTH" value="75"/>
+				<bi:property name="HEIGHT" value="200"/>
+				<bi:property name="CSS_STYLE" value="background: blue;"/>
+				<bi:property name="TOP_MARGIN" value="1"/>
+			</bi:component>
+			<bi:component name="IMAGE_1" type="IMAGE_COMPONENT">
+				<bi:property name="WIDTH" value="200"/>
+				<bi:property name="HEIGHT" value="150"/>
+				<bi:property name="IMAGE" value="IMG.JPG"/>
+				<bi:property name="TOP_MARGIN" value="1"/>
+				<bi:property name="LEFT_MARGIN" value="1"/>
+			</bi:component>
+			<bi:component name="TABSTRIP_1" type="TABSTRIP_COMPONENT">
+				<bi:property name="WIDTH" value="200"/>
+				<bi:property name="HEIGHT" value="200"/>
+				<bi:property name="TOP_MARGIN" value="1"/>
+				<bi:property name="LEFT_MARGIN" value="1"/>
+				<bi:component name="TAB_1" type="TAB_COMPONENT">
+					<bi:property name="TEXT" value="Tab 1"/>
+				</bi:component>
+				<bi:component name="TAB_2" type="TAB_COMPONENT">
+					<bi:property name="TEXT" value="Tab 2"/>
+				</bi:component>
+			</bi:component>
+			<bi:component name="KPIVIEW_1" type="org_scn_community_basics_KpiView">
+				<bi:property name="WIDTH" value="200"/>
+				<bi:property name="HEIGHT" value="200"/>
+			</bi:component>
+			<bi:component name="GRID_LAYOUT_1" type="GRID_LAYOUT_COMPONENT">
+				<bi:property name="GRID_ORIENTATION" value="V"/>
+				<bi:property name="COLUMN_SETTINGS_LIST" type="ORDEREDLIST" value="">
+					<bi:property name="COLUMN_WIDTH" index="0" value="1"/>
+				</bi:property>
+				<bi:property name="ROW_SETTINGS_LIST" type="ORDEREDLIST" value="">
+					<bi:property name="ROW_HEIGHT" index="0" value="1"/>
+					<bi:property name="ROW_HEIGHT" index="1" value="1"/>
+				</bi:property>
+				<bi:property name="WIDTH" value="250"/>
+				<bi:property name="RIGHT_MARGIN" value="auto"/>
+				<bi:property name="HEIGHT" value="125"/>
+				<bi:property name="BOTTOM_MARGIN" value="auto"/>
+				<bi:component name="GRID_CELL_1" type="GRID_CELL_COMPONENT">
+					<bi:component name="TEXTAREA_1" type="org_scn_community_basics_TextArea">
+						<bi:property name="RIGHT_MARGIN" value="0"/>
+						<bi:property name="BOTTOM_MARGIN" value="0"/>
+						<bi:property name="WIDTH" value="auto"/>
+						<bi:property name="HEIGHT" value="auto"/>
+						<bi:property name="value" value="Some funny text"/>
+					</bi:component>
+				</bi:component>
+				<bi:component name="GRID_CELL_2" type="GRID_CELL_COMPONENT">
+					<bi:component name="IMAGE_5" type="IMAGE_COMPONENT">
+						<bi:property name="WIDTH" value="auto"/>
+						<bi:property name="HEIGHT" value="auto"/>
+						<bi:property name="IMAGE" value="IMG.JPG"/>
+						<bi:property name="RIGHT_MARGIN" value="0"/>
+						<bi:property name="BOTTOM_MARGIN" value="0"/>
+					</bi:component>
+				</bi:component>
+			</bi:component>
+		</bi:component>
+		<bi:component name="CONTEXT_MENU" type="CONTEXT_MENU_COMPONENT"/>
+	</bi:component>
+</bi:biapp>

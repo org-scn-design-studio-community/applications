@@ -1,0 +1,115 @@
+<bi:biapp bi:version="1400" xmlns:bi="http://xml.sap.com/2011/biml/biapp" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns="http://www.w3.org/TR/REC-html40" xmlns:h="http://www.w3.org/TR/REC-html40" xmlns:sdk1="org.scn.community.basics" sdk1:version="1.0" xmlns:sdk2="org.scn.community.utils" sdk2:version="1.0">
+	<bi:component name="APPLICATION_PROPERTIES" type="APPLICATION_PROPERTIES">
+		<bi:property name="THEME" value="sap_platinum"/>
+	</bi:component>
+	<bi:component name="ROOT" type="ABSOLUTE_LAYOUT_COMPONENT">
+		<bi:component name="CLIENTINFORMATION_1" type="org_scn_community_utils_ClientInformation">
+			<bi:property name="LEFT_MARGIN" value="68"/>
+			<bi:property name="TOP_MARGIN" value="49"/>
+			<bi:property name="RIGHT_MARGIN" value="492"/>
+			<bi:property name="BOTTOM_MARGIN" value="228"/>
+			<bi:property name="onSizeChanged">
+				<bi:value><![CDATA[var oW = CLIENTINFORMATION_1.getOwnWidth();
+var oH = CLIENTINFORMATION_1.getOwnHeight();
+var wW = CLIENTINFORMATION_1.getWindowWidth();
+var wH = CLIENTINFORMATION_1.getWindowHeight();
+
+TEXTAREA_1.setValue(
+	" -- SIZE -- \r\n" + 
+	"Object Width: " + oW + "\r\n" +
+	"Object Height: " + oH + "\r\n" +
+	"Window Width: " + wW + "\r\n" +
+	"Window Height: " + wH
+);]]></bi:value>
+			</bi:property>
+			<bi:property name="onInformationAvailable">
+				<bi:value><![CDATA[var appCodeName = CLIENTINFORMATION_1.getAppCodeName();
+var appName = CLIENTINFORMATION_1.getAppName();
+var appVersion = CLIENTINFORMATION_1.getAppVersion();
+var language = CLIENTINFORMATION_1.getLanguage();
+var platform = CLIENTINFORMATION_1.getPlatform();
+var product = CLIENTINFORMATION_1.getProduct();
+var userAgent = CLIENTINFORMATION_1.getUserAgent();
+var verndor = CLIENTINFORMATION_1.getVerndor();
+		
+var width  = CLIENTINFORMATION_1.getScreenWidth();
+var height = CLIENTINFORMATION_1.getScreenHeight();
+var colors = CLIENTINFORMATION_1.getScreenColorsDepth();
+
+var value = "-- INFORMATION -- \r\n";
+value = value + " appCodeName: " + appCodeName + "\r\n";
+value = value + " appName: " + appName + "\r\n";
+value = value + " appVersion: " + appVersion + "\r\n";
+value = value + " language: " + language + "\r\n";
+value = value + " platform: " + platform + "\r\n";
+value = value + " product: " + product + "\r\n";
+value = value + " userAgent: " + userAgent + "\r\n";
+value = value + " verndor: " + verndor + "\r\n";
+value = value + "\r\n -- SCREEN -- \r\n";
+value = value + " width: " + width + "\r\n";
+value = value + " height: " + height + "\r\n";
+value = value + " colors: " + colors + "\r\n";
+
+TEXTAREA_2.setValue(value);
+
+var browser = CLIENTINFORMATION_1.getBrowser();
+var browserV = CLIENTINFORMATION_1.getBrowserVersion();
+var browserFV = CLIENTINFORMATION_1.getBrowserFullVersion();
+var browserM = CLIENTINFORMATION_1.isMobileBrowser();
+
+value = "-- BROWSER -- \r\n";
+value = value + " browser: " + browser + "\r\n";
+value = value + " browser is mobile: " + browserM + "\r\n";
+value = value + " browser version: " + browserV + "\r\n";
+value = value + " browser full version: " + browserFV + "";
+
+
+TEXTAREA_3.setValue(value);
+]]></bi:value>
+			</bi:property>
+			<bi:property name="readLocation" value="X"/>
+			<bi:property name="onGeoAvailable">
+				<bi:value><![CDATA[var lat = CLIENTINFORMATION_1.getGeoLatitude();
+var lon = CLIENTINFORMATION_1.getGeoLongitude();
+var acc = CLIENTINFORMATION_1.getGeoAccuracy();
+
+TEXTAREA_4.setValue(
+	" -- LOCATION -- \r\n" + 
+	"Latitude: " + lat + "\r\n" +
+	"Longitude: " + lon + "\r\n" +
+	"Accuranyc (m): " + acc + "\r\n"
+);
+
+MAP_1.addLocation("ME", "Here You Are", "", lat, lon);
+MAP_1.moveTo("ME");]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="TEXTAREA_1" type="org_scn_community_basics_TextArea">
+			<bi:property name="LEFT_MARGIN" value="20"/>
+			<bi:property name="TOP_MARGIN" value="23"/>
+			<bi:property name="HEIGHT" value="200"/>
+		</bi:component>
+		<bi:component name="TEXTAREA_3" type="org_scn_community_basics_TextArea">
+			<bi:property name="LEFT_MARGIN" value="20"/>
+			<bi:property name="TOP_MARGIN" value="236"/>
+			<bi:property name="HEIGHT" value="189"/>
+		</bi:component>
+		<bi:component name="TEXTAREA_2" type="org_scn_community_basics_TextArea">
+			<bi:property name="LEFT_MARGIN" value="263"/>
+			<bi:property name="TOP_MARGIN" value="25"/>
+			<bi:property name="WIDTH" value="790"/>
+			<bi:property name="HEIGHT" value="200"/>
+		</bi:component>
+		<bi:component name="TEXTAREA_4" type="org_scn_community_basics_TextArea">
+			<bi:property name="LEFT_MARGIN" value="20"/>
+			<bi:property name="TOP_MARGIN" value="451"/>
+			<bi:property name="HEIGHT" value="189"/>
+		</bi:component>
+		<bi:component name="MAP_1" type="org_scn_community_basics_Map">
+			<bi:property name="LEFT_MARGIN" value="263"/>
+			<bi:property name="TOP_MARGIN" value="236"/>
+			<bi:property name="WIDTH" value="768"/>
+		</bi:component>
+		<bi:component name="CONTEXT_MENU" type="CONTEXT_MENU_COMPONENT"/>
+	</bi:component>
+</bi:biapp>
