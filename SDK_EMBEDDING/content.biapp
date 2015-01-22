@@ -1,0 +1,32 @@
+<bi:biapp bi:version="1400" xmlns:bi="http://xml.sap.com/2011/biml/biapp" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns="http://www.w3.org/TR/REC-html40" xmlns:h="http://www.w3.org/TR/REC-html40" xmlns:sdk1="org.scn.community.basics" sdk1:version="1.0">
+	<bi:component name="APPLICATION_PROPERTIES" type="APPLICATION_PROPERTIES">
+		<bi:property name="THEME" value="sap_bluecrystal"/>
+	</bi:component>
+	<bi:component name="ROOT" type="ABSOLUTE_LAYOUT_COMPONENT">
+		<bi:component name="EMBEDDEDFRAME_1" type="org_scn_community_basics_EmbeddedFrame">
+			<bi:property name="LEFT_MARGIN" value="27"/>
+			<bi:property name="TOP_MARGIN" value="30"/>
+			<bi:property name="url" value="http://en.wikipedia.org/wiki/Object_Linking_and_Embedding"/>
+			<bi:property name="WIDTH" value="867"/>
+			<bi:property name="HEIGHT" value="272"/>
+		</bi:component>
+		<bi:component name="EMBEDDEDMEDIA_1" type="org_scn_community_basics_EmbeddedMedia">
+			<bi:property name="LEFT_MARGIN" value="35"/>
+			<bi:property name="TOP_MARGIN" value="325"/>
+			<bi:property name="url" value="http://www.youtube.com/v/XGSy3_Czz8k"/>
+		</bi:component>
+		<bi:component name="EMBEDDEDMEDIA_2" type="org_scn_community_basics_EmbeddedMedia">
+			<bi:property name="LEFT_MARGIN" value="484"/>
+			<bi:property name="TOP_MARGIN" value="327"/>
+			<bi:property name="url" value="http://www.youtube.com/v/XGSy3_Czz8k?fs=0"/>
+			<bi:property name="tag" value="object"/>
+		</bi:component>
+		<bi:component name="MODALBROWSER_1" type="org_scn_community_basics_ModalBrowser">
+			<bi:property name="LEFT_MARGIN" value="918"/>
+			<bi:property name="TOP_MARGIN" value="30"/>
+			<bi:property name="HEIGHT" value="160"/>
+			<bi:property name="url" value="http://en.wikipedia.org/wiki/Object_Linking_and_Embedding"/>
+		</bi:component>
+		<bi:component name="CONTEXT_MENU" type="CONTEXT_MENU_COMPONENT"/>
+	</bi:component>
+</bi:biapp>
