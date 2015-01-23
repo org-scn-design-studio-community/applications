@@ -1,0 +1,257 @@
+<bi:biapp bi:version="1400" xmlns:bi="http://xml.sap.com/2011/biml/biapp" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns="http://www.w3.org/TR/REC-html40" xmlns:h="http://www.w3.org/TR/REC-html40" xmlns:sdk1="org.scn.community.basics" sdk1:version="1.0" xmlns:sdk2="org.scn.community.utils" sdk2:version="1.0">
+	<bi:component name="APPLICATION_PROPERTIES" type="APPLICATION_PROPERTIES">
+		<bi:property name="THEME" value="sap_platinum"/>
+		<bi:property name="MESSAGE_TYPES" value="ALL"/>
+	</bi:component>
+	<bi:data_source_alias name="KAR_DS_1" type="QUERY_DATA_SOURCE">
+		<bi:property name="DATA_SOURCE_DEFINITION">
+			<bi:property name="DATA_SOURCE_CONNECTION" value=""/>
+			<bi:property name="DATA_SOURCE_TYPE" type="CHOICE" value="QUERY"/>
+			<bi:property name="DATA_SOURCE_NAME" value="0BICS_009_BICSTEST_Q0007"/>
+		</bi:property>
+	</bi:data_source_alias>
+	<bi:data_source_alias name="KAR_DS_2" type="QUERY_DATA_SOURCE">
+		<bi:property name="DATA_SOURCE_DEFINITION">
+			<bi:property name="DATA_SOURCE_CONNECTION" value=""/>
+			<bi:property name="DATA_SOURCE_TYPE" type="CHOICE" value="QUERY"/>
+			<bi:property name="DATA_SOURCE_NAME" value="0BICS_009_BICSTEST_Q0007"/>
+		</bi:property>
+	</bi:data_source_alias>
+	<bi:component name="ROOT" type="ABSOLUTE_LAYOUT_COMPONENT">
+		<bi:component name="BUTTON_1" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="List All Buttons KAR*, Cast and change Text"/>
+			<bi:property name="LEFT_MARGIN" value="208"/>
+			<bi:property name="TOP_MARGIN" value="59"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[var output = COMPONENTMANAGER_1.listAllComponentsWithType("BUTTON", "KAR");
+
+var components = "";
+output.forEach(function(element, index) {
+  components = components + element.name + ", " + element.type + ", " + element.component.getWidth() + "\r\n";
+  
+  var button = COMPONENTMANAGER_1.returnAsButton(element.component);
+  
+  button.setText("changed!");
+});
+
+TEXTAREA_1.setValue(components);]]></bi:value>
+			</bi:property>
+			<bi:property name="WIDTH" value="256"/>
+		</bi:component>
+		<bi:component name="KAR_BUTTON_2" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="List all Panels"/>
+			<bi:property name="LEFT_MARGIN" value="40"/>
+			<bi:property name="TOP_MARGIN" value="98"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[var output = COMPONENTMANAGER_1.listAllComponentsWithType("PANEL");
+
+var components = "";
+output.forEach(function(element, index) {
+  components = components + element.name + ", " + element.type + ", " + element.component.getWidth() + "\r\n";
+});
+
+TEXTAREA_1.setValue(components);]]></bi:value>
+			</bi:property>
+			<bi:property name="WIDTH" value="150"/>
+		</bi:component>
+		<bi:component name="BUTTON_4" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="add button 1 and 4 to buttons group"/>
+			<bi:property name="LEFT_MARGIN" value="45"/>
+			<bi:property name="TOP_MARGIN" value="386"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[COMPONENTMANAGER_1.addComponentToGroup("BUTTONS", "BUTTON_1");
+COMPONENTMANAGER_1.addComponentToGroup("BUTTONS", "BUTTON_4");]]></bi:value>
+			</bi:property>
+			<bi:property name="WIDTH" value="247"/>
+			<bi:property name="HEIGHT" value="20"/>
+		</bi:component>
+		<bi:component name="BUTTON_5" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="resize buttons in group buttons"/>
+			<bi:property name="LEFT_MARGIN" value="43"/>
+			<bi:property name="TOP_MARGIN" value="417"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[var components = COMPONENTMANAGER_1.getComponentsFromGroup("BUTTONS");
+
+components.forEach(function(element, index) {
+  var name = element.name;
+  
+  var component = COMPONENTMANAGER_1.getComponentByName(name);
+  var button = COMPONENTMANAGER_1.returnAsButton(component);
+  
+  button.setWidth(400);
+});]]></bi:value>
+			</bi:property>
+			<bi:property name="WIDTH" value="247"/>
+			<bi:property name="HEIGHT" value="20"/>
+		</bi:component>
+		<bi:component name="KAR_BUTTON_3" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="List All Components"/>
+			<bi:property name="LEFT_MARGIN" value="40"/>
+			<bi:property name="TOP_MARGIN" value="59"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[var output = COMPONENTMANAGER_1.listAllComponents();
+
+var components = "";
+output.forEach(function(element, index) {
+  components = components + element.name + ", " + element.type + ", " + "" + "\r\n";
+});
+
+TEXTAREA_1.setValue(components);]]></bi:value>
+			</bi:property>
+			<bi:property name="WIDTH" value="152"/>
+		</bi:component>
+		<bi:component name="BUTTON_3TOP" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="add entry to accordion by name"/>
+			<bi:property name="LEFT_MARGIN" value="672"/>
+			<bi:property name="TOP_MARGIN" value="23"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[var prefixDynamic = "KAR";
+
+var inputComponent = COMPONENTMANAGER_1.getComponentByName(prefixDynamic + "ACCORDION_LOAD");
+
+var acc = COMPONENTMANAGER_1.returnAsScnAccordion(inputComponent);
+acc.addElement("KAROL", "Karol", "", "S1");
+]]></bi:value>
+			</bi:property>
+			<bi:property name="WIDTH" value="269"/>
+		</bi:component>
+		<bi:component name="BUTTON_7" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="List All Components"/>
+			<bi:property name="LEFT_MARGIN" value="485"/>
+			<bi:property name="TOP_MARGIN" value="18"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[var output = COMPONENTMANAGER_1.listAllComponents();
+
+var components = "";
+output.forEach(function(element, index) {
+  components = components + element.name + ", " + element.type + ", " + "" + "\r\n";
+});
+
+TEXTAREA_1.setValue(components);]]></bi:value>
+			</bi:property>
+			<bi:property name="WIDTH" value="152"/>
+		</bi:component>
+		<bi:component name="BUTTON_4TOP" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="List All DataSources"/>
+			<bi:property name="LEFT_MARGIN" value="329"/>
+			<bi:property name="TOP_MARGIN" value="382"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[var output = COMPONENTMANAGER_1.listAllDataSources("KAR");
+
+var components = "";
+output.forEach(function(element, index) {
+  components = components + element.name + ", " + element.type + ", " + "" + "\r\n";
+});
+
+TEXTAREA_1.setValue(components);]]></bi:value>
+			</bi:property>
+			<bi:property name="WIDTH" value="254"/>
+		</bi:component>
+		<bi:component name="BUTTON_6" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Copy FIlters"/>
+			<bi:property name="LEFT_MARGIN" value="328"/>
+			<bi:property name="TOP_MARGIN" value="431"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[var components = COMPONENTMANAGER_1.getDataSourcesFromGroup("KAROL");
+
+components.forEach(function(element, index) {
+  var name = element.name;
+  
+  var ds = COMPONENTMANAGER_1.getDataSourceByName(name);
+  
+  ds.copyFilters(DS_1);
+});]]></bi:value>
+			</bi:property>
+			<bi:property name="WIDTH" value="254"/>
+		</bi:component>
+		<bi:component name="PANEL_1" type="PANEL_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="316"/>
+			<bi:property name="TOP_MARGIN" value="176"/>
+			<bi:property name="CSS_STYLE" value="background: red !important;"/>
+			<bi:property name="WIDTH" value="204"/>
+			<bi:property name="HEIGHT" value="174"/>
+		</bi:component>
+		<bi:component name="COMPONENTMANAGER_1" type="org_scn_community_utils_ComponentManager">
+			<bi:property name="LEFT_MARGIN" value="108"/>
+			<bi:property name="TOP_MARGIN" value="255"/>
+		</bi:component>
+		<bi:component name="TEXTAREA_1" type="org_scn_community_basics_TextArea">
+			<bi:property name="LEFT_MARGIN" value="598"/>
+			<bi:property name="TOP_MARGIN" value="70"/>
+			<bi:property name="WIDTH" value="474"/>
+		</bi:component>
+		<bi:component name="PANEL_2" type="PANEL_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="61"/>
+			<bi:property name="TOP_MARGIN" value="145"/>
+			<bi:property name="WIDTH" value="216"/>
+			<bi:property name="HEIGHT" value="211"/>
+			<bi:property name="CSS_STYLE" value="background: blue!important;"/>
+		</bi:component>
+		<bi:component name="ACCORDION_1" type="org_scn_community_basics_Accordion">
+			<bi:property name="LEFT_MARGIN" value="609"/>
+			<bi:property name="TOP_MARGIN" value="471"/>
+			<bi:property name="HEIGHT" value="68"/>
+		</bi:component>
+		<bi:component name="KAR_ACCORDION_LOAD" type="org_scn_community_basics_Accordion">
+			<bi:property name="LEFT_MARGIN" value="610"/>
+			<bi:property name="TOP_MARGIN" value="472"/>
+			<bi:property name="HEIGHT" value="68"/>
+			<bi:property name="elementsContent" value="[{&quot;key&quot;:&quot;S1&quot;,&quot;text&quot;:&quot;Section 1&quot;,&quot;url&quot;:&quot;&quot;,&quot;parent&quot;:&quot;ROOT&quot;,&quot;leaf&quot;:false},{&quot;key&quot;:&quot;Item&quot;,&quot;text&quot;:&quot;New Item 0&quot;,&quot;url&quot;:&quot;&quot;,&quot;parent&quot;:&quot;S1&quot;,&quot;leaf&quot;:true}]"/>
+			<bi:property name="cleanAll" value="X"/>
+		</bi:component>
+		<bi:component name="BUTTON_3" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="List All Components ending *TOP"/>
+			<bi:property name="LEFT_MARGIN" value="210"/>
+			<bi:property name="TOP_MARGIN" value="14"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[var output = COMPONENTMANAGER_1.listAllComponents("", "TOP");
+
+var components = "";
+output.forEach(function(element, index) {
+  components = components + element.name + ", " + element.type + ", " + element.component.getWidth() + "\r\n";
+  
+  var button = COMPONENTMANAGER_1.returnAsButton(element.component);
+  
+  button.setText("changed!");
+});
+
+TEXTAREA_1.setValue(components);]]></bi:value>
+			</bi:property>
+			<bi:property name="WIDTH" value="256"/>
+		</bi:component>
+		<bi:component name="RADIOBUTTONGROUP_1" type="RADIOBUTTONGROUP_COMPONENT">
+			<bi:property name="ITEMS" type="ORDEREDLIST">
+				<bi:property name="SELECTION_ITEM" index="0">
+					<bi:property name="SELECTED" value="X"/>
+					<bi:property name="VALUE" value="Value1"/>
+				</bi:property>
+				<bi:property name="SELECTION_ITEM" index="1">
+					<bi:property name="VALUE" value="Value2"/>
+				</bi:property>
+			</bi:property>
+			<bi:property name="LEFT_MARGIN" value="76"/>
+			<bi:property name="TOP_MARGIN" value="486"/>
+		</bi:component>
+		<bi:component name="BUTTON_2" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="List All Buttons ending *TOP, Cast and change Text"/>
+			<bi:property name="LEFT_MARGIN" value="214"/>
+			<bi:property name="TOP_MARGIN" value="102"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[var output = COMPONENTMANAGER_1.listAllComponentsWithType("BUTTON", "", "TOP");
+
+var components = "";
+output.forEach(function(element, index) {
+  components = components + element.name + ", " + element.type + ", " + element.component.getWidth() + "\r\n";
+  
+  var button = COMPONENTMANAGER_1.returnAsButton(element.component);
+  
+  button.setText("changed!");
+});
+
+TEXTAREA_1.setValue(components);]]></bi:value>
+			</bi:property>
+			<bi:property name="WIDTH" value="334"/>
+		</bi:component>
+		<bi:component name="CONTEXT_MENU" type="CONTEXT_MENU_COMPONENT"/>
+	</bi:component>
+</bi:biapp>
