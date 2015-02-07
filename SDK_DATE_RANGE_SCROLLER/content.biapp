@@ -1,0 +1,168 @@
+<bi:biapp bi:version="1400" xmlns:bi="http://xml.sap.com/2011/biml/biapp" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns="http://www.w3.org/TR/REC-html40" xmlns:h="http://www.w3.org/TR/REC-html40" xmlns:sdk1="org.scn.community.basics" sdk1:version="1.0">
+	<bi:component name="APPLICATION_PROPERTIES" type="APPLICATION_PROPERTIES">
+		<bi:property name="THEME" value="sap_bluecrystal"/>
+	</bi:component>
+	<bi:component name="ROOT" type="ABSOLUTE_LAYOUT_COMPONENT">
+		<bi:component name="DATERANGESCROLLER_1" type="org_scn_community_basics_DateRangeScroller">
+			<bi:property name="LEFT_MARGIN" value="71"/>
+			<bi:property name="TOP_MARGIN" value="49"/>
+			<bi:property name="HEIGHT" value="40"/>
+			<bi:property name="onChange">
+				<bi:value><![CDATA[var date = DATERANGESCROLLER_1.getStartDate();
+date = date + "\r\n";
+date = date + DATERANGESCROLLER_1.getEndDate();
+
+TEXTAREA_1.setValue(date);]]></bi:value>
+			</bi:property>
+			<bi:property name="DViewType" value="Day"/>
+			<bi:property name="WIDTH" value="500"/>
+		</bi:component>
+		<bi:component name="DATERANGESCROLLER_2" type="org_scn_community_basics_DateRangeScroller">
+			<bi:property name="LEFT_MARGIN" value="71"/>
+			<bi:property name="TOP_MARGIN" value="79"/>
+			<bi:property name="HEIGHT" value="40"/>
+			<bi:property name="onChange">
+				<bi:value><![CDATA[var date = DATERANGESCROLLER_2.getStartDate();
+date = date + "\r\n";
+date = date + DATERANGESCROLLER_2.getEndDate();
+
+TEXTAREA_1.setValue(date);]]></bi:value>
+			</bi:property>
+			<bi:property name="WIDTH" value="500"/>
+		</bi:component>
+		<bi:component name="DATERANGESCROLLER_4" type="org_scn_community_basics_DateRangeScroller">
+			<bi:property name="LEFT_MARGIN" value="71"/>
+			<bi:property name="TOP_MARGIN" value="132"/>
+			<bi:property name="HEIGHT" value="40"/>
+			<bi:property name="onChange">
+				<bi:value><![CDATA[var date = DATERANGESCROLLER_4.getStartDate();
+date = date + "\r\n";
+date = date + DATERANGESCROLLER_4.getEndDate();
+
+TEXTAREA_1.setValue(date);]]></bi:value>
+			</bi:property>
+			<bi:property name="DViewType" value="Year"/>
+			<bi:property name="WIDTH" value="500"/>
+		</bi:component>
+		<bi:component name="DATERANGESCROLLER_5" type="org_scn_community_basics_DateRangeScroller">
+			<bi:property name="LEFT_MARGIN" value="71"/>
+			<bi:property name="TOP_MARGIN" value="157"/>
+			<bi:property name="HEIGHT" value="40"/>
+			<bi:property name="onChange">
+				<bi:value><![CDATA[var date = DATERANGESCROLLER_5.getStartDate();
+date = date + "\r\n";
+date = date + DATERANGESCROLLER_5.getEndDate();
+
+TEXTAREA_1.setValue(date);]]></bi:value>
+			</bi:property>
+			<bi:property name="DViewType" value="CustomWeek"/>
+			<bi:property name="WIDTH" value="500"/>
+			<bi:property name="DSpecialDuration" value="6"/>
+		</bi:component>
+		<bi:component name="DATERANGESCROLLER_6" type="org_scn_community_basics_DateRangeScroller">
+			<bi:property name="LEFT_MARGIN" value="71"/>
+			<bi:property name="TOP_MARGIN" value="192"/>
+			<bi:property name="HEIGHT" value="40"/>
+			<bi:property name="onChange">
+				<bi:value><![CDATA[var date = DATERANGESCROLLER_6.getStartDate();
+date = date + "\r\n";
+date = date + DATERANGESCROLLER_6.getEndDate();
+
+TEXTAREA_1.setValue(date);]]></bi:value>
+			</bi:property>
+			<bi:property name="DViewType" value="CustomDuration"/>
+			<bi:property name="WIDTH" value="500"/>
+			<bi:property name="DSpecialDay" value="1"/>
+		</bi:component>
+		<bi:component name="DATERANGESCROLLER_7" type="org_scn_community_basics_DateRangeScroller">
+			<bi:property name="LEFT_MARGIN" value="71"/>
+			<bi:property name="TOP_MARGIN" value="222"/>
+			<bi:property name="HEIGHT" value="40"/>
+			<bi:property name="onChange">
+				<bi:value><![CDATA[var date = DATERANGESCROLLER_7.getStartDate();
+date = date + "\r\n";
+date = date + DATERANGESCROLLER_7.getEndDate();
+
+TEXTAREA_1.setValue(date);]]></bi:value>
+			</bi:property>
+			<bi:property name="DViewType" value="CustomDuration"/>
+			<bi:property name="WIDTH" value="500"/>
+			<bi:property name="DSpecialDay" value="1"/>
+			<bi:property name="DLangFormat" value="X"/>
+		</bi:component>
+		<bi:component name="DATERANGESCROLLER_8" type="org_scn_community_basics_DateRangeScroller">
+			<bi:property name="LEFT_MARGIN" value="70"/>
+			<bi:property name="TOP_MARGIN" value="248"/>
+			<bi:property name="HEIGHT" value="40"/>
+			<bi:property name="onChange">
+				<bi:value><![CDATA[var date = DATERANGESCROLLER_8.getStartDate();
+date = date + "\r\n";
+date = date + DATERANGESCROLLER_8.getEndDate();
+
+TEXTAREA_1.setValue(date);]]></bi:value>
+			</bi:property>
+			<bi:property name="DViewType" value="CustomDuration"/>
+			<bi:property name="WIDTH" value="500"/>
+			<bi:property name="DSpecialDay" value="1"/>
+			<bi:property name="DLangFormat" value="X"/>
+			<bi:property name="DLangStyle" value="long"/>
+		</bi:component>
+		<bi:component name="DATERANGESCROLLER_9" type="org_scn_community_basics_DateRangeScroller">
+			<bi:property name="LEFT_MARGIN" value="74"/>
+			<bi:property name="TOP_MARGIN" value="286"/>
+			<bi:property name="HEIGHT" value="13"/>
+			<bi:property name="onChange">
+				<bi:value><![CDATA[var date = DATERANGESCROLLER_7.getStartDate();
+date = date + "\r\n";
+date = date + DATERANGESCROLLER_7.getEndDate();
+
+TEXTAREA_1.setValue(date);]]></bi:value>
+			</bi:property>
+			<bi:property name="DViewType" value="CustomDuration"/>
+			<bi:property name="WIDTH" value="500"/>
+			<bi:property name="DSpecialDay" value="1"/>
+			<bi:property name="DLangFormat" value="X"/>
+			<bi:property name="DLangRelative" value="X"/>
+			<bi:property name="DLangStyle" value="medium"/>
+		</bi:component>
+		<bi:component name="DATERANGESCROLLER_10" type="org_scn_community_basics_DateRangeScroller">
+			<bi:property name="LEFT_MARGIN" value="72"/>
+			<bi:property name="TOP_MARGIN" value="308"/>
+			<bi:property name="HEIGHT" value="13"/>
+			<bi:property name="onChange">
+				<bi:value><![CDATA[var date = DATERANGESCROLLER_7.getStartDate();
+date = date + "\r\n";
+date = date + DATERANGESCROLLER_7.getEndDate();
+
+TEXTAREA_1.setValue(date);]]></bi:value>
+			</bi:property>
+			<bi:property name="DViewType" value="Day"/>
+			<bi:property name="WIDTH" value="500"/>
+			<bi:property name="DSpecialDay" value="1"/>
+			<bi:property name="DLangFormat" value="X"/>
+			<bi:property name="DLangRelative" value="X"/>
+			<bi:property name="DLangStyle" value="long"/>
+		</bi:component>
+		<bi:component name="DATERANGESCROLLER_3" type="org_scn_community_basics_DateRangeScroller">
+			<bi:property name="LEFT_MARGIN" value="72"/>
+			<bi:property name="TOP_MARGIN" value="105"/>
+			<bi:property name="HEIGHT" value="40"/>
+			<bi:property name="onChange">
+				<bi:value><![CDATA[var date = DATERANGESCROLLER_3.getStartDate();
+date = date + "\r\n";
+date = date + DATERANGESCROLLER_3.getEndDate();
+
+TEXTAREA_1.setValue(date);]]></bi:value>
+			</bi:property>
+			<bi:property name="DViewType" value="Month"/>
+			<bi:property name="WIDTH" value="500"/>
+		</bi:component>
+		<bi:component name="TEXTAREA_1" type="org_scn_community_basics_TextArea">
+			<bi:property name="LEFT_MARGIN" value="474"/>
+			<bi:property name="TOP_MARGIN" value="49"/>
+			<bi:property name="WIDTH" value="183"/>
+			<bi:property name="HEIGHT" value="101"/>
+		</bi:component>
+		<bi:component name="CONTEXT_MENU" type="CONTEXT_MENU_COMPONENT"/>
+	</bi:component>
+</bi:biapp>

@@ -1,0 +1,387 @@
+<bi:biapp bi:version="1400" xmlns:bi="http://xml.sap.com/2011/biml/biapp" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns="http://www.w3.org/TR/REC-html40" xmlns:h="http://www.w3.org/TR/REC-html40" xmlns:sdk1="org.scn.community.utils" sdk1:version="1.0">
+	<bi:component name="APPLICATION_PROPERTIES" type="APPLICATION_PROPERTIES">
+		<bi:property name="THEME" value="sap_platinum"/>
+	</bi:component>
+	<bi:component name="ROOT" type="ABSOLUTE_LAYOUT_COMPONENT">
+		<bi:component name="MATH_1" type="org_scn_community_utils_Math">
+			<bi:property name="LEFT_MARGIN" value="66"/>
+			<bi:property name="TOP_MARGIN" value="40"/>
+			<bi:property name="WIDTH" value="156"/>
+			<bi:property name="HEIGHT" value="61"/>
+		</bi:component>
+		<bi:component name="INPUTFIELD_1" type="INPUTFIELD_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="61"/>
+			<bi:property name="TOP_MARGIN" value="253"/>
+		</bi:component>
+		<bi:component name="INPUTFIELD_2" type="INPUTFIELD_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="240"/>
+			<bi:property name="TOP_MARGIN" value="252"/>
+		</bi:component>
+		<bi:component name="INPUTFIELD_3" type="INPUTFIELD_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="240"/>
+			<bi:property name="TOP_MARGIN" value="335"/>
+		</bi:component>
+		<bi:component name="BUTTON_1" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="abs"/>
+			<bi:property name="LEFT_MARGIN" value="474"/>
+			<bi:property name="TOP_MARGIN" value="63"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[var a = INPUTFIELD_1.getValue();
+var aF = Convert.stringToFloat(a);
+
+var b = INPUTFIELD_1.getValue();
+var bF = Convert.stringToFloat(b);
+
+INPUTFIELD_3.setValue(""+MATH_1.abs(aF));]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_3" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="acos"/>
+			<bi:property name="LEFT_MARGIN" value="474"/>
+			<bi:property name="TOP_MARGIN" value="113"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[var a = INPUTFIELD_1.getValue();
+var aF = Convert.stringToFloat(a);
+
+var b = INPUTFIELD_1.getValue();
+var bF = Convert.stringToFloat(b);
+
+INPUTFIELD_3.setValue(""+MATH_1.acos(aF));]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_4" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="asin"/>
+			<bi:property name="LEFT_MARGIN" value="474"/>
+			<bi:property name="TOP_MARGIN" value="159"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[var a = INPUTFIELD_1.getValue();
+var aF = Convert.stringToFloat(a);
+
+var b = INPUTFIELD_1.getValue();
+var bF = Convert.stringToFloat(b);
+
+INPUTFIELD_3.setValue(""+MATH_1.asin(aF));]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_2" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="round"/>
+			<bi:property name="LEFT_MARGIN" value="758"/>
+			<bi:property name="TOP_MARGIN" value="332"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[var a = INPUTFIELD_1.getValue();
+var aF = Convert.stringToFloat(a);
+
+var b = INPUTFIELD_1.getValue();
+var bF = Convert.stringToFloat(b);
+
+INPUTFIELD_3.setValue(""+MATH_1.round(aF));]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_5" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="atan"/>
+			<bi:property name="LEFT_MARGIN" value="611"/>
+			<bi:property name="TOP_MARGIN" value="64"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[var a = INPUTFIELD_1.getValue();
+var aF = Convert.stringToFloat(a);
+
+var b = INPUTFIELD_1.getValue();
+var bF = Convert.stringToFloat(b);
+
+INPUTFIELD_3.setValue(""+MATH_1.atan(aF));]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_6" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="ceil"/>
+			<bi:property name="LEFT_MARGIN" value="611"/>
+			<bi:property name="TOP_MARGIN" value="115"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[var a = INPUTFIELD_1.getValue();
+var aF = Convert.stringToFloat(a);
+
+var b = INPUTFIELD_1.getValue();
+var bF = Convert.stringToFloat(b);
+
+INPUTFIELD_3.setValue(""+MATH_1.ceil(aF));]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_7" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="cos"/>
+			<bi:property name="LEFT_MARGIN" value="611"/>
+			<bi:property name="TOP_MARGIN" value="160"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[var a = INPUTFIELD_1.getValue();
+var aF = Convert.stringToFloat(a);
+
+var b = INPUTFIELD_1.getValue();
+var bF = Convert.stringToFloat(b);
+
+INPUTFIELD_3.setValue(""+MATH_1.cos(aF));]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_8" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="exp"/>
+			<bi:property name="LEFT_MARGIN" value="475"/>
+			<bi:property name="TOP_MARGIN" value="232"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[var a = INPUTFIELD_1.getValue();
+var aF = Convert.stringToFloat(a);
+
+var b = INPUTFIELD_1.getValue();
+var bF = Convert.stringToFloat(b);
+
+INPUTFIELD_3.setValue(""+MATH_1.exp(aF));]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_9" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="floor"/>
+			<bi:property name="LEFT_MARGIN" value="475"/>
+			<bi:property name="TOP_MARGIN" value="283"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[var a = INPUTFIELD_1.getValue();
+var aF = Convert.stringToFloat(a);
+
+var b = INPUTFIELD_1.getValue();
+var bF = Convert.stringToFloat(b);
+
+INPUTFIELD_3.setValue(""+MATH_1.floor(aF));]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_10" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="log"/>
+			<bi:property name="LEFT_MARGIN" value="475"/>
+			<bi:property name="TOP_MARGIN" value="328"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[var a = INPUTFIELD_1.getValue();
+var aF = Convert.stringToFloat(a);
+
+var b = INPUTFIELD_1.getValue();
+var bF = Convert.stringToFloat(b);
+
+INPUTFIELD_3.setValue(""+MATH_1.log(aF));]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_11" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="max"/>
+			<bi:property name="LEFT_MARGIN" value="613"/>
+			<bi:property name="TOP_MARGIN" value="232"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[var a = INPUTFIELD_1.getValue();
+var aF = Convert.stringToFloat(a);
+
+var b = INPUTFIELD_2.getValue();
+var bF = Convert.stringToFloat(b);
+
+INPUTFIELD_3.setValue(""+MATH_1.max(aF, bF));]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_12" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="min"/>
+			<bi:property name="LEFT_MARGIN" value="613"/>
+			<bi:property name="TOP_MARGIN" value="283"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[var a = INPUTFIELD_1.getValue();
+var aF = Convert.stringToFloat(a);
+
+var b = INPUTFIELD_2.getValue();
+var bF = Convert.stringToFloat(b);
+
+INPUTFIELD_3.setValue(""+MATH_1.min(aF, bF));]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_13" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="pow"/>
+			<bi:property name="LEFT_MARGIN" value="613"/>
+			<bi:property name="TOP_MARGIN" value="328"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[var a = INPUTFIELD_1.getValue();
+var aF = Convert.stringToFloat(a);
+
+var b = INPUTFIELD_2.getValue();
+var bF = Convert.stringToFloat(b);
+
+INPUTFIELD_3.setValue(""+MATH_1.pow(aF, bF));]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_14" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="random"/>
+			<bi:property name="LEFT_MARGIN" value="757"/>
+			<bi:property name="TOP_MARGIN" value="234"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[var a = INPUTFIELD_1.getValue();
+var aF = Convert.stringToFloat(a);
+
+var b = INPUTFIELD_1.getValue();
+var bF = Convert.stringToFloat(b);
+
+INPUTFIELD_3.setValue(""+MATH_1.random());]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_15" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="sin"/>
+			<bi:property name="LEFT_MARGIN" value="757"/>
+			<bi:property name="TOP_MARGIN" value="285"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[var a = INPUTFIELD_1.getValue();
+var aF = Convert.stringToFloat(a);
+
+var b = INPUTFIELD_1.getValue();
+var bF = Convert.stringToFloat(b);
+
+INPUTFIELD_3.setValue(""+MATH_1.sin(aF));]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_16" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="sqrt"/>
+			<bi:property name="LEFT_MARGIN" value="890"/>
+			<bi:property name="TOP_MARGIN" value="235"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[var a = INPUTFIELD_1.getValue();
+var aF = Convert.stringToFloat(a);
+
+var b = INPUTFIELD_1.getValue();
+var bF = Convert.stringToFloat(b);
+
+INPUTFIELD_3.setValue(""+MATH_1.sqrt(aF));]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_17" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="tan"/>
+			<bi:property name="LEFT_MARGIN" value="891"/>
+			<bi:property name="TOP_MARGIN" value="287"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[var a = INPUTFIELD_1.getValue();
+var aF = Convert.stringToFloat(a);
+
+var b = INPUTFIELD_1.getValue();
+var bF = Convert.stringToFloat(b);
+
+INPUTFIELD_3.setValue(""+MATH_1.tan(aF));]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_18" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="sum 4,5,7"/>
+			<bi:property name="LEFT_MARGIN" value="49"/>
+			<bi:property name="TOP_MARGIN" value="411"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[var a = MATH_1.sum(["4.3", "5.6", "7"]);
+
+INPUTFIELD_3.setValue(""+a);]]></bi:value>
+			</bi:property>
+			<bi:property name="WIDTH" value="341"/>
+		</bi:component>
+		<bi:component name="BUTTON_19" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="average 4,5,7"/>
+			<bi:property name="LEFT_MARGIN" value="50"/>
+			<bi:property name="TOP_MARGIN" value="453"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[var a = MATH_1.average(["4.7", "5.2", "7"]);
+
+INPUTFIELD_3.setValue(""+a);]]></bi:value>
+			</bi:property>
+			<bi:property name="WIDTH" value="341"/>
+		</bi:component>
+		<bi:component name="BUTTON_20" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="percent 23 of 67"/>
+			<bi:property name="LEFT_MARGIN" value="49"/>
+			<bi:property name="TOP_MARGIN" value="497"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[var a = MATH_1.percent(23.0, 67.0);
+
+INPUTFIELD_3.setValue(""+a);]]></bi:value>
+			</bi:property>
+			<bi:property name="WIDTH" value="341"/>
+		</bi:component>
+		<bi:component name="BUTTON_21" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="median 23,45,84,11"/>
+			<bi:property name="LEFT_MARGIN" value="48"/>
+			<bi:property name="TOP_MARGIN" value="542"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[var a = MATH_1.median(["23","45","84","11"]);
+
+INPUTFIELD_3.setValue(""+a);]]></bi:value>
+			</bi:property>
+			<bi:property name="WIDTH" value="341"/>
+		</bi:component>
+		<bi:component name="BUTTON_22" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="sum 4,5,7"/>
+			<bi:property name="LEFT_MARGIN" value="432"/>
+			<bi:property name="TOP_MARGIN" value="413"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[COLLECTION_1.removeAllItems();
+
+COLLECTION_1.addItem("", "", 4.3);
+COLLECTION_1.addItem("", "", 5.6);
+COLLECTION_1.addItem("", "", 7.0);
+
+var a = MATH_1.sumV(COLLECTION_1.getAsKeyLabelValueArray());
+
+INPUTFIELD_3.setValue(""+a);]]></bi:value>
+			</bi:property>
+			<bi:property name="WIDTH" value="341"/>
+		</bi:component>
+		<bi:component name="BUTTON_23" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="average 4,5,7"/>
+			<bi:property name="LEFT_MARGIN" value="433"/>
+			<bi:property name="TOP_MARGIN" value="455"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[COLLECTION_1.removeAllItems();
+
+COLLECTION_1.addItem("", "", 4.3);
+COLLECTION_1.addItem("", "", 5.6);
+COLLECTION_1.addItem("", "", 7.0);
+
+var a = MATH_1.averageV(COLLECTION_1.getAsKeyLabelValueArray());
+
+INPUTFIELD_3.setValue(""+a);]]></bi:value>
+			</bi:property>
+			<bi:property name="WIDTH" value="341"/>
+		</bi:component>
+		<bi:component name="BUTTON_24" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="percent 23 of 67"/>
+			<bi:property name="LEFT_MARGIN" value="432"/>
+			<bi:property name="TOP_MARGIN" value="499"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[var a = MATH_1.percent(23.0, 67.0);
+
+INPUTFIELD_3.setValue(""+a);]]></bi:value>
+			</bi:property>
+			<bi:property name="WIDTH" value="341"/>
+		</bi:component>
+		<bi:component name="BUTTON_25" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="median 23,45,84,11"/>
+			<bi:property name="LEFT_MARGIN" value="431"/>
+			<bi:property name="TOP_MARGIN" value="543"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[COLLECTION_1.removeAllItems();
+
+COLLECTION_1.addItem("", "", 23.0);
+COLLECTION_1.addItem("", "", 45.0);
+COLLECTION_1.addItem("", "", 84.0);
+COLLECTION_1.addItem("", "", 11.0);
+
+var a = MATH_1.medianV(COLLECTION_1.getAsKeyLabelValueArray());
+
+INPUTFIELD_3.setValue(""+a);]]></bi:value>
+			</bi:property>
+			<bi:property name="WIDTH" value="341"/>
+		</bi:component>
+		<bi:component name="TEXT_1" type="TEXT_COMPONENT">
+			<bi:property name="TEXT" value="a"/>
+			<bi:property name="LEFT_MARGIN" value="62"/>
+			<bi:property name="TOP_MARGIN" value="230"/>
+		</bi:component>
+		<bi:component name="TEXT_2" type="TEXT_COMPONENT">
+			<bi:property name="TEXT" value="b"/>
+			<bi:property name="LEFT_MARGIN" value="241"/>
+			<bi:property name="TOP_MARGIN" value="231"/>
+		</bi:component>
+		<bi:component name="TEXT_3" type="TEXT_COMPONENT">
+			<bi:property name="TEXT" value="result"/>
+			<bi:property name="LEFT_MARGIN" value="241"/>
+			<bi:property name="TOP_MARGIN" value="307"/>
+		</bi:component>
+		<bi:component name="COLLECTION_1" type="org_scn_community_utils_Collection"/>
+		<bi:component name="CONTEXT_MENU" type="CONTEXT_MENU_COMPONENT"/>
+	</bi:component>
+</bi:biapp>
