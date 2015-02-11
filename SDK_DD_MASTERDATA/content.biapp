@@ -1,0 +1,54 @@
+<bi:biapp bi:version="1400" xmlns:bi="http://xml.sap.com/2011/biml/biapp" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns="http://www.w3.org/TR/REC-html40" xmlns:h="http://www.w3.org/TR/REC-html40" xmlns:sdk1="org.scn.community.databound" sdk1:version="1.0">
+	<bi:component name="APPLICATION_PROPERTIES" type="APPLICATION_PROPERTIES">
+		<bi:property name="THEME" value="sap_platinum"/>
+		<bi:property name="MESSAGE_TYPES" value="ALL"/>
+		<bi:property name="ON_STARTUP">
+			<bi:value><![CDATA[// DS_1.getMembers("0BC_PROD1", 1000);]]></bi:value>
+		</bi:property>
+	</bi:component>
+	<bi:data_source_alias name="DS_1" type="QUERY_DATA_SOURCE">
+		<bi:property name="DATA_SOURCE_DEFINITION">
+			<bi:property name="DATA_SOURCE_CONNECTION" value="Q93 [PUBLIC]"/>
+			<bi:property name="DATA_SOURCE_TYPE" type="CHOICE" value="QUERY"/>
+			<bi:property name="DATA_SOURCE_NAME" value="0BICS_009_BICSTEST_Q0007"/>
+		</bi:property>
+	</bi:data_source_alias>
+	<bi:component name="ROOT" type="ABSOLUTE_LAYOUT_COMPONENT">
+		<bi:component name="DROPDOWN_1" type="org_scn_community_databound_DropDown">
+			<bi:property name="LEFT_MARGIN" value="211"/>
+			<bi:property name="TOP_MARGIN" value="114"/>
+			<bi:property name="WIDTH" value="238"/>
+			<bi:property name="DATA_SOURCE_ALIAS_REF" value="DS_1"/>
+			<bi:property name="DBindingMode" value="Master Data"/>
+			<bi:property name="onSelectionChanged">
+				<bi:value><![CDATA[APPLICATION.createInfoMessage("done");]]></bi:value>
+			</bi:property>
+			<bi:property name="DDimension" value="0BC_PROD1"/>
+		</bi:component>
+		<bi:component name="DROPDOWN_2" type="org_scn_community_databound_DropDown">
+			<bi:property name="LEFT_MARGIN" value="208"/>
+			<bi:property name="TOP_MARGIN" value="151"/>
+			<bi:property name="WIDTH" value="238"/>
+			<bi:property name="DATA_SOURCE_ALIAS_REF" value="DS_1"/>
+			<bi:property name="onSelectionChanged">
+				<bi:value><![CDATA[APPLICATION.createInfoMessage("done");]]></bi:value>
+			</bi:property>
+			<bi:property name="DDimension" value="0BC_PROD1"/>
+			<bi:property name="data" value="{&quot;0BC_PERS1&quot;: &quot;00004&quot;}"/>
+		</bi:component>
+		<bi:component name="BUTTON_1" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Button"/>
+			<bi:property name="LEFT_MARGIN" value="314"/>
+			<bi:property name="TOP_MARGIN" value="230"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[APPLICATION.createInfoMessage("Sel: " + DS_1.getFilterExt("0BC_PROD1"));]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="CROSSTAB_1" type="CROSSTAB_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="658"/>
+			<bi:property name="TOP_MARGIN" value="279"/>
+			<bi:property name="DATA_SOURCE_ALIAS_REF" value="DS_1"/>
+		</bi:component>
+		<bi:component name="CONTEXT_MENU" type="CONTEXT_MENU_COMPONENT"/>
+	</bi:component>
+</bi:biapp>

@@ -1,0 +1,64 @@
+<bi:biapp bi:version="1400" xmlns:bi="http://xml.sap.com/2011/biml/biapp" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns="http://www.w3.org/TR/REC-html40" xmlns:h="http://www.w3.org/TR/REC-html40" xmlns:sdk1="org.scn.community.databound" sdk1:version="1.0">
+	<bi:component name="APPLICATION_PROPERTIES" type="APPLICATION_PROPERTIES">
+		<bi:property name="THEME" value="sap_bluecrystal"/>
+		<bi:property name="MESSAGE_TYPES" value="ALL"/>
+	</bi:component>
+	<bi:data_source_alias name="DS_1" type="QUERY_DATA_SOURCE">
+		<bi:property name="DATA_SOURCE_DEFINITION">
+			<bi:property name="DATA_SOURCE_CONNECTION" value="Q93 [PUBLIC]"/>
+			<bi:property name="DATA_SOURCE_TYPE" type="CHOICE" value="QUERY"/>
+			<bi:property name="DATA_SOURCE_NAME" value="0BICS_009_BICSTEST_Q0007"/>
+			<bi:property name="DATA_SOURCE_INITIAL_STATE">
+				<bi:value><![CDATA[eNrtWttu4zYQ/RXD74Wc2EEaQCuApsY2u5SokJQvKQrCTdytgW5SJN6H9us71M2SI18SO0gTaBEsJA5nOOQ5Q86IdvuMKjNmMPFcBXLMKBgfFJUs0kyE2DhTGgJDOCPKu77qtn6N4j5n9DfXqYhcn2hiiATi+TAgMdeus2463Mx1DHLmdRK3Op0rYx80KG2uO53OpeukctSqc5aFA2EiKcbMB9m6n39ffGkXptpOZn1TsDFGG+cSo2GiwTvvnPXOOt0OziVvKlxQwIHacY2KCHqihNQsHLZW//yN1rNFsIOWOmq0cHDHUkPWlxKJfjIS2kn6MdXoKx0RSagGyZTGeWw2FJOlJgKpztolqwrHdKrdd6njkK9U7w0mP9NedNXtTS66XX4x6YXdXy6ICPeac55NzykUys/5ir1gNbLpjJmKkXs3JDHDYQx8zeA6oUu0lqwfIxKl55JlKvir7AYQ9EEaQikoNB1JUBDqpMvGq6dhilYqTdVXVKinWWIIX1gIvklHVEZIjBdcfp/JbGmJohD6qI7MLxpxvVOb+LThbAmUihut35f3d8v7b1/aFQXL9jKQNFZaBCZCrAJAsCwX0Aw6bBTo49diDZkduGzZKUT1YA6liBs0PwuaAdENmJ8FzEgy+tZo+kxFnMzMV5g1oL54SV6P7QTYsMH242PrlJOlitut7w93di1ZAKGyAGrS59B+A/9Kz16+b9QT0MtP/B1izO52SPGA2SG1rN6+PP93klUR38O4EQNJJB3NWnc/Fv58ZeM6+9fO4rxdIWbGh74QX3GiY8JjUO2iA8Y66zPO9MxLHjkUnCuJDpvKiTj/tnBVAuroIqvJeI7cQF9M5zrmjpjvQ3gy4r7/upenOxAyiDnJzaEhKtAPFiobWQM2jLG3t3r8sUA+10jcG5DCqDiyM0gOBLsRR3agVGm7/CUfMbJvIKev+skQmoTlcyajIxFAs4l+lrJREd4E6icMVBpLCSGdNZH6ESN1b6EYEIXO2TsY8voi8QjnN2s5eyjsKPUwHdgmzYm6Qxv3qKZO/Dh14nEx8Y6F5PPrtTqMfMk4N76YhGaj//a7zHSXNZt3n1glmLJHJ77hfI8ryiPvW/fccB64jmSa7FBTpjIHpJhYBhfhhULUH4P3x/yvJ6ymsrcM2/QUtNfcpVfXKWmrWYB8kIyatEsg/MJWrSyPyEgolsylLzQyqyBk0f688Ev0QxFCTdGX2n7WjH/Jrw0wxuQM/7ffEv20iQLnalsNuVdvH/u8gnf7mOEVnHhtHDoW3wrKVPA4COuBTmdch/N5g/PLcd66QZwOzYEEaGL29Fg6OwFw0r1zrd96Wn67jx4XT4v71Xy1fLjHbANwwwUTxvYYbrf+XTw+VDuEQgZJXVmYybPYIp1t3f45f5zfrhaPy6fV8nbXkVM5kybToDuK+XUvOJtFA315BYMkhS/M+0AZDq68n3BnKV5cRbHKCYdmgCshZCLcaHIhiEZEsRvwc1qUWlzFhiEeMmMchPCCN5VGHFsTxg3apTFPk52UBDWCms5mnbOsfzW2qxcCGeT2Mo9KLS6JIj4zNRa0yI5LVQTTAV0ze/bTpi09Djd7kEYebc8Xr0ZQz+AS205NPBl2L4e80+uGg/Nzoa8H0xnvNsRriLdJPKey82a1rdGShCo1kVVs1TLOWKwNZwHT9gyrF2QnncCsieQJNEwpRPkLFVj7FKn1+res/wGwj20k]]></bi:value>
+			</bi:property>
+		</bi:property>
+	</bi:data_source_alias>
+	<bi:component name="ROOT" type="ABSOLUTE_LAYOUT_COMPONENT">
+		<bi:component name="DATASLIDER_1" type="org_scn_community_databound_Slider">
+			<bi:property name="LEFT_MARGIN" value="178"/>
+			<bi:property name="TOP_MARGIN" value="35"/>
+			<bi:property name="DATA_SOURCE_ALIAS_REF" value="DS_1"/>
+			<bi:property name="data" value="{&quot;4FW8C4P934W533L5W4N3J5AON&quot;: &quot;4FW8C4WXM3HULQ4M1YPFT79EF&quot;}"/>
+			<bi:property name="WIDTH" value="644"/>
+			<bi:property name="onSelectionChanged">
+				<bi:value><![CDATA[var selection = DATASLIDER_1.getSelectedKey();
+APPLICATION.createInfoMessage("Selected: " + selection);
+
+if(selection == "-N/A-") {
+	DS_1.clearFilter("0BC_PERS1");
+} else {
+	DS_1.setFilterExt("0BC_PERS1", DATASLIDER_1.getSelectedKey());
+}]]></bi:value>
+			</bi:property>
+			<bi:property name="HEIGHT" value="132"/>
+		</bi:component>
+		<bi:component name="DATASLIDER_2" type="org_scn_community_databound_Slider">
+			<bi:property name="LEFT_MARGIN" value="65"/>
+			<bi:property name="TOP_MARGIN" value="37"/>
+			<bi:property name="DATA_SOURCE_ALIAS_REF" value="DS_1"/>
+			<bi:property name="data" value="{&quot;4FW8C4P934W533L5W4N3J5AON&quot;: &quot;4FW8C4WXM3HULQ4M1YPFT79EF&quot;}"/>
+			<bi:property name="WIDTH" value="262"/>
+			<bi:property name="onSelectionChanged">
+				<bi:value><![CDATA[var selection = DATASLIDER_2.getSelectedKey();
+APPLICATION.createInfoMessage("Selected: " + selection);
+
+if(selection == "-N/A-") {
+	DS_1.clearFilter("0BC_PERS1");
+} else {
+	DS_1.setFilterExt("0BC_PERS1", selection);
+}]]></bi:value>
+			</bi:property>
+			<bi:property name="vertical" value="X"/>
+			<bi:property name="HEIGHT" value="443"/>
+			<bi:property name="maxNumber" value="4"/>
+			<bi:property name="topBottom" value="Top X"/>
+		</bi:component>
+		<bi:component name="CROSSTAB_1" type="CROSSTAB_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="184"/>
+			<bi:property name="TOP_MARGIN" value="89"/>
+			<bi:property name="DATA_SOURCE_ALIAS_REF" value="DS_1"/>
+			<bi:property name="HEIGHT" value="800"/>
+		</bi:component>
+		<bi:component name="CONTEXT_MENU" type="CONTEXT_MENU_COMPONENT"/>
+	</bi:component>
+</bi:biapp>

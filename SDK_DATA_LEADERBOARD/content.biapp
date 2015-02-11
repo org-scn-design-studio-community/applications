@@ -1,0 +1,79 @@
+<bi:biapp bi:version="1302" xmlns:bi="http://xml.sap.com/2011/biml/biapp" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns="http://www.w3.org/TR/REC-html40" xmlns:h="http://www.w3.org/TR/REC-html40" xmlns:sdk1="org.scn.community.databound" sdk1:version="1.0">
+	<bi:component name="APPLICATION_PROPERTIES" type="APPLICATION_PROPERTIES">
+		<bi:property name="THEME" value="sap_platinum"/>
+		<bi:property name="MESSAGE_TYPES" value="ALL"/>
+	</bi:component>
+	<bi:data_source_alias name="DS_1" type="QUERY_DATA_SOURCE">
+		<bi:property name="DATA_SOURCE_DEFINITION">
+			<bi:property name="DATA_SOURCE_CONNECTION" value="Q99 [PUBLIC]"/>
+			<bi:property name="DATA_SOURCE_TYPE" type="CHOICE" value="QUERY"/>
+			<bi:property name="DATA_SOURCE_NAME" value="0BICS_009_BICSTEST_Q0007"/>
+			<bi:property name="DATA_SOURCE_INITIAL_STATE">
+				<bi:value><![CDATA[eNrtWm1v4jgQ/iuI76fQQtWrlI1knAn41olT2wHS08niWm4P6ZaeWvbD3a+/ySsJDRRaet2tUqEq9tjj8TzP2DMEe8ioMhMGU8dWICeMgnFBUclCzUSAnbHS4BvCGVHO9VW/82sYDTmjv9lWTWS7RBNDJBDHBY9EXNvWputwNdcRyNjppWb1elcmedCgtLnu9XqXtpXJcVaTsSzwhAmlmDAXZGc1/7r41C1Vda1c+7Zga40u7iVCxUSDc947G/Suzs5xL0VXaYICDjRZ16iQoCVKSM2CUWf9z9+oPXdCsmhloEYNBw+sdORjKZFoJyNBskk3ohptpWMiCdUgmdK4j+2OcrPUhCDVWbeiVeGaVn34vum45AunD7zpz3QQXvUH04t+n19MB0H/lwsigmfVWU+2Z5UTqs+Fx47wRr6dCVMRcu+GpGo4TIBvGNwktInWkg0jRKLyXNFMBX+RXh/8IUhDKAWFqkMJCgKdDtlqOhpmqKXWVW/ihGaapYqwwQJwTbaiMkJivKD7XSZz1xJFIXBxOjK/7ER/ZzrxacvYCig1Mzq/L1d3y9WXT93ahITtVSBppLTwTYhY+YBgJVxANWiwUaBf74sNZMnCVc1WKWoGcyRF1KL5UdD0iW7B/ChghpLRt0bTZSrkJDafIW5BPdolL8d2CmzUYvvjY2tVk6Wa2Z2v93foy6EQn9F7E8IjUN03sK7y7BSnRjP9nOK+3yPG3G6PFK+XPdKE07ud871TrI73M3wbM5BE0nHcufu2cOfrJKrzv24e5d0aLXewIR+Akc6GjDMdO+kjh5JxFdFhWzkR498Wrlo4vbrEavOdVx6fR9O5iblj5roQnIy47+/36nY9If2Ik0IdKqIC7WCBSiLLY6MIRzvrh28L5HODxL4BKYyKwmQHKmFichCHyULZpN3yY77CyL8BOX3NT0bQpisfMxUdCx/aQ/SjFI2K8DZQP2Cg0khKCGjcRuqPGKknLRObzDp9HZlcC3uKPUwIdkkLqu6ZjadUWyl+Z5Xi29DqfUvJp6/XmjByJePcuGIamK3xu99lZues2X73iXWCqVp04jec7/GK8pXvW595w3mgH8ksPaFmTOUGSDFNGFyGFwpx/gScP+Z/PWI9lbdybLN7sIccqjRtqzJbxT7yQTJqsiG+cEtdjbIiIkOhWLqXodDIrJKQZf/T0i+dH4gAGsq+TPeTbvykvzbAGJMx/icY+W7WRYFztauKfHbec+xzSqRfGl1WgloNOyp45AfN8GX7aELvvEXvePR2hv3p0PQkQBuJ/1ckJjfAK7GzssN0s3TncfllFT4sHher9Xy9vF9h+gF4AoMJouRe7nb+XTzc1wcEQvppqVmqKRLbMsPt3P45f5jfrhcPy8f18nbfHVS7pKYzvz+O+PXAP4tDT19egZdm9aV6FyjDxZXzE7qibNiKYuETjIyHjhAyFW512eCHY6LYDbgFoyo9tmKjAG+dCS5CeEm5WieurQnjBvXSiGfZT8afBkHDYLNJYjY/I9s3CoH0C325RZUem4Qhj02DBi3y+1OVcXjA0Fxf8m0n5olHqD1oRhGoT53XIGhmcIVtpyaeDPqXI94b9APv/Fzoa28W835LvJZ428Szaod2XuwaLUmgMhV5CVev60yCteHMZzq5/poF+SUpMOEiRUYNMwph0aACi6Ey1978uPU/qhxyFg==]]></bi:value>
+			</bi:property>
+		</bi:property>
+	</bi:data_source_alias>
+	<bi:component name="ROOT" type="ABSOLUTE_LAYOUT_COMPONENT">
+		<bi:component name="CROSSTAB_1" type="CROSSTAB_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="15"/>
+			<bi:property name="TOP_MARGIN" value="25"/>
+			<bi:property name="DATA_SOURCE_ALIAS_REF" value="DS_1"/>
+			<bi:property name="HEIGHT" value="518"/>
+			<bi:property name="WIDTH" value="360"/>
+		</bi:component>
+		<bi:component name="DATALEADERBOARD_1" type="org_scn_community_databound_LeaderBoard">
+			<bi:property name="LEFT_MARGIN" value="386"/>
+			<bi:property name="TOP_MARGIN" value="50"/>
+			<bi:property name="DATA_SOURCE_ALIAS_REF" value="DS_1"/>
+			<bi:property name="data" value="{&quot;4FW8C4P934W533L5W4N3J5AON&quot;: &quot;4FW8RN37GL043NF22OTQFXYL3&quot;}"/>
+			<bi:property name="WIDTH" value="267"/>
+			<bi:property name="HEIGHT" value="228"/>
+			<bi:property name="valuePrefix" value="... has "/>
+			<bi:property name="valueSuffix" value=" Points"/>
+			<bi:property name="maxNumber" value="5"/>
+			<bi:property name="fallbackPicture" value="NoName.jpg"/>
+		</bi:component>
+		<bi:component name="TEXT_2" type="TEXT_COMPONENT">
+			<bi:property name="TEXT" value="Leaders by 0BC_COUNT (Top 5)"/>
+			<bi:property name="LEFT_MARGIN" value="388"/>
+			<bi:property name="TOP_MARGIN" value="33"/>
+			<bi:property name="STYLE" value="HEADING1"/>
+			<bi:property name="WIDTH" value="271"/>
+			<bi:property name="HEIGHT" value="18"/>
+		</bi:component>
+		<bi:component name="DATALEADERBOARD_2" type="org_scn_community_databound_LeaderBoard">
+			<bi:property name="LEFT_MARGIN" value="385"/>
+			<bi:property name="TOP_MARGIN" value="309"/>
+			<bi:property name="DATA_SOURCE_ALIAS_REF" value="DS_1"/>
+			<bi:property name="data" value="{&quot;4FW8C4P934W533L5W4N3J5AON&quot;: &quot;4FW8C4WXM3HULQ4M1YPFT79EF&quot;}"/>
+			<bi:property name="WIDTH" value="267"/>
+			<bi:property name="HEIGHT" value="227"/>
+			<bi:property name="valuePrefix" value="... has "/>
+			<bi:property name="valueSuffix" value=" Points"/>
+			<bi:property name="topBottom" value="Bottom X"/>
+			<bi:property name="maxNumber" value="5"/>
+			<bi:property name="fallbackPicture" value="NoName.jpg"/>
+			<bi:property name="usePictures" value=""/>
+			<bi:property name="valueDecimalPlaces" value="2"/>
+			<bi:property name="onSelectionChanged">
+				<bi:value><![CDATA[APPLICATION.createInfoMessage("Selected: " + DATALEADERBOARD_2.getSelectedKey());]]></bi:value>
+			</bi:property>
+			<bi:property name="onPress">
+				<bi:value><![CDATA[APPLICATION.createInfoMessage("Pressed: " + DATALEADERBOARD_2.getPressedKey());]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="TEXT_1" type="TEXT_COMPONENT">
+			<bi:property name="TEXT" value="Loosers by 0BC_TURN (Bottom 5)"/>
+			<bi:property name="LEFT_MARGIN" value="388"/>
+			<bi:property name="TOP_MARGIN" value="292"/>
+			<bi:property name="STYLE" value="HEADING1"/>
+			<bi:property name="WIDTH" value="277"/>
+			<bi:property name="HEIGHT" value="17"/>
+		</bi:component>
+		<bi:component name="FILTERPANEL_1" type="FILTERPANEL_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="661"/>
+			<bi:property name="TOP_MARGIN" value="39"/>
+			<bi:property name="DATA_SOURCE_ALIAS_REF" value="DS_1"/>
+		</bi:component>
+	</bi:component>
+</bi:biapp>

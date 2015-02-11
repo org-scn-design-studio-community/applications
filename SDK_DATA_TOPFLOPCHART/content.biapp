@@ -1,0 +1,89 @@
+<bi:biapp bi:version="1400" xmlns:bi="http://xml.sap.com/2011/biml/biapp" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns="http://www.w3.org/TR/REC-html40" xmlns:h="http://www.w3.org/TR/REC-html40" xmlns:sdk1="org.scn.community.databound" sdk1:version="1.0">
+	<bi:component name="APPLICATION_PROPERTIES" type="APPLICATION_PROPERTIES">
+		<bi:property name="THEME" value="sap_platinum"/>
+		<bi:property name="MESSAGE_TYPES" value="ALL"/>
+	</bi:component>
+	<bi:data_source_alias name="DS_1" type="QUERY_DATA_SOURCE">
+		<bi:property name="DATA_SOURCE_DEFINITION">
+			<bi:property name="DATA_SOURCE_CONNECTION" value="Q93 [PUBLIC]"/>
+			<bi:property name="DATA_SOURCE_TYPE" type="CHOICE" value="QUERY"/>
+			<bi:property name="DATA_SOURCE_NAME" value="0BICS_009_BICSTEST_Q0007"/>
+			<bi:property name="DATA_SOURCE_INITIAL_STATE">
+				<bi:value><![CDATA[eNrtWm1v4jgQ/iuI76fQQtWrlItknAn41olT2wHS08niWm4P6ZaeWvbD3q+/ySsJBAp92ZdeVtXK8diPxzPP2DMk9pBRZSYMpo6tQE4YBeOCopKFmokAO2OlwTeEM6Kc66urzm9hNOSM/m5bNZHtEk0MkUAcFzwScW1bm65tmP5emOsIZOz0UrV6vSuTNDQoba57vd6lbWVynNWkLAs8YUIpJswF2VnNPy1+6ZZQXStH3xZsrdHFvUQITDQ4572zwVnvvI97KbpKFRRwoMm6RoUENVFCahaMOusv/yB6boRk0cpAjQhHD6x05GMpkagnI0GySTeiGnWlYyIJ1SCZ0riP7Y5yszSdc9atoCpc06oP3zN94E1/poPwqj+YXvT7/GI6CPq/XhAR1OB2FVa4Tw7GB38IEsdmjRrodOb3xxG/HvhncejpyyvwuvnsfJqVujsHrrbVseqnuwepnt69tWPO5qULD51u/QlTEXL9hqQwHCbANxHTJLSJ1pINI/R8pV1BpoI/CzczryGUgkLoUIKCQJPcstVHR8MMUWpd9cfE9420ToHwgQXg5jxQRkiMTzS/y2RuWqIoBC5Ox0grO9HeGSa2tpStOKWmRueP5epuufpYkCefsM0hGiktfBOir3xAZyVcQBhU2CjQL7fFxmXJwlVkqxQ1O3MKbPTW3nSZCjmJzQeIW6eebJLn+9Ynug3U9xKooWS0DdT3GagjKaI2Un/ESLWqyVJN386n+zs04lCID2i2CeERqO4bcK3SdopzoplwTkG1A2LM7Q5I8UI5IE1Sif3G+d65Vff3E0QbM5BE0nHcufu8cOfrJI7zf908rrs1Pu5hQz4AY5sNGWc6dtImh5JxFdFxW3ml8+tt3VULpxdXhO25+cJz82Q6NzF3zFwXglcj7re3e3W7npB+xEkBh0BUoB4sUElkeWwU4Whn/fB5gXxukNg3IIVRUZjsQCVMTA7iMFkom7Rf/ozfHF6/5icjaJPP95l8KsJb175P146FD+39+C5+AaCRlBDQuHXn/75MPE2t7SotORMOFHF40e+TFhQ8MBvvkrYC/M4qwJNZ/A1Lv93XYU22dyXj3LhiGpit8fvfdWbnotl+N4p5valq9IO9AbW++hvJI+1IZunJM2MqV0CKacLMMmxQiPMn4Pw5//sR65/8Kfdtdm/1kEOVR9uqzFaxj3yQjJpsiC/cEqtRVkRaKBRL9zIUGplVErLs3y3V0vmBCKChTMuwd7rxL/0aAWNMxvg/wYh2sy4KnKt9Vd+T855in1N6+rnRZSVeq/mOCh75QbP7sn00ee+89d7p3tsb9q/nTU8CtJH4tSIxuQFe6DsrO0w3S3celx9X4cPicbFaz9fL+xWmFYAnMJggSr9g6fy7eLivDwiE9NNCv4QpEtEyI+3c/jV/mN+uFw/Lx/Xy9tAd9OQXNVaZkSWaA2W4uHJ+QlOUD7aiWKgEI+OhIYRMhVtdNvjhmCh2A27BqEqPrdgowFtngosQXlKu1olra8K4QVwa8Sz7yfjTIGgYbDZJzOYzs0Oj0JF+gZdrVOmxSRjy2DQgaJHfn6qMwyOG5njJr5OY/50Ae9SMIlB3jdcgaGZwhW2vTTwZ9C9HvDfoB975udDX3izm/ZZ4LfG2iWfVDu28iDVakkBlEHlpVq/XTOJrw5nPdHL9NQvyS1JgwkWKjBpmFMLigQoshspce/Px638MZXpZ]]></bi:value>
+			</bi:property>
+		</bi:property>
+	</bi:data_source_alias>
+	<bi:component name="ROOT" type="ABSOLUTE_LAYOUT_COMPONENT">
+		<bi:component name="CROSSTAB_1" type="CROSSTAB_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="23"/>
+			<bi:property name="TOP_MARGIN" value="25"/>
+			<bi:property name="DATA_SOURCE_ALIAS_REF" value="DS_1"/>
+			<bi:property name="HEIGHT" value="518"/>
+			<bi:property name="WIDTH" value="475"/>
+		</bi:component>
+		<bi:component name="FILTERPANEL_1" type="FILTERPANEL_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="739"/>
+			<bi:property name="TOP_MARGIN" value="26"/>
+			<bi:property name="DATA_SOURCE_ALIAS_REF" value="DS_1"/>
+			<bi:property name="HEIGHT" value="528"/>
+		</bi:component>
+		<bi:component name="DATATOPFLOPCHART_1" type="org_scn_community_databound_TopFlopChart">
+			<bi:property name="LEFT_MARGIN" value="228"/>
+			<bi:property name="TOP_MARGIN" value="25"/>
+			<bi:property name="DATA_SOURCE_ALIAS_REF" value="DS_1"/>
+			<bi:property name="data" value="{&quot;4FW8C4P934W533L5W4N3J5AON&quot;: &quot;4FW8C4WXM3HULQ4M1YPFT79EF&quot;}"/>
+			<bi:property name="HEIGHT" value="164"/>
+			<bi:property name="WIDTH" value="508"/>
+			<bi:property name="fallbackPicture" value="NoName.jpg"/>
+			<bi:property name="valueSuffix" value=" EUR"/>
+			<bi:property name="averageSuffix" value=" EUR"/>
+			<bi:property name="averagePrefix" value="Average: "/>
+			<bi:property name="deltaValueSuffix" value=" EUR"/>
+			<bi:property name="valueStart" value="120"/>
+			<bi:property name="breakOnAverage" value="X"/>
+			<bi:property name="allowInteraction" value=""/>
+			<bi:property name="useBackground" value="X"/>
+			<bi:property name="maxValueSize" value="500"/>
+			<bi:property name="showDelta" value=""/>
+		</bi:component>
+		<bi:component name="DATATOPFLOPCHART_2" type="org_scn_community_databound_TopFlopChart">
+			<bi:property name="LEFT_MARGIN" value="227"/>
+			<bi:property name="TOP_MARGIN" value="190"/>
+			<bi:property name="DATA_SOURCE_ALIAS_REF" value="DS_1"/>
+			<bi:property name="data" value="{&quot;4FW8C4P934W533L5W4N3J5AON&quot;: &quot;4FW8C4WXM3HULQ4M1YPFT79EF&quot;}"/>
+			<bi:property name="HEIGHT" value="164"/>
+			<bi:property name="WIDTH" value="508"/>
+			<bi:property name="fallbackPicture" value="NoName.jpg"/>
+			<bi:property name="valueSuffix" value=" EUR"/>
+			<bi:property name="averageSuffix" value=" EUR"/>
+			<bi:property name="averagePrefix" value="Average: "/>
+			<bi:property name="deltaValueSuffix" value=" EUR"/>
+			<bi:property name="valueStart" value="120"/>
+			<bi:property name="breakOnAverage" value="X"/>
+			<bi:property name="allowInteraction" value=""/>
+			<bi:property name="maxValueSize" value="420"/>
+			<bi:property name="useDelta" value="X"/>
+			<bi:property name="addCounter" value=""/>
+		</bi:component>
+		<bi:component name="DATATOPFLOPCHART_3" type="org_scn_community_databound_TopFlopChart">
+			<bi:property name="LEFT_MARGIN" value="227"/>
+			<bi:property name="TOP_MARGIN" value="355"/>
+			<bi:property name="DATA_SOURCE_ALIAS_REF" value="DS_1"/>
+			<bi:property name="data" value="{&quot;4FW8C4P934W533L5W4N3J5AON&quot;: &quot;4FW8C4WXM3HULQ4M1YPFT79EF&quot;}"/>
+			<bi:property name="HEIGHT" value="164"/>
+			<bi:property name="WIDTH" value="508"/>
+			<bi:property name="fallbackPicture" value="NoName.jpg"/>
+			<bi:property name="valueSuffix" value=" EUR"/>
+			<bi:property name="averageSuffix" value=" EUR"/>
+			<bi:property name="averagePrefix" value="Average: "/>
+			<bi:property name="deltaValueSuffix" value=" EUR"/>
+			<bi:property name="valueStart" value="180"/>
+			<bi:property name="allowInteraction" value=""/>
+			<bi:property name="useBackground" value="X"/>
+			<bi:property name="maxValueSize" value="508"/>
+			<bi:property name="useDelta" value="X"/>
+			<bi:property name="showAverage" value=""/>
+			<bi:property name="breakOnIndex" value="1"/>
+		</bi:component>
+	</bi:component>
+</bi:biapp>

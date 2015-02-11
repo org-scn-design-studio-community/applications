@@ -1,0 +1,73 @@
+<bi:biapp bi:version="1302" xmlns:bi="http://xml.sap.com/2011/biml/biapp" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns="http://www.w3.org/TR/REC-html40" xmlns:h="http://www.w3.org/TR/REC-html40" xmlns:sdk1="org.scn.community.databound" sdk1:version="1.0">
+	<bi:component name="APPLICATION_PROPERTIES" type="APPLICATION_PROPERTIES">
+		<bi:property name="THEME" value="sap_bluecrystal"/>
+		<bi:property name="MESSAGE_TYPES" value="ALL"/>
+	</bi:component>
+	<bi:data_source_alias name="DS_1" type="QUERY_DATA_SOURCE">
+		<bi:property name="DATA_SOURCE_DEFINITION">
+			<bi:property name="DATA_SOURCE_CONNECTION" value="Q93 [PUBLIC]"/>
+			<bi:property name="DATA_SOURCE_TYPE" type="CHOICE" value="QUERY"/>
+			<bi:property name="DATA_SOURCE_NAME" value="0BICS_009_BICSTEST_Q0007"/>
+			<bi:property name="DATA_SOURCE_INITIAL_STATE">
+				<bi:value><![CDATA[eNrtWm1v2zYQ/iuGvw9yYgdZAFUATZ1trpSokJRfMgyEl3idgdUdEvdD9+t31JslR7Gd2FmWQEVQSDzyeLznOfJOtNtnVJkxg4nnKpBjRsH4oKhkkWYixMaZ0hAYwhlR3vVVt/VrFPc5o7+5TkXk+kQTQyQQz4cBibl2nU3T4WquY5Azr5OY1elcGfugQWlz3el0Ll0nleOoOmNZOBAmkmLMfJCt1fzr4lO7UNV2Mu3bgq052riWGBUTDd5556x3dtbp4lrypsIEBRyondeoiKAlSkjNwmFr/eNv1J45wU5a6qhRw8EdSw1ZX0ok2slIaBfpx1SjrXREJKEaJFMa17HdUCyWmgikOmuXtCqc06l23zUcp3zh8N5g8jPtRVfd3uSi2+UXk17Y/eWCiHCvOufR8pxiQPk599gzvJEtZ8xUjNy7IYkaDmPgGwbXCV2itWT9GJEoPZc0U8FfpDeAoA/SEEpBoepIgoJQJ122Xj0NU9RSaaq+4oB6miWK8IWF4Jt0RmWExHhB9/tMZq4likLo43BkftGI/k514tOWsSVQKma0fl+u7parL5/alQGW7WUgaay0CEyEWAWAYFkuoBo02CjQx/tiA5mduKzZKUT1YA6liBs0PwqaAdENmB8FzEgy+tpo+kxFnMzMZ5g1oD7bJS/HdgJs2GD7/rF1yslSxezW12931pcsgFBZADXpc2i/gn2lZy/fN+oJ6OUn/g4xZnc7pHjA7JBaVj/tnv87yaqI72HciIEkko5mrbvvC3++tnGd/Wtncd6uEDPjQ1+Iz7jQMeExqHbRAWOd9RlneuYljxwKzpVEhy3lRJx/XbgqAXV0kdVkPEduoM+mcx1zR8z3ITwZcd/e7+XlDoQMYk5ydaiICrSDhcpG1oANY+ztre+/L5DPNRL3BqQwKo7sCpIDwW7EkZ0oHfS0/DkfMbJvIKev+skQmoTlYyajIxFAs4l+lLJREd4E6gcMVBpLCSGdNZH6HiN1b6EYEIXG2TsY8vIi8Qjjt2s5eyjsKPUwHXhKmhN1x2jco5o68f3UicfFxBsWko+v1+ow8iXj3PhiEpqt/k/fZaa7rNm++8QqwZQtOvEN51tcUR5537rnhvNAP5JpskNNmcoMkGJiGVyEFwpx/Bi8P+Z/PWA1lb1l2KanYAc5VHp1ndJoNQuQD5JRk3YJhF/oqpXlERkJxZK19IVGZhWELNofF37J+FCEUFP0pbofNeNf8msDjDE5w//tt0Q/baLAuXqqhtw7bh/7vALpl0aXY1GrYEcFj4OwHr50HXXonTfoPR+9J8P+dGgOJEATif9VJNoT4EjsnHQz3Uzdelh+WUX3i4fFaj1fL7+tMP0A3IHBhLE9l9utfxb336odQiGDpNAs1ORpbZHftm7/nN/Pb9eL++XDenm76wyqHFKTadAdxfy6F5zNooG+vIJBktMX6n2gDCdX3k/oiuLFVRTLnnBoBugIIRPhVpMLQTQiit2AnzOq1OIqNgzx1BnjJIQXlKs04tyaMG5QL415mv2k/KkR1HQ2myRm8zOyXb0QyCDXl1lUanFJFPGZqdGgRXZ+qiIOD+ia6bPfOm0tcrjag0bkgfrYeTWCegaX2HZq4smweznknV43HJyfC309mM54tyFeQ7xt4jmVTTsrdo2WJFSpiqyEq9Z1xmJtOAuYtsdfvSA7JAUmXCTPqGFKIcpfqMBiqMi1Nz9u/Re4hnH7]]></bi:value>
+			</bi:property>
+		</bi:property>
+	</bi:data_source_alias>
+	<bi:component name="ROOT" type="ABSOLUTE_LAYOUT_COMPONENT">
+		<bi:component name="DATARANGESLIDER_1" type="org_scn_community_databound_RangeSlider">
+			<bi:property name="DATA_SOURCE_ALIAS_REF" value="DS_1"/>
+			<bi:property name="data" value="{&quot;4FW8C4P934W533L5W4N3J5AON&quot;: &quot;4FW8C4WXM3HULQ4M1YPFT79EF&quot;}"/>
+			<bi:property name="WIDTH" value="1000"/>
+			<bi:property name="TOP_MARGIN" value="30"/>
+			<bi:property name="LEFT_MARGIN" value="117"/>
+			<bi:property name="onSelectionChanged">
+				<bi:value><![CDATA[var selection1 = DATARANGESLIDER_1.getSelectedKey();
+var selection2 = DATARANGESLIDER_1.getSelectedKey2();
+
+APPLICATION.createInfoMessage("Selected Range: " + selection1 + " - " + selection2);
+APPLICATION.createInfoMessage("Selected Range Keys: " + DATARANGESLIDER_1.getSelectedKeys());
+
+
+if(selection1.indexOf("-N/A-") > -1 || selection2.indexOf("-N/A-") > -1) {
+	//
+} else {
+	DS_1.setFilterExt("0BC_PERS1", "" + DATARANGESLIDER_1.getSelectedKey()  + " - " + DATARANGESLIDER_1.getSelectedKey2());
+}]]></bi:value>
+			</bi:property>
+			<bi:property name="maxNumber" value="20"/>
+		</bi:component>
+		<bi:component name="DATARANGESLIDER_2" type="org_scn_community_databound_RangeSlider">
+			<bi:property name="DATA_SOURCE_ALIAS_REF" value="DS_1"/>
+			<bi:property name="data" value="{&quot;4FW8C4P934W533L5W4N3J5AON&quot;: &quot;4FW8C4WXM3HULQ4M1YPFT79EF&quot;}"/>
+			<bi:property name="WIDTH" value="1000"/>
+			<bi:property name="TOP_MARGIN" value="93"/>
+			<bi:property name="LEFT_MARGIN" value="118"/>
+			<bi:property name="onSelectionChanged">
+				<bi:value><![CDATA[var selectedKeys = DATARANGESLIDER_2.getSelectedKeys();
+
+// remove the NAs, in this scenarios I do not care
+selectedKeys = Convert.replaceAll(selectedKeys, "-N/A-1;", "");
+selectedKeys = Convert.replaceAll(selectedKeys, ";-N/A-2", "");
+
+APPLICATION.createInfoMessage("Selected Range Keys: " + selectedKeys);
+
+DS_1.setFilterExt("0BC_PERS1", selectedKeys);
+]]></bi:value>
+			</bi:property>
+			<bi:property name="maxNumber" value="3"/>
+			<bi:property name="sorting" value="By Value"/>
+		</bi:component>
+		<bi:component name="CROSSTAB_1" type="CROSSTAB_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="119"/>
+			<bi:property name="TOP_MARGIN" value="154"/>
+			<bi:property name="DATA_SOURCE_ALIAS_REF" value="DS_1"/>
+			<bi:property name="HEIGHT" value="800"/>
+		</bi:component>
+		<bi:component name="RANGESLIDER_1" type="org_scn_community_databound_RangeSlider">
+			<bi:property name="LEFT_MARGIN" value="618"/>
+			<bi:property name="TOP_MARGIN" value="236"/>
+			<bi:property name="vertical" value="X"/>
+			<bi:property name="HEIGHT" value="333"/>
+		</bi:component>
+	</bi:component>
+</bi:biapp>
