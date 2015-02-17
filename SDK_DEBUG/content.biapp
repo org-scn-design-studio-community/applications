@@ -1,0 +1,63 @@
+<bi:biapp bi:version="1400" xmlns:bi="http://xml.sap.com/2011/biml/biapp" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns="http://www.w3.org/TR/REC-html40" xmlns:h="http://www.w3.org/TR/REC-html40" xmlns:sdk1="org.scn.community.utils" sdk1:version="1.0">
+	<bi:component name="APPLICATION_PROPERTIES" type="APPLICATION_PROPERTIES">
+		<bi:property name="THEME" value="sap_bluecrystal"/>
+		<bi:property name="ON_STARTUP">
+			<bi:value><![CDATA[var firstCall = "new value";
+
+DEBUG.inspectNow();]]></bi:value>
+		</bi:property>
+		<bi:property name="GLOBALVARIABLES" type="UNORDEREDLIST">
+			<bi:property name="GLOBALVARIABLE" index="0">
+				<bi:property name="NAME" value="XGLOBALVAR"/>
+				<bi:property name="VALUE" value="&apos;test&apos;"/>
+			</bi:property>
+		</bi:property>
+	</bi:component>
+	<bi:component name="ROOT" type="ABSOLUTE_LAYOUT_COMPONENT">
+		<bi:component name="BUTTON_1" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Show Debug"/>
+			<bi:property name="LEFT_MARGIN" value="25"/>
+			<bi:property name="TOP_MARGIN" value="13"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[DEBUG_POPUP.show();]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_2" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Change Sort"/>
+			<bi:property name="LEFT_MARGIN" value="118"/>
+			<bi:property name="TOP_MARGIN" value="13"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[var myvariable = "test for content";
+
+DEBUG.inspectNow("Breakpoint at Click Button 2");]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="DEBUG_POPUP" type="POPUP_COMPONENT">
+			<bi:property name="TOP_MARGIN" value="10"/>
+			<bi:property name="LEFT_MARGIN" value="10"/>
+			<bi:property name="WIDTH" value="1200"/>
+			<bi:property name="HEIGHT" value="800"/>
+			<bi:component name="BUTTON_5" type="BUTTON_COMPONENT">
+				<bi:property name="TEXT" value="Hide"/>
+				<bi:property name="LEFT_MARGIN" value="auto"/>
+				<bi:property name="TOP_MARGIN" value="auto"/>
+				<bi:property name="ON_CLICK">
+					<bi:value><![CDATA[DEBUG_POPUP.hide();]]></bi:value>
+				</bi:property>
+				<bi:property name="BOTTOM_MARGIN" value="10"/>
+				<bi:property name="RIGHT_MARGIN" value="16"/>
+			</bi:component>
+			<bi:component name="DEBUG" type="org_scn_community_utils_Debugger">
+				<bi:property name="TOP_MARGIN" value="60"/>
+				<bi:property name="WIDTH" value="auto"/>
+				<bi:property name="HEIGHT" value="auto"/>
+				<bi:property name="LEFT_MARGIN" value="20"/>
+				<bi:property name="RIGHT_MARGIN" value="20"/>
+				<bi:property name="BOTTOM_MARGIN" value="50"/>
+				<bi:property name="DLogActive" value=""/>
+			</bi:component>
+			<bi:component name="PANEL_1" type="PANEL_COMPONENT"/>
+		</bi:component>
+		<bi:component name="CONTEXT_MENU" type="CONTEXT_MENU_COMPONENT"/>
+	</bi:component>
+</bi:biapp>

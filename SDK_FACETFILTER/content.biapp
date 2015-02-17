@@ -1,0 +1,110 @@
+<bi:biapp bi:version="1400" xmlns:bi="http://xml.sap.com/2011/biml/biapp" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns="http://www.w3.org/TR/REC-html40" xmlns:h="http://www.w3.org/TR/REC-html40" xmlns:sdk1="org.scn.community.databound" sdk1:version="1.0" xmlns:sdk2="org.scn.community.utils" sdk2:version="1.0">
+	<bi:component name="APPLICATION_PROPERTIES" type="APPLICATION_PROPERTIES">
+		<bi:property name="THEME" value="sap_bluecrystal"/>
+		<bi:property name="ON_STARTUP">
+			<bi:value><![CDATA[FACETFILTER_1.reloadDataSource(DS_FULL);
+FACETFILTER_1.reloadSelection();]]></bi:value>
+		</bi:property>
+		<bi:property name="GLOBALVARIABLES" type="UNORDEREDLIST">
+			<bi:property name="GLOBALVARIABLE" index="0">
+				<bi:property name="NAME" value="XGLOBALVAR"/>
+				<bi:property name="VALUE" value="&apos;test&apos;"/>
+			</bi:property>
+		</bi:property>
+	</bi:component>
+	<bi:data_source_alias name="DS" type="QUERY_DATA_SOURCE">
+		<bi:property name="DATA_SOURCE_DEFINITION">
+			<bi:property name="DATA_SOURCE_CONNECTION" value="Q93 [PUBLIC]"/>
+			<bi:property name="DATA_SOURCE_TYPE" type="CHOICE" value="QUERY"/>
+			<bi:property name="DATA_SOURCE_NAME" value="0D_DX_M01_Q0003"/>
+			<bi:property name="DATA_SOURCE_INITIAL_STATE">
+				<bi:value><![CDATA[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]]></bi:value>
+			</bi:property>
+		</bi:property>
+		<bi:property name="ON_RESULTSETCHANGED">
+			<bi:value><![CDATA[FACETFILTER_1.reloadDataSource(DS_FULL);
+FACETFILTER_1.reloadSelection();
+]]></bi:value>
+		</bi:property>
+	</bi:data_source_alias>
+	<bi:data_source_alias name="DS_FULL" type="QUERY_DATA_SOURCE">
+		<bi:property name="DATA_SOURCE_DEFINITION">
+			<bi:property name="DATA_SOURCE_CONNECTION" value="Q93 [PUBLIC]"/>
+			<bi:property name="DATA_SOURCE_TYPE" type="CHOICE" value="QUERY"/>
+			<bi:property name="DATA_SOURCE_NAME" value="0D_DX_M01_Q0003"/>
+			<bi:property name="DATA_SOURCE_INITIAL_STATE">
+				<bi:value><![CDATA[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]]></bi:value>
+			</bi:property>
+		</bi:property>
+	</bi:data_source_alias>
+	<bi:component name="ROOT" type="ABSOLUTE_LAYOUT_COMPONENT">
+		<bi:component name="BUTTON_1" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Show Debug"/>
+			<bi:property name="LEFT_MARGIN" value="25"/>
+			<bi:property name="TOP_MARGIN" value="13"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[DEBUG_POPUP.show();]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_2" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Change Sort"/>
+			<bi:property name="LEFT_MARGIN" value="118"/>
+			<bi:property name="TOP_MARGIN" value="13"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[FACETFILTER_1.setSortingDirection(org_scn_community_shared_SortDirection.ASCENDING);
+FACETFILTER_1.setSortingType(org_scn_community_shared_SortType.SELECTED);
+
+var myvariable = "test for content";
+
+DEBUG.inspectNow("Breakpoint at Click Button 2", FACETFILTER_1);]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="CROSSTAB_1" type="CROSSTAB_COMPONENT">
+			<bi:property name="DATA_SOURCE_ALIAS_REF" value="DS"/>
+			<bi:property name="TOP_MARGIN" value="380"/>
+			<bi:property name="LEFT_MARGIN" value="36"/>
+			<bi:property name="WIDTH" value="1043"/>
+		</bi:component>
+		<bi:component name="FACETFILTER_1" type="org_scn_community_databound_FacetFilter">
+			<bi:property name="LEFT_MARGIN" value="25"/>
+			<bi:property name="TOP_MARGIN" value="50"/>
+			<bi:property name="WIDTH" value="1055"/>
+			<bi:property name="HEIGHT" value="300"/>
+			<bi:property name="DATA_SOURCE_ALIAS_REF" value="DS"/>
+			<bi:property name="DMaxMembers" value="100"/>
+		</bi:component>
+		<bi:component name="FILTERPANEL_1" type="FILTERPANEL_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="1100"/>
+			<bi:property name="TOP_MARGIN" value="50"/>
+			<bi:property name="DATA_SOURCE_ALIAS_REF" value="DS"/>
+			<bi:property name="HEIGHT" value="631"/>
+		</bi:component>
+		<bi:component name="DEBUG_POPUP" type="POPUP_COMPONENT">
+			<bi:property name="TOP_MARGIN" value="10"/>
+			<bi:property name="LEFT_MARGIN" value="10"/>
+			<bi:property name="WIDTH" value="1200"/>
+			<bi:property name="HEIGHT" value="800"/>
+			<bi:component name="BUTTON_5" type="BUTTON_COMPONENT">
+				<bi:property name="TEXT" value="Hide"/>
+				<bi:property name="LEFT_MARGIN" value="auto"/>
+				<bi:property name="TOP_MARGIN" value="auto"/>
+				<bi:property name="ON_CLICK">
+					<bi:value><![CDATA[DEBUG_POPUP.hide();]]></bi:value>
+				</bi:property>
+				<bi:property name="BOTTOM_MARGIN" value="10"/>
+				<bi:property name="RIGHT_MARGIN" value="16"/>
+			</bi:component>
+			<bi:component name="DEBUG" type="org_scn_community_utils_Debugger">
+				<bi:property name="TOP_MARGIN" value="60"/>
+				<bi:property name="WIDTH" value="auto"/>
+				<bi:property name="HEIGHT" value="auto"/>
+				<bi:property name="LEFT_MARGIN" value="20"/>
+				<bi:property name="RIGHT_MARGIN" value="20"/>
+				<bi:property name="BOTTOM_MARGIN" value="50"/>
+				<bi:property name="DLogActive" value=""/>
+			</bi:component>
+			<bi:component name="PANEL_1" type="PANEL_COMPONENT"/>
+		</bi:component>
+		<bi:component name="CONTEXT_MENU" type="CONTEXT_MENU_COMPONENT"/>
+	</bi:component>
+</bi:biapp>
