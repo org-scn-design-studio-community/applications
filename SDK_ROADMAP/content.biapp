@@ -1,0 +1,31 @@
+<bi:biapp bi:version="1400" xmlns:bi="http://xml.sap.com/2011/biml/biapp" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns="http://www.w3.org/TR/REC-html40" xmlns:h="http://www.w3.org/TR/REC-html40" xmlns:sdk1="org.scn.community.basics" sdk1:version="1.0">
+	<bi:component name="APPLICATION_PROPERTIES" type="APPLICATION_PROPERTIES">
+		<bi:property name="THEME" value="sap_bluecrystal"/>
+		<bi:property name="ON_STARTUP">
+			<bi:value><![CDATA[ROADMAP_1.addStep("S1", "Step 1", true, true);
+ROADMAP_1.addStep("S2", "Step 2", true, false);
+ROADMAP_1.addStep("S3", "Step 3", true, true);
+ROADMAP_1.addStep("S4", "Step 4", false, true);
+ROADMAP_1.addStep("S5", "Step 5", true, true);
+ROADMAP_1.addStep("S6", "Step 6", true, true);]]></bi:value>
+		</bi:property>
+		<bi:property name="MESSAGE_TYPES" value="ALL"/>
+	</bi:component>
+	<bi:component name="ROOT" type="ABSOLUTE_LAYOUT_COMPONENT">
+		<bi:component name="ROADMAP_1" type="org_scn_community_basics_RoadMap">
+			<bi:property name="LEFT_MARGIN" value="129"/>
+			<bi:property name="TOP_MARGIN" value="56"/>
+			<bi:property name="numberOfVisibleSteps" value="3"/>
+			<bi:property name="WIDTH" value="auto"/>
+			<bi:property name="onSelectionChanged">
+				<bi:value><![CDATA[var sel = ROADMAP_1.getSelectedStep();
+
+APPLICATION.createInfoMessage("Selected: " + sel);
+ROADMAP_1.setStepEnabled("S1", false);
+ROADMAP_1.setStepVisible("S6", false);]]></bi:value>
+			</bi:property>
+			<bi:property name="RIGHT_MARGIN" value="202"/>
+		</bi:component>
+		<bi:component name="CONTEXT_MENU" type="CONTEXT_MENU_COMPONENT"/>
+	</bi:component>
+</bi:biapp>
