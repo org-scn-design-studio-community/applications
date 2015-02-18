@@ -1,0 +1,30 @@
+<bi:biapp bi:version="1400" xmlns:bi="http://xml.sap.com/2011/biml/biapp" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns="http://www.w3.org/TR/REC-html40" xmlns:h="http://www.w3.org/TR/REC-html40" xmlns:sdk1="org.scn.community.basics" sdk1:version="1.0">
+	<bi:component name="APPLICATION_PROPERTIES" type="APPLICATION_PROPERTIES">
+		<bi:property name="THEME" value="sap_platinum"/>
+	</bi:component>
+	<bi:component name="ROOT" type="ABSOLUTE_LAYOUT_COMPONENT">
+		<bi:component name="TRISTATECHECKBOX_1" type="org_scn_community_basics_TriStateCheckBox">
+			<bi:property name="LEFT_MARGIN" value="142"/>
+			<bi:property name="TOP_MARGIN" value="84"/>
+			<bi:property name="onSelectionChanged">
+				<bi:value><![CDATA[APPLICATION.createInfoMessage("CB1: Change: " + TRISTATECHECKBOX_1.getSelectionState());
+
+TRISTATECHECKBOX_2.setSelectionState(org_scn_community_shared_SelectionState.MIXED);
+TRISTATECHECKBOX_3.setSelectionState(org_scn_community_shared_SelectionState.UNCHECKED);]]></bi:value>
+			</bi:property>
+			<bi:property name="enabled" value="X"/>
+			<bi:property name="editable" value="X"/>
+		</bi:component>
+		<bi:component name="TRISTATECHECKBOX_2" type="org_scn_community_basics_TriStateCheckBox">
+			<bi:property name="LEFT_MARGIN" value="142"/>
+			<bi:property name="TOP_MARGIN" value="130"/>
+			<bi:property name="selectionState" value="Checked"/>
+		</bi:component>
+		<bi:component name="TRISTATECHECKBOX_3" type="org_scn_community_basics_TriStateCheckBox">
+			<bi:property name="LEFT_MARGIN" value="142"/>
+			<bi:property name="TOP_MARGIN" value="166"/>
+			<bi:property name="selectionState" value="Mixed"/>
+		</bi:component>
+		<bi:component name="CONTEXT_MENU" type="CONTEXT_MENU_COMPONENT"/>
+	</bi:component>
+</bi:biapp>
