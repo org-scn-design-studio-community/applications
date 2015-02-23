@@ -1,0 +1,98 @@
+<bi:biapp bi:version="1400" xmlns:bi="http://xml.sap.com/2011/biml/biapp" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns="http://www.w3.org/TR/REC-html40" xmlns:h="http://www.w3.org/TR/REC-html40" xmlns:sdk1="org.scn.community.basics" sdk1:version="1.0">
+	<bi:component name="APPLICATION_PROPERTIES" type="APPLICATION_PROPERTIES">
+		<bi:property name="THEME" value="sap_bluecrystal"/>
+	</bi:component>
+	<bi:component name="ROOT" type="ABSOLUTE_LAYOUT_COMPONENT">
+		<bi:component name="CALENDAR_1" type="org_scn_community_basics_Calendar">
+			<bi:property name="LEFT_MARGIN" value="52"/>
+			<bi:property name="TOP_MARGIN" value="70"/>
+			<bi:property name="onRangeChanged">
+				<bi:value><![CDATA[var d1 = CALENDAR_1.getRangeDateValueFrom();
+var d2 = CALENDAR_1.getRangeDateValueTo();
+
+TEXT.setText(d1 + " - " + d2);]]></bi:value>
+			</bi:property>
+			<bi:property name="onSingleChanged">
+				<bi:value><![CDATA[var d1 = CALENDAR_1.getSingleDateValue();
+
+TEXT.setText(d1);
+
+CALENDAR_1.setCurrentDateValue("20140201");
+CALENDAR_1.setSingleDateValue("20140129");]]></bi:value>
+			</bi:property>
+			<bi:property name="onCurrentChanged">
+				<bi:value><![CDATA[var d1 = CALENDAR_1.getCurrentDateValue();
+
+TEXT.setText(d1);]]></bi:value>
+			</bi:property>
+			<bi:property name="singleRow" value="X"/>
+		</bi:component>
+		<bi:component name="CALENDAR_2" type="org_scn_community_basics_Calendar">
+			<bi:property name="LEFT_MARGIN" value="52"/>
+			<bi:property name="TOP_MARGIN" value="245"/>
+			<bi:property name="onRangeChanged">
+				<bi:value><![CDATA[var d1 = CALENDAR_2.getRangeDateValueFrom();
+var d2 = CALENDAR_2.getRangeDateValueTo();
+
+TEXT.setText(d1 + " - " + d2);]]></bi:value>
+			</bi:property>
+			<bi:property name="DSelectionType" value="Range Selection"/>
+			<bi:property name="onSingleChanged">
+				<bi:value><![CDATA[var d1 = CALENDAR_2.getSingleDateValue();
+
+TEXT.setText(d1);]]></bi:value>
+			</bi:property>
+			<bi:property name="WIDTH" value="600"/>
+			<bi:property name="monthsPerRow" value="2"/>
+			<bi:property name="monthsToDisplay" value="2"/>
+			<bi:property name="onCurrentChanged">
+				<bi:value><![CDATA[var d1 = CALENDAR_2.getCurrentDateValue();
+
+TEXT.setText(d1);]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="CALENDAR_3" type="org_scn_community_basics_Calendar">
+			<bi:property name="LEFT_MARGIN" value="674"/>
+			<bi:property name="TOP_MARGIN" value="60"/>
+			<bi:property name="onRangeChanged">
+				<bi:value><![CDATA[var d1 = CALENDAR_3.getRangeDateValueFrom();
+var d2 = CALENDAR_3.getRangeDateValueTo();
+
+TEXT.setText(d1 + " - " + d2);
+
+CALENDAR_3.setCurrentDateValue("20140104");
+CALENDAR_3.setRangeDateValueFrom("20140101");
+CALENDAR_3.setRangeDateValueTo("20140107");
+]]></bi:value>
+			</bi:property>
+			<bi:property name="DSelectionType" value="Range Selection"/>
+			<bi:property name="onSingleChanged">
+				<bi:value><![CDATA[var d1 = CALENDAR_3.getSingleDateValue();
+
+TEXT.setText(d1);]]></bi:value>
+			</bi:property>
+			<bi:property name="WIDTH" value="361"/>
+			<bi:property name="monthsToDisplay" value="2"/>
+			<bi:property name="onCurrentChanged">
+				<bi:value><![CDATA[var d1 = CALENDAR_3.getCurrentDateValue();
+
+TEXT.setText(d1);]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="TEXT_1" type="TEXT_COMPONENT">
+			<bi:property name="TEXT" value="Selection"/>
+			<bi:property name="LEFT_MARGIN" value="52"/>
+			<bi:property name="TOP_MARGIN" value="31"/>
+			<bi:property name="WIDTH" value="265"/>
+			<bi:property name="STYLE" value="HEADING2"/>
+		</bi:component>
+		<bi:component name="TEXT" type="TEXT_COMPONENT">
+			<bi:property name="TEXT" value="Sample text"/>
+			<bi:property name="LEFT_MARGIN" value="163"/>
+			<bi:property name="TOP_MARGIN" value="31"/>
+			<bi:property name="WIDTH" value="265"/>
+			<bi:property name="STYLE" value="HEADING2"/>
+		</bi:component>
+		<bi:component name="CONTEXT_MENU" type="CONTEXT_MENU_COMPONENT"/>
+	</bi:component>
+</bi:biapp>
