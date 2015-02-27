@@ -1,0 +1,86 @@
+<bi:biapp bi:version="1400" xmlns:bi="http://xml.sap.com/2011/biml/biapp" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns="http://www.w3.org/TR/REC-html40" xmlns:h="http://www.w3.org/TR/REC-html40" xmlns:sdk1="org.scn.community.databound" sdk1:version="1.0" xmlns:sdk2="org.scn.community.utils" sdk2:version="1.0">
+	<bi:component name="APPLICATION_PROPERTIES" type="APPLICATION_PROPERTIES">
+		<bi:property name="THEME" value="sap_bluecrystal"/>
+	</bi:component>
+	<bi:data_source_alias name="DS_1" type="QUERY_DATA_SOURCE">
+		<bi:property name="DATA_SOURCE_DEFINITION">
+			<bi:property name="DATA_SOURCE_CONNECTION" value="Q93 [PUBLIC]"/>
+			<bi:property name="DATA_SOURCE_TYPE" type="CHOICE" value="QUERY"/>
+			<bi:property name="DATA_SOURCE_NAME" value="0BICS_009_BICSTEST_Q0007"/>
+			<bi:property name="DATA_SOURCE_INITIAL_STATE">
+				<bi:value><![CDATA[eNrtWm1v4jgQ/iuI76dQoNetlItknAF868Sp7QDp6WRxLbeHdEtPLfth79ff5JUEAoWW6rpVUFUlHvvxeOaZsQdjDxhVZsJg6tgK5IRRMC4oKlmgmfCxMVIaPEM4I8q5ue61fgvCAWf0d9uqiGyXaGKIBOK4MCQh17a1aToe5iYEGTmdRK1O59rEDxqUNjedTufKtlI5jqpTlvlDYQIpJswF2VrNvy5+aRdQbStD3xZszdHGtYQITDQ43c7FZafb/RnXkjcVKijgQON5jQoIaqKE1Mwftdbf/0H0zAjxpKWOGhGO7lhqyPpSIlFPRvx4kW5INepKx0QSqkEypXEd2w3FYqkJQKqLdglV7c6gUDEOxgNvABL7pg85CH4u2lnPrIuV+CIDeQFe78x4nw7jWeXFW1VTHTIdmvvdma5/ZrzLs5uuP5x+ov3gutefXvZ6/HLa93u/XhLhV0xp1cBZO7SuVyWPlBOiIHPlhKkQc84tSWA4TIBvMled0CZaSzYIMQJLzyVkKviLcFNzG0IpKIQOJCjwNcksXX51NMwQpdJUfY15WZteEiB8YT64GQeUERLzJJrfZTIzLVEUfBeHY8YrGtHeKSY+bSlbckpFjdYfy9X9cvUlJ1M2YJtTNFRaeCZAX3mAzoq5gDCosFGgX2+LjcviicvIViGqd+ZIirDx5kfxpkd048yP4sxAMvrW3nSZCjiJzGeIGqeebJKX+3YKbNT49sf3rVU+LFXUbn19uEdbDoT4jNabEB6Car+BdqVnJ88a9fRz8v3+gBjPdgekuL0ckMac3m+c906xqr+f4duYgSSSjqPW/beFO19nlUX8aWdR3q7Qcg8bsg4Y6WzAONORkzxyKBhXEh23lDMx/m3dVQmnV5dYzXnnlenzZDrXMXfMXBf8sxH3/7d7eblDIb2QkxwOgahAPZiv4sgaslGIvZ3147cF8rlGYt+CFEaFQbwCFTMxTsRBPFE6aL/8lK9vsm++zl/zkxE0x5WPeRQdCw+aJPpRikZFeBOoHzBQaSgl+DRqIvVHjNT3VybGWf9ALYf7/T5pzsQDozEJNYVgUwi+thDcvRyrc4ErGefGFVPfbPXffwOdZkmzfWONp3xT1ujM99I7l6vW218wnnBL/oL7ySPtSGZJApoxlSkgxTQmaBE9KMTxE3D+nP/9hNVQ9pb5Nt3FOsih0qttlUaryEM+SEZN2sUTboFVK8sDLhCKJWsZCI3MKghZtO8Wbsl4X/hQU7Sl2DvN+Jf8RgRjTEb4n2Bgu2kTBc7Vvhrw2XHPsc8pPP0cM5yCoS+NQyv2b8XLVPDQ8+sdna64zs/dxs+n+3lvgjifN4cSoInZ8/vSOugAK82dm/Gtp+WXVfC4eFqs1vP18mGFhwnAhAvGD5Ofs7T+XTw+VDv4QnpJXVjA5KfQ4jjauvtr/ji/Wy8el0/r5d2hLaeyJ01nXm8c8pu+dxEFQ311DcPkCF7Au0AZTq6cnzCzFC+2olil+CMzREsImQi3mmzwgjFR7BbcnBalFluxkY+bzAQnIbzgTaUR59aEcYO4NOTpYSclQY2gprPZnFk2v/U71Asd6eV4mUalFpsEAY9MDYIW2XapimA6omuGF381iae+E2CPGpFH267xagT1DC6x7dzEk37vasQ7/Z4/7HaFvhnOIt5riNcQb5t4ViXzZqWr0ZL4KoXICrJqlWZiXxvOPKbjPaxekO10As9XJD9Aw4xCkL9QgbVPcbTe/AL5Pw+e5xE=]]></bi:value>
+			</bi:property>
+		</bi:property>
+	</bi:data_source_alias>
+	<bi:component name="ROOT" type="ABSOLUTE_LAYOUT_COMPONENT">
+		<bi:component name="CROSSTAB_1" type="CROSSTAB_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="47"/>
+			<bi:property name="TOP_MARGIN" value="26"/>
+			<bi:property name="DATA_SOURCE_ALIAS_REF" value="DS_1"/>
+			<bi:property name="CROSSTAB_ENABLE_SELECTION" value="X"/>
+		</bi:component>
+		<bi:component name="FILTERPANEL_1" type="FILTERPANEL_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="1400"/>
+			<bi:property name="TOP_MARGIN" value="30"/>
+			<bi:property name="DATA_SOURCE_ALIAS_REF" value="DS_1"/>
+			<bi:property name="PANEL_MODE" value="ALL"/>
+			<bi:property name="HEIGHT" value="300"/>
+		</bi:component>
+		<bi:component name="PDFPRINT_1" type="org_scn_community_utils_PdfPrint">
+			<bi:property name="TOP_MARGIN" value="10"/>
+			<bi:property name="LEFT_MARGIN" value="400"/>
+		</bi:component>
+		<bi:component name="PDFPRINT_2" type="org_scn_community_utils_PdfPrint">
+			<bi:property name="TOP_MARGIN" value="10"/>
+			<bi:property name="LEFT_MARGIN" value="400"/>
+			<bi:property name="rootPanel" value="PANEL_1"/>
+		</bi:component>
+		<bi:component name="BUTTON_1" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Pdf!"/>
+			<bi:property name="LEFT_MARGIN" value="577"/>
+			<bi:property name="TOP_MARGIN" value="39"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[PDFPRINT_1.print();]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_2" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Pdf PANEL!"/>
+			<bi:property name="LEFT_MARGIN" value="577"/>
+			<bi:property name="TOP_MARGIN" value="139"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[PDFPRINT_2.print();]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="PANEL_1" type="PANEL_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="42"/>
+			<bi:property name="TOP_MARGIN" value="221"/>
+			<bi:property name="WIDTH" value="1131"/>
+			<bi:property name="HEIGHT" value="600"/>
+			<bi:property name="CSS_STYLE" value="background: white !important;"/>
+			<bi:component name="UI5TABLE_1" type="org_scn_community_databound_UI5Table">
+				<bi:property name="LEFT_MARGIN" value="48"/>
+				<bi:property name="TOP_MARGIN" value="24"/>
+				<bi:property name="DATA_SOURCE_ALIAS_REF" value="DS_1"/>
+				<bi:property name="WIDTH" value="785"/>
+				<bi:property name="HEIGHT" value="233"/>
+				<bi:property name="DVisibleRowCount" value="8"/>
+			</bi:component>
+			<bi:component name="UI5TABLE_2" type="org_scn_community_databound_UI5Table">
+				<bi:property name="LEFT_MARGIN" value="49"/>
+				<bi:property name="TOP_MARGIN" value="266"/>
+				<bi:property name="DATA_SOURCE_ALIAS_REF" value="DS_1"/>
+				<bi:property name="WIDTH" value="786"/>
+				<bi:property name="HEIGHT" value="233"/>
+				<bi:property name="DVisibleRowCount" value="8"/>
+				<bi:property name="DNavigationMode" value="Scrollbar"/>
+			</bi:component>
+			<bi:component name="TOPFLOPCHART_1" type="org_scn_community_databound_TopFlopChart">
+				<bi:property name="LEFT_MARGIN" value="888"/>
+				<bi:property name="TOP_MARGIN" value="31"/>
+				<bi:property name="DATA_SOURCE_ALIAS_REF" value="DS_1"/>
+				<bi:property name="data" value="{&quot;4FW8C4P934W533L5W4N3J5AON&quot;: &quot;4FW8C4WXM3HULQ4M1YPFT79EF&quot;}"/>
+			</bi:component>
+		</bi:component>
+		<bi:component name="CONTEXT_MENU" type="CONTEXT_MENU_COMPONENT"/>
+	</bi:component>
+</bi:biapp>
