@@ -1,0 +1,142 @@
+<bi:biapp bi:version="1400" xmlns:bi="http://xml.sap.com/2011/biml/biapp" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns="http://www.w3.org/TR/REC-html40" xmlns:h="http://www.w3.org/TR/REC-html40" xmlns:sdk1="org.scn.community.utils" sdk1:version="1.0">
+	<bi:component name="APPLICATION_PROPERTIES" type="APPLICATION_PROPERTIES">
+		<bi:property name="THEME" value="sap_bluecrystal"/>
+		<bi:property name="GLOBALVARIABLES" type="UNORDEREDLIST">
+			<bi:property name="GLOBALVARIABLE" index="0">
+				<bi:property name="NAME" value="GLOBAL_MAXIMIZED"/>
+				<bi:property name="VALUE" value="false"/>
+			</bi:property>
+		</bi:property>
+	</bi:component>
+	<bi:component name="ROOT" type="ABSOLUTE_LAYOUT_COMPONENT">
+		<bi:component name="BUTTON_RESET" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Reset Layout"/>
+			<bi:property name="HEIGHT" value="24"/>
+			<bi:property name="TOP_MARGIN" value="2"/>
+			<bi:property name="LEFT_MARGIN" value="2"/>
+			<bi:property name="WIDTH" value="120"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[var height = CLIENTINFORMATION_1.getWindowHeight() - CLIENTINFORMATION_1.getTopMargin();
+
+var dividedSize = height / 3;
+
+PANEL_1.setTopMargin(CLIENTINFORMATION_1.getTopMargin());
+PANEL_2.setTopMargin(CLIENTINFORMATION_1.getTopMargin() + (dividedSize*1));
+PANEL_3.setTopMargin(CLIENTINFORMATION_1.getTopMargin() + (dividedSize*2));
+
+PANEL_1.setHeight(dividedSize);
+PANEL_2.setHeight(dividedSize);
+PANEL_3.setHeight(dividedSize);
+
+PANEL_1.setVisible(true);
+PANEL_2.setVisible(true);
+PANEL_3.setVisible(true);
+
+GLOBAL_MAXIMIZED = false;]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="PANEL_1" type="PANEL_COMPONENT">
+			<bi:property name="WIDTH" value="auto"/>
+			<bi:property name="RIGHT_MARGIN" value="0"/>
+			<bi:property name="HEIGHT" value="300"/>
+			<bi:property name="CSS_STYLE" value="background: red;"/>
+			<bi:property name="VISIBLE" value=""/>
+			<bi:component name="CROSSTAB_2" type="CROSSTAB_COMPONENT">
+				<bi:property name="RIGHT_MARGIN" value="0"/>
+				<bi:property name="BOTTOM_MARGIN" value="0"/>
+				<bi:property name="WIDTH" value="auto"/>
+				<bi:property name="HEIGHT" value="auto"/>
+			</bi:component>
+		</bi:component>
+		<bi:component name="PANEL_2" type="PANEL_COMPONENT">
+			<bi:property name="WIDTH" value="auto"/>
+			<bi:property name="RIGHT_MARGIN" value="0"/>
+			<bi:property name="HEIGHT" value="300"/>
+			<bi:property name="CSS_STYLE" value="background: blue;"/>
+			<bi:property name="VISIBLE" value=""/>
+			<bi:component name="CROSSTAB_1" type="CROSSTAB_COMPONENT">
+				<bi:property name="RIGHT_MARGIN" value="0"/>
+				<bi:property name="BOTTOM_MARGIN" value="0"/>
+				<bi:property name="WIDTH" value="auto"/>
+				<bi:property name="HEIGHT" value="auto"/>
+			</bi:component>
+		</bi:component>
+		<bi:component name="PANEL_3" type="PANEL_COMPONENT">
+			<bi:property name="WIDTH" value="auto"/>
+			<bi:property name="RIGHT_MARGIN" value="0"/>
+			<bi:property name="HEIGHT" value="300"/>
+			<bi:property name="CSS_STYLE" value="background: green;"/>
+			<bi:property name="VISIBLE" value=""/>
+			<bi:component name="CHART_1" type="CHART_COMPONENT">
+				<bi:property name="RIGHT_MARGIN" value="0"/>
+				<bi:property name="BOTTOM_MARGIN" value="0"/>
+				<bi:property name="WIDTH" value="auto"/>
+				<bi:property name="HEIGHT" value="auto"/>
+			</bi:component>
+		</bi:component>
+		<bi:component name="CLIENTINFORMATION_1" type="org_scn_community_utils_ClientInformation">
+			<bi:property name="TOP_MARGIN" value="30"/>
+			<bi:property name="onSizeChanged">
+				<bi:value><![CDATA[if(GLOBAL_MAXIMIZED == false) {
+	BUTTON_RESET.onClick();
+}
+]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_1" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Maximize Cross1"/>
+			<bi:property name="HEIGHT" value="24"/>
+			<bi:property name="TOP_MARGIN" value="2"/>
+			<bi:property name="LEFT_MARGIN" value="160"/>
+			<bi:property name="WIDTH" value="120"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[BUTTON_RESET.onClick();
+
+PANEL_1.setHeight(CLIENTINFORMATION_1.getOwnHeight());
+PANEL_1.setTopMargin(CLIENTINFORMATION_1.getTopMargin());
+
+PANEL_2.setVisible(false);
+PANEL_3.setVisible(false);
+
+GLOBAL_MAXIMIZED = true;]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_2" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Maximize Cross2"/>
+			<bi:property name="HEIGHT" value="24"/>
+			<bi:property name="TOP_MARGIN" value="2"/>
+			<bi:property name="LEFT_MARGIN" value="318"/>
+			<bi:property name="WIDTH" value="120"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[BUTTON_RESET.onClick();
+
+PANEL_2.setHeight(CLIENTINFORMATION_1.getOwnHeight());
+PANEL_2.setTopMargin(CLIENTINFORMATION_1.getTopMargin());
+
+PANEL_1.setVisible(false);
+PANEL_3.setVisible(false);
+
+GLOBAL_MAXIMIZED = true;]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_3" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Maximize Chart"/>
+			<bi:property name="HEIGHT" value="24"/>
+			<bi:property name="TOP_MARGIN" value="2"/>
+			<bi:property name="LEFT_MARGIN" value="458"/>
+			<bi:property name="WIDTH" value="120"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[BUTTON_RESET.onClick();
+
+PANEL_3.setHeight(CLIENTINFORMATION_1.getOwnHeight());
+PANEL_3.setTopMargin(CLIENTINFORMATION_1.getTopMargin());
+
+PANEL_2.setVisible(false);
+PANEL_1.setVisible(false);
+
+GLOBAL_MAXIMIZED = true;]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="CONTEXT_MENU" type="CONTEXT_MENU_COMPONENT"/>
+	</bi:component>
+</bi:biapp>
