@@ -1,0 +1,111 @@
+<bi:biapp bi:version="1500" xmlns:bi="http://xml.sap.com/2011/biml/biapp" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns="http://www.w3.org/TR/REC-html40" xmlns:h="http://www.w3.org/TR/REC-html40" xmlns:sdk1="org.scn.community.basics" sdk1:version="1.0" xmlns:sdk2="org.scn.community.utils" sdk2:version="1.0">
+	<bi:component name="APPLICATION_PROPERTIES" type="APPLICATION_PROPERTIES">
+		<bi:property name="THEME" value="sap_platinum"/>
+	</bi:component>
+	<bi:component name="ROOT" type="ABSOLUTE_LAYOUT_COMPONENT">
+		<bi:component name="BUTTON_3" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Show Debugger"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[POPUP_1.show();]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="POPUP_1" type="POPUP_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="0"/>
+			<bi:property name="TOP_MARGIN" value="0"/>
+			<bi:property name="RIGHT_MARGIN" value="0"/>
+			<bi:property name="BOTTOM_MARGIN" value="0"/>
+			<bi:property name="WIDTH" value="auto"/>
+			<bi:property name="HEIGHT" value="auto"/>
+			<bi:property name="DESIGNER_VISIBLE" value=""/>
+			<bi:component name="BUTTON_2" type="BUTTON_COMPONENT">
+				<bi:property name="TEXT" value="Hide"/>
+				<bi:property name="ON_CLICK">
+					<bi:value><![CDATA[POPUP_1.hide();]]></bi:value>
+				</bi:property>
+			</bi:component>
+			<bi:component name="DEBUGGER_1" type="org_scn_community_utils_Debugger">
+				<bi:property name="TOP_MARGIN" value="40"/>
+				<bi:property name="WIDTH" value="1200"/>
+				<bi:property name="HEIGHT" value="800"/>
+			</bi:component>
+		</bi:component>
+		<bi:component name="REALDATE_1" type="org_scn_community_utils_RealDate">
+			<bi:property name="LEFT_MARGIN" value="138"/>
+			<bi:property name="TOP_MARGIN" value="152"/>
+		</bi:component>
+		<bi:component name="BUTTON_1" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Fill Dates (Roll by Day, Month, Year)"/>
+			<bi:property name="LEFT_MARGIN" value="43"/>
+			<bi:property name="TOP_MARGIN" value="39"/>
+			<bi:property name="WIDTH" value="199"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[REALDATE_1.initializeWithInternalDate(APPLICATION.getInfo().dateNowInternalFormat);
+TEXTAREA_4.setValue(REALDATE_1.internal_toString());
+
+DEBUGGER_1.inspectNow("Real Date", REALDATE_1);
+
+var days = "";
+
+ARRAY_1.eaches(0, Convert.stringToInt(INPUTFIELD_1.getValue()), 1).forEach(function(element, index) {
+  REALDATE_1.rollDays(1);
+  days = days + "\r\n" + REALDATE_1.format("DD-MM-YYYY") + " week day :" + REALDATE_1.getDayOfWeek() + ", " + REALDATE_1.getDayName();
+});
+
+TEXTAREA_1.setValue(days);
+
+REALDATE_1.initializeWithInternalDate(APPLICATION.getInfo().dateNowInternalFormat);
+
+var months = "";
+
+ARRAY_1.eaches(0, Convert.stringToInt(INPUTFIELD_1.getValue()), 1).forEach(function(element, index) {
+  REALDATE_1.rollDays(1);
+  months = months + "\r\n" + REALDATE_1.format("MM-YYYY");
+});
+
+TEXTAREA_2.setValue(months);
+
+REALDATE_1.initializeWithInternalDate(APPLICATION.getInfo().dateNowInternalFormat);
+
+var years = "";
+
+ARRAY_1.eaches(0, Convert.stringToInt(INPUTFIELD_1.getValue()), 1).forEach(function(element, index) {
+  REALDATE_1.rollDays(1);
+  years = years + "\r\n" + REALDATE_1.format("YYYY");
+});
+
+TEXTAREA_3.setValue(days);]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="TEXTAREA_1" type="org_scn_community_basics_TextArea">
+			<bi:property name="LEFT_MARGIN" value="36"/>
+			<bi:property name="TOP_MARGIN" value="145"/>
+			<bi:property name="WIDTH" value="420"/>
+		</bi:component>
+		<bi:component name="TEXTAREA_4" type="org_scn_community_basics_TextArea">
+			<bi:property name="LEFT_MARGIN" value="37"/>
+			<bi:property name="TOP_MARGIN" value="554"/>
+			<bi:property name="WIDTH" value="420"/>
+		</bi:component>
+		<bi:component name="TEXTAREA_2" type="org_scn_community_basics_TextArea">
+			<bi:property name="LEFT_MARGIN" value="474"/>
+			<bi:property name="TOP_MARGIN" value="146"/>
+		</bi:component>
+		<bi:component name="TEXTAREA_3" type="org_scn_community_basics_TextArea">
+			<bi:property name="LEFT_MARGIN" value="720"/>
+			<bi:property name="TOP_MARGIN" value="146"/>
+		</bi:component>
+		<bi:component name="ARRAY_1" type="org_scn_community_utils_Array"/>
+		<bi:component name="INPUTFIELD_1" type="INPUTFIELD_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="140"/>
+			<bi:property name="TOP_MARGIN" value="74"/>
+			<bi:property name="VALUE" value="10"/>
+		</bi:component>
+		<bi:component name="TEXT_1" type="TEXT_COMPONENT">
+			<bi:property name="TEXT" value="Number for Roll:"/>
+			<bi:property name="LEFT_MARGIN" value="46"/>
+			<bi:property name="TOP_MARGIN" value="76"/>
+			<bi:property name="WIDTH" value="120"/>
+		</bi:component>
+		<bi:component name="CONTEXT_MENU" type="CONTEXT_MENU_COMPONENT"/>
+	</bi:component>
+</bi:biapp>
