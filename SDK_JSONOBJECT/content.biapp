@@ -1,0 +1,73 @@
+<bi:biapp bi:version="1500" xmlns:bi="http://xml.sap.com/2011/biml/biapp" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns="http://www.w3.org/TR/REC-html40" xmlns:h="http://www.w3.org/TR/REC-html40" xmlns:sdk1="org.scn.community.basics" sdk1:version="1.0" xmlns:sdk2="org.scn.community.utils" sdk2:version="1.0">
+	<bi:component name="APPLICATION_PROPERTIES" type="APPLICATION_PROPERTIES">
+		<bi:property name="THEME" value="sap_bluecrystal"/>
+		<bi:property name="MESSAGE_TYPES" value="ALL"/>
+		<bi:property name="SHOW_PROMPT" value="X"/>
+		<bi:property name="MERGE_PROMPTS" value=""/>
+		<bi:property name="PROMPTS_CONFIG">
+			<bi:value><![CDATA[[{name:"DS_1:0BC_TYPE_SE"},{name:"DS_1:0BICS_PCOUN"},{name:"DS_1:0BC_IREG"},{name:"DS_1:0VC_FV_01"},{name:"DS_1:0BC_CUST_NODE"}]]]></bi:value>
+		</bi:property>
+	</bi:component>
+	<bi:component name="ROOT" type="ABSOLUTE_LAYOUT_COMPONENT">
+		<bi:component name="JSONOBJECT" type="org_scn_community_utils_JsonObject"/>
+		<bi:component name="BUTTON_2" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Filter as JSON"/>
+			<bi:property name="LEFT_MARGIN" value="32"/>
+			<bi:property name="TOP_MARGIN" value="19"/>
+			<bi:property name="WIDTH" value="196"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[var measure = "KKGH3aHJAAGSLH_GUID";
+var value = "MEMEBER_VALUE";
+ 
+var dimension = "0BC_COUN";
+ 
+//// this does not work
+
+//DS_1.getData(measure, {
+//  dimension: value
+//});
+
+var jsonValue = "{\""+dimension+"\":\""+value+"\", \"key\": {\"ol\": \"ha\"}}"; 
+JSONOBJECT.createFromValue(jsonValue);
+var filter = JSONOBJECT.getAsMultiDimFilter();
+// var data = DS_1.getData(measure, filter);
+ 
+TEXTAREA_1.setValue(JSONOBJECT.getAsJSON());
+
+JSONOBJECT.clear();
+
+JSONOBJECT.addProperty("0BC_COUN", "my_value");
+JSONOBJECT.addProperty("0BC_SOME", "my_valuesome");
+var filter2 = JSONOBJECT.getAsMultiDimFilter();
+// var data2 = DS_1.getData(measure, filter2);
+
+TEXTAREA_2.setValue(JSONOBJECT.getAsJSON()); 
+// now data is selected]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="TEXTAREA_1" type="org_scn_community_basics_TextArea">
+			<bi:property name="LEFT_MARGIN" value="42"/>
+			<bi:property name="TOP_MARGIN" value="66"/>
+		</bi:component>
+		<bi:component name="TEXTAREA_2" type="org_scn_community_basics_TextArea">
+			<bi:property name="LEFT_MARGIN" value="308"/>
+			<bi:property name="TOP_MARGIN" value="68"/>
+		</bi:component>
+		<bi:component name="CONTEXT_MENU" type="CONTEXT_MENU_COMPONENT"/>
+		<bi:component name="GLOBAL_SCRIPTS_1" type="GLOBAL_SCRIPTS_COMPONENT">
+			<bi:property name="FUNCTIONS" type="ORDEREDLIST">
+				<bi:property name="FUNCTION" index="0">
+					<bi:property name="NAME" value="synchVariables"/>
+					<bi:property name="FUNCTION_BODY">
+						<bi:value><![CDATA[var variablesInQuery = DS_1.getVariables();
+
+variablesInQuery.forEach(function(variable, index) {
+	var variableValueExt = DS_1.getVariableValueExt(variable);
+	DS_2.setVariableValueExt(variable.name, variableValueExt);
+});]]></bi:value>
+					</bi:property>
+				</bi:property>
+			</bi:property>
+		</bi:component>
+	</bi:component>
+</bi:biapp>
