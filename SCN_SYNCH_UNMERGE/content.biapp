@@ -1,0 +1,258 @@
+<bi:biapp bi:version="1500" xmlns:bi="http://xml.sap.com/2011/biml/biapp" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns="http://www.w3.org/TR/REC-html40" xmlns:h="http://www.w3.org/TR/REC-html40">
+	<bi:component name="APPLICATION_PROPERTIES" type="APPLICATION_PROPERTIES">
+		<bi:property name="THEME" value="sap_bluecrystal"/>
+		<bi:property name="MESSAGE_TYPES" value="ALL"/>
+		<bi:property name="SHOW_PROMPT" value="X"/>
+		<bi:property name="MERGE_PROMPTS" value=""/>
+		<bi:property name="ON_BEFORE_PROMPTS_SUBMIT">
+			<bi:value><![CDATA[GLOBAL_SCRIPTS.synchronizeVariables(DS_1, DS_2);
+
+if(BACKGROUND_PROCESS_DONE) {
+	GLOBAL_SCRIPTS.synchronizeVariables(DS_1, DS_3);
+	GLOBAL_SCRIPTS.synchronizeVariables(DS_1, DS_4);
+}]]></bi:value>
+		</bi:property>
+		<bi:property name="PROMPTS_CONFIG">
+			<bi:value><![CDATA[[{name:"DS_1:0BC_TYPE_SE"},{name:"DS_1:0BICS_PCOUN"},{name:"DS_1:0BC_IREG"},{name:"DS_1:0VC_FV_01"},{name:"DS_1:0BC_CUST_NODE"}]]]></bi:value>
+		</bi:property>
+		<bi:property name="ON_BACKGROUND_PROCESSING">
+			<bi:value><![CDATA[DS_3.loadDataSource();
+DS_4.loadDataSource();
+
+GLOBAL_SCRIPTS.synchronizeVariables(DS_1, DS_3);
+GLOBAL_SCRIPTS.synchronizeVariables(DS_1, DS_4);
+
+BACKGROUND_PROCESS_DONE = true;]]></bi:value>
+		</bi:property>
+		<bi:property name="GLOBALVARIABLES" type="UNORDEREDLIST">
+			<bi:property name="GLOBALVARIABLE" index="0">
+				<bi:property name="NAME" value="BACKGROUND_PROCESS_DONE"/>
+				<bi:property name="VALUE" value="false"/>
+			</bi:property>
+		</bi:property>
+	</bi:component>
+	<bi:data_source_alias name="DS_1" type="QUERY_DATA_SOURCE">
+		<bi:property name="DATA_SOURCE_DEFINITION">
+			<bi:property name="DATA_SOURCE_CONNECTION" value="Q93 [PUBLIC]"/>
+			<bi:property name="DATA_SOURCE_TYPE" type="CHOICE" value="QUERY"/>
+			<bi:property name="DATA_SOURCE_NAME" value="0BICS_C03_BEX_ALL_VARMDX_ZEN"/>
+			<bi:property name="DATA_SOURCE_INITIAL_STATE">
+				<bi:value><![CDATA[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]]></bi:value>
+			</bi:property>
+		</bi:property>
+		<bi:property name="ON_RESULTSETCHANGED">
+			<bi:value><![CDATA[GLOBAL_SCRIPTS.printVariables(me, TEXT_1);
+]]></bi:value>
+		</bi:property>
+		<bi:property name="TEXT" value="V"/>
+	</bi:data_source_alias>
+	<bi:data_source_alias name="DS_2" type="QUERY_DATA_SOURCE">
+		<bi:property name="DATA_SOURCE_DEFINITION">
+			<bi:property name="DATA_SOURCE_CONNECTION" value="Q93 [PUBLIC]"/>
+			<bi:property name="DATA_SOURCE_TYPE" type="CHOICE" value="QUERY"/>
+			<bi:property name="DATA_SOURCE_NAME" value="0BICS_C03_BEX_ALL_VARMDX_ZEN"/>
+			<bi:property name="DATA_SOURCE_INITIAL_STATE">
+				<bi:value><![CDATA[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]]></bi:value>
+			</bi:property>
+		</bi:property>
+		<bi:property name="ON_RESULTSETCHANGED">
+			<bi:value><![CDATA[GLOBAL_SCRIPTS.printVariables(me, TEXT_2);
+]]></bi:value>
+		</bi:property>
+	</bi:data_source_alias>
+	<bi:data_source_alias name="DS_3" type="QUERY_DATA_SOURCE">
+		<bi:property name="DATA_SOURCE_DEFINITION">
+			<bi:property name="DATA_SOURCE_CONNECTION" value="Q93 [PUBLIC]"/>
+			<bi:property name="DATA_SOURCE_TYPE" type="CHOICE" value="QUERY"/>
+			<bi:property name="DATA_SOURCE_NAME" value="0BICS_C03_BEX_ALL_VARMDX_ZEN"/>
+			<bi:property name="DATA_SOURCE_INITIAL_STATE">
+				<bi:value><![CDATA[eNrtXG1v2zYQ/iuGvw+y+7IhgGqApmiZiyTKJOVYHgbCTb3WWJsOjjus+/U7SpQs2YotO44XpwqKVCKPx+Pdc0fyRMbuUyzUmJKbni0IH1NMlEME5jSUlAVQGAtJfIU8ikRvdPW69VsY9T2Kf7etUpXtIIkU4gT1HDJAkSdta11Un80oIjzudRKxcOe16pMJVHlqjLjvTNSUBLaV0kDLKoFpMGAq5GxMHcJbd7Mv83ftnF3bMj1sVlT004YxRcAcSdJ71em+7fzc6cKYsqJcDEE8gnXfSoQIpBGMSxq4rdX3v6AHowzdcYFQAofahIUCQ4sRl0RQFOiBOhGWICseIo6wJJwKCYPaLMgHjBVmkR5czlRAl1aZelfrSMjjW3PiHt9YxiE5rvWb0STsd689V766Alx0p3G/+8toOHpTYretaAH28Yjyid8nHGjThxJTcTXlwbQzndC3wnGGwh3ctE1r08xKoGoYF59FhfjWlh2r22bQqG92o70xFRH42hQlXDwyJt7aY6sqbSQlp/0IEFd4LjBGvjyKb6oehTAmAliHnAgSSGQ0U3ztOVSEHorVNYltq1RTftUmrPSqhB+80IA4xpxCMQ4hAqzjUG4UjAQmgQPNwdHzQtB6yhOeNmQumKYkRuv94u7D4u5jhgHTYBMK2peYr0KwmE/AZBrQwAYEVoLIk6lkbUDdf7EDK6+qNq1LbhrTvkzTjiIUNLZ9gbbFEeckwPFTG1eSiWysWl8XR5ozCqhsTHmJprSKC6eSvK0vXz+AEvuMXYPaxsiLiGifUqzCc8/M4w+L9twtW9b2HjMPKeGI42Hc+vBt7sxW2oXMT9u4VLuEhgdsYQjAs2ifelTGveTRI7m9C1X1hvJYoD2tnUooPnA/98jgZEzgIwE96N01ateeRJVPJzBwzPwQtrWODzSbSv3hQt3l+MBFG/Jwj9mVhmgm+HOjvgrgQ+o4OsV4xhh/PpAOGPcjD2XsgBFmIAcNhHbAAXUjoO6tlt/mgOeKGntKOFMiCvUIhEaiy1kU6o7SRg/XH5JgTNOT/+Oc0kwglziBvLjZopBtP33SFoPKm/TPy0ztnSaCNuHyjMY/VzYJ0BEy0XyveaGef5LteLP3Pi8cnkKNF5ehBORWo7uXxawd1XrC21UNa50fN/2ZnV3JVu5DVwEvqY+4JJiDocLSk46J2cSZF9vh1PNMgPhJn3wpvNsBc4g+suMGGq49yULb2ihLaWAfCRtqkeLhj9nn+7khLFUY8InW34v7xfvPIKWWRY9eWx4soJsIY4eq/foeslQWfQJCFJ6zwKmVljRtb/T/7LIyRk270bm3j8sImCdMsZQDYG7/CijoSCJ5/AyBsONTwAWi4qCgdg6IrAXaheXaOMp2YU1A+cEDSpbDec4B5bmuxZq49hzjmt5jNmGtCWtJBvm8QDg6rXQ4HnZ09aJgcYBKD0KH3+02i+hmsjlksrGKm/Q62ajy+Df0mQAo+78F0sz/AWS2tzMMJYJuBYGVsdqt1tb75Xz253AxX86Wt5++v2sn2Y52kUStr2/4MNZe+prlLYqa2aTcAGue5nmaz5M5++ag3IEfcrev71SBJk2lOewmUBv0D18KS8Oj2rxENmBcFSU67VWx429cPeqyV73rWtYRp0qe8tLbnqtbNQ2IJsmGbEKF6Z+zG+0SBZ80GVqTTa3K13Y20rVFjxaxD0DkFKuUJIkvhldlXebisPGjyVj6TAKkc0/Iy7fPByXtAxaQirNBKe+tYviX3BslOg8HvxGEEictwsTzxENHjfa22wf7Xgb4Y73a0kYrmQ4zL/KDxnrnsN6DMeN05hxwQhpbnskTkyTU7gBdyDfVIYx03upRWLDS4LweSut+8fEuXM7v53er2Wrx9Q7WRwQiOlFBlNz9bf07X34tEwSM+8hrF9jkn7/yC8a3n2bL2e1qvlzcrxa3uybEvXeR10tjLTnBFDoX6Qe97MUWGDZegasGoAjGk8qNIpv44RAJOiVOhtBCiS2oG4DFxtAJ8nIIlwqhb4mop4Avjrx0GZfisaKiglitV2PrPzCwiwoM6Wf8jESFEhuFoRerCg6SmflY5H5dg9Tw00ds9XnT+mxrtcgcf1t5FRWwmBXIdXnq14mliwV59TV1SrX6vRr9BaSeHrTTmI6u2K++G/f9QcijwVvWgLYB7SlBa5UmH3M/VkmOApF2b/a25UPNSuNEedSnUk/j1RVmsmchzOrZzoBMMAmzF33OgeZ7hvWfW/kPKXU2Cw==]]></bi:value>
+			</bi:property>
+		</bi:property>
+		<bi:property name="ON_RESULTSETCHANGED">
+			<bi:value><![CDATA[GLOBAL_SCRIPTS.printVariables(me, TEXT_3);
+]]></bi:value>
+		</bi:property>
+		<bi:property name="LOAD_IN_SCRIPT" value="X"/>
+		<bi:property name="DATA_SOURCE_GROUP" value="GR2"/>
+	</bi:data_source_alias>
+	<bi:data_source_alias name="DS_4" type="QUERY_DATA_SOURCE">
+		<bi:property name="DATA_SOURCE_DEFINITION">
+			<bi:property name="DATA_SOURCE_CONNECTION" value="Q93 [PUBLIC]"/>
+			<bi:property name="DATA_SOURCE_TYPE" type="CHOICE" value="QUERY"/>
+			<bi:property name="DATA_SOURCE_NAME" value="0BICS_C03_BEX_ALL_VARMDX_ZEN"/>
+			<bi:property name="DATA_SOURCE_INITIAL_STATE">
+				<bi:value><![CDATA[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]]></bi:value>
+			</bi:property>
+		</bi:property>
+		<bi:property name="ON_RESULTSETCHANGED">
+			<bi:value><![CDATA[GLOBAL_SCRIPTS.printVariables(me, TEXT_4);
+]]></bi:value>
+		</bi:property>
+		<bi:property name="DATA_SOURCE_GROUP" value="GR3"/>
+		<bi:property name="LOAD_IN_SCRIPT" value="X"/>
+	</bi:data_source_alias>
+	<bi:component name="ROOT" type="ABSOLUTE_LAYOUT_COMPONENT">
+		<bi:component name="BUTTON_1" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Prompts (Variables)"/>
+			<bi:property name="LEFT_MARGIN" value="35"/>
+			<bi:property name="TOP_MARGIN" value="17"/>
+			<bi:property name="WIDTH" value="196"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[APPLICATION.openPromptDialog(800, 600);]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_3" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="trigger background processing"/>
+			<bi:property name="LEFT_MARGIN" value="245"/>
+			<bi:property name="TOP_MARGIN" value="17"/>
+			<bi:property name="WIDTH" value="246"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[APPLICATION.doBackgroundProcessing();]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="PANEL_1" type="PANEL_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="28"/>
+			<bi:property name="TOP_MARGIN" value="57"/>
+			<bi:property name="WIDTH" value="596"/>
+			<bi:property name="HEIGHT" value="343"/>
+			<bi:component name="CROSSTAB_1" type="CROSSTAB_COMPONENT">
+				<bi:property name="LEFT_MARGIN" value="4"/>
+				<bi:property name="TOP_MARGIN" value="4"/>
+				<bi:property name="WIDTH" value="213"/>
+				<bi:property name="HEIGHT" value="334"/>
+				<bi:property name="DATA_SOURCE_ALIAS_REF" value="DS_1"/>
+			</bi:component>
+			<bi:component name="TEXT_1" type="TEXT_COMPONENT">
+				<bi:property name="TEXT" value="Sample text"/>
+				<bi:property name="LEFT_MARGIN" value="217"/>
+				<bi:property name="TOP_MARGIN" value="4"/>
+				<bi:property name="WIDTH" value="374"/>
+				<bi:property name="HEIGHT" value="335"/>
+			</bi:component>
+		</bi:component>
+		<bi:component name="PANEL_2" type="PANEL_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="640"/>
+			<bi:property name="TOP_MARGIN" value="57"/>
+			<bi:property name="WIDTH" value="596"/>
+			<bi:property name="HEIGHT" value="343"/>
+			<bi:component name="CROSSTAB_2" type="CROSSTAB_COMPONENT">
+				<bi:property name="LEFT_MARGIN" value="4"/>
+				<bi:property name="TOP_MARGIN" value="4"/>
+				<bi:property name="WIDTH" value="213"/>
+				<bi:property name="HEIGHT" value="334"/>
+				<bi:property name="DATA_SOURCE_ALIAS_REF" value="DS_2"/>
+			</bi:component>
+			<bi:component name="TEXT_2" type="TEXT_COMPONENT">
+				<bi:property name="TEXT" value="Sample text"/>
+				<bi:property name="LEFT_MARGIN" value="217"/>
+				<bi:property name="TOP_MARGIN" value="4"/>
+				<bi:property name="WIDTH" value="374"/>
+				<bi:property name="HEIGHT" value="335"/>
+			</bi:component>
+		</bi:component>
+		<bi:component name="PANEL_3" type="PANEL_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="28"/>
+			<bi:property name="TOP_MARGIN" value="420"/>
+			<bi:property name="WIDTH" value="596"/>
+			<bi:property name="HEIGHT" value="343"/>
+			<bi:component name="CROSSTAB_3" type="CROSSTAB_COMPONENT">
+				<bi:property name="LEFT_MARGIN" value="4"/>
+				<bi:property name="TOP_MARGIN" value="4"/>
+				<bi:property name="WIDTH" value="213"/>
+				<bi:property name="HEIGHT" value="334"/>
+				<bi:property name="DATA_SOURCE_ALIAS_REF" value="DS_3"/>
+			</bi:component>
+			<bi:component name="TEXT_3" type="TEXT_COMPONENT">
+				<bi:property name="TEXT" value="Sample text"/>
+				<bi:property name="LEFT_MARGIN" value="217"/>
+				<bi:property name="TOP_MARGIN" value="4"/>
+				<bi:property name="WIDTH" value="374"/>
+				<bi:property name="HEIGHT" value="335"/>
+			</bi:component>
+		</bi:component>
+		<bi:component name="PANEL_4" type="PANEL_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="640"/>
+			<bi:property name="TOP_MARGIN" value="420"/>
+			<bi:property name="WIDTH" value="596"/>
+			<bi:property name="HEIGHT" value="343"/>
+			<bi:component name="CROSSTAB_4" type="CROSSTAB_COMPONENT">
+				<bi:property name="LEFT_MARGIN" value="4"/>
+				<bi:property name="TOP_MARGIN" value="4"/>
+				<bi:property name="WIDTH" value="213"/>
+				<bi:property name="HEIGHT" value="334"/>
+				<bi:property name="DATA_SOURCE_ALIAS_REF" value="DS_4"/>
+			</bi:component>
+			<bi:component name="TEXT_4" type="TEXT_COMPONENT">
+				<bi:property name="TEXT" value="Sample text"/>
+				<bi:property name="LEFT_MARGIN" value="217"/>
+				<bi:property name="TOP_MARGIN" value="4"/>
+				<bi:property name="WIDTH" value="374"/>
+				<bi:property name="HEIGHT" value="335"/>
+			</bi:component>
+		</bi:component>
+		<bi:component name="CONTEXT_MENU" type="CONTEXT_MENU_COMPONENT"/>
+		<bi:component name="GLOBAL_SCRIPTS" type="GLOBAL_SCRIPTS_COMPONENT">
+			<bi:property name="FUNCTIONS" type="ORDEREDLIST">
+				<bi:property name="FUNCTION" index="0">
+					<bi:property name="NAME" value="synchronizeVariables"/>
+					<bi:property name="FUNCTION_DESC" value="Synchronization of Variables between 2 data sources"/>
+					<bi:property name="FUNCTION_BODY">
+						<bi:value><![CDATA[// get all variables from the data source
+var variablesInQuery = fromDataSource.getVariables();
+
+// loop on all variables
+variablesInQuery.forEach(function(variable, index) {
+	// copy values only for those which are input enabled
+	if(variable.inputEnabled) {
+		// get the external string
+		var variableValueExt = fromDataSource.getVariableValueExt(variable);
+		
+		// set the external string
+	    toDataSource.setVariableValueExt(variable, variableValueExt);
+	}
+});
+
+DS_3.isInitialized();]]></bi:value>
+					</bi:property>
+					<bi:property name="INPUT_PARAMETERS" type="ORDEREDLIST">
+						<bi:property name="INPUT_PARAMETER" index="0">
+							<bi:property name="NAME" value="fromDataSource"/>
+							<bi:property name="PARAMETER_TYPE" value="DataSourceAlias"/>
+							<bi:property name="PARAMETER_DESC" value="The data source which is providing the variables"/>
+						</bi:property>
+						<bi:property name="INPUT_PARAMETER" index="1">
+							<bi:property name="NAME" value="toDataSource"/>
+							<bi:property name="PARAMETER_TYPE" value="DataSourceAlias"/>
+							<bi:property name="PARAMETER_DESC" value="The data source which will be set"/>
+						</bi:property>
+					</bi:property>
+				</bi:property>
+				<bi:property name="FUNCTION" index="1">
+					<bi:property name="NAME" value="printVariables"/>
+					<bi:property name="FUNCTION_DESC" value="Print the values of variables into text field"/>
+					<bi:property name="FUNCTION_BODY">
+						<bi:value><![CDATA[var variablesInQuery = DS.getVariables();
+
+var output = "";
+variablesInQuery.forEach(function(variable, index) {
+  output = output + variable.name + "\r\n" + DS.getVariableValueExt(variable) + "\r\n" + "\r\n";
+});
+
+TEXT.setText(output);]]></bi:value>
+					</bi:property>
+					<bi:property name="INPUT_PARAMETERS" type="ORDEREDLIST">
+						<bi:property name="INPUT_PARAMETER" index="0">
+							<bi:property name="NAME" value="DS"/>
+							<bi:property name="PARAMETER_TYPE" value="DataSourceAlias"/>
+						</bi:property>
+						<bi:property name="INPUT_PARAMETER" index="1">
+							<bi:property name="NAME" value="TEXT"/>
+							<bi:property name="PARAMETER_TYPE" value="Text"/>
+						</bi:property>
+					</bi:property>
+				</bi:property>
+			</bi:property>
+		</bi:component>
+	</bi:component>
+</bi:biapp>

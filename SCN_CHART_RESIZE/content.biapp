@@ -1,0 +1,164 @@
+<bi:biapp bi:version="1500" xmlns:bi="http://xml.sap.com/2011/biml/biapp" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns="http://www.w3.org/TR/REC-html40" xmlns:h="http://www.w3.org/TR/REC-html40">
+	<bi:component name="APPLICATION_PROPERTIES" type="APPLICATION_PROPERTIES">
+		<bi:property name="THEME" value="sap_bluecrystal"/>
+		<bi:property name="ON_STARTUP">
+			<bi:value><![CDATA[DS_1.setFilter("ET091M7ZRGLFJ4T516TD29ZLY", "ET091M7ZRGLFJ4T516TD2A5XI");]]></bi:value>
+		</bi:property>
+	</bi:component>
+	<bi:data_source_alias name="DS_1" type="QUERY_DATA_SOURCE">
+		<bi:property name="DATA_SOURCE_DEFINITION">
+			<bi:property name="DATA_SOURCE_CONNECTION" value="Q93 [PUBLIC]"/>
+			<bi:property name="DATA_SOURCE_TYPE" type="CHOICE" value="QUERY"/>
+			<bi:property name="DATA_SOURCE_NAME" value="KK_NICE"/>
+		</bi:property>
+		<bi:property name="ON_RESULTSETCHANGED">
+			<bi:value><![CDATA[GLOBAL_SCRIPTS.adjustChart("W");
+GLOBAL_SCRIPTS.adjustChart("H");]]></bi:value>
+		</bi:property>
+	</bi:data_source_alias>
+	<bi:component name="ROOT" type="ABSOLUTE_LAYOUT_COMPONENT">
+		<bi:component name="RPANEL" type="PANEL_COMPONENT">
+			<bi:property name="CSS_STYLE" value="background: white;"/>
+			<bi:property name="RIGHT_MARGIN" value="0"/>
+			<bi:property name="BOTTOM_MARGIN" value="0"/>
+			<bi:property name="WIDTH" value="auto"/>
+			<bi:property name="HEIGHT" value="auto"/>
+			<bi:component name="NAVIGATIONPANEL_1" type="NAVIGATIONPANEL_COMPONENT">
+				<bi:property name="LEFT_MARGIN" value="844"/>
+				<bi:property name="TOP_MARGIN" value="33"/>
+				<bi:property name="HEIGHT" value="600"/>
+				<bi:property name="DATA_SOURCE_ALIAS_REF" value="DS_1"/>
+				<bi:property name="PAUSE_REFRESH" value=""/>
+			</bi:component>
+			<bi:component name="PANEL_1" type="PANEL_COMPONENT">
+				<bi:property name="LEFT_MARGIN" value="13"/>
+				<bi:property name="TOP_MARGIN" value="29"/>
+				<bi:property name="WIDTH" value="809"/>
+				<bi:property name="HEIGHT" value="820"/>
+				<bi:property name="CSS_STYLE" value="  /* allow Y scroll | hidden */  &#13;&#10;  overflow-y: scroll !important;&#13;&#10;  /* allow X scroll | hidden */  &#13;&#10;  overflow-x: scroll !important;"/>
+				<bi:component name="CHART_1" type="CHART_COMPONENT">
+					<bi:property name="DATA_SOURCE_ALIAS_REF" value="DS_1"/>
+					<bi:property name="TYPE" type="CHOICE" value="VERTICAL_BAR">
+						<bi:property name="VERTICAL_BAR">
+							<bi:property name="properties" value="">
+								<bi:property name="dataLabel" value="">
+									<bi:property name="formatString" value="Default"/>
+								</bi:property>
+								<bi:property name="yAxis" value="">
+									<bi:property name="maxSizeRatio" value="0.75"/>
+								</bi:property>
+								<bi:property name="xAxis" value="">
+									<bi:property name="maxSizeRatio" value="0.75"/>
+								</bi:property>
+							</bi:property>
+						</bi:property>
+					</bi:property>
+					<bi:property name="WIDTH" value="784"/>
+					<bi:property name="HEIGHT" value="800"/>
+					<bi:property name="AXES_SWAPPED" value="X"/>
+					<bi:property name="CHART_BACKGROUNDCOLOR" value="{&quot;colorValue&quot;:&quot;&quot;,&quot;colorValidValues&quot;:[null,&quot;Transparent&quot;],&quot;selectedValidValue&quot;:[null,&quot;No Fill&quot;],&quot;selectedValue&quot;:&quot;No Fill&quot;}"/>
+				</bi:component>
+			</bi:component>
+			<bi:component name="BUTTON_1" type="BUTTON_COMPONENT">
+				<bi:property name="TEXT" value="Extend Width (+1000)"/>
+				<bi:property name="LEFT_MARGIN" value="853"/>
+				<bi:property name="TOP_MARGIN" value="643"/>
+				<bi:property name="ON_CLICK">
+					<bi:value><![CDATA[CHART_1.setWidth(CHART_1.getWidth() + 1000);]]></bi:value>
+				</bi:property>
+				<bi:property name="WIDTH" value="200"/>
+			</bi:component>
+			<bi:component name="BUTTON_2" type="BUTTON_COMPONENT">
+				<bi:property name="TEXT" value="Extend Height (+1000)"/>
+				<bi:property name="LEFT_MARGIN" value="853"/>
+				<bi:property name="TOP_MARGIN" value="682"/>
+				<bi:property name="ON_CLICK">
+					<bi:value><![CDATA[CHART_1.setHeight(CHART_1.getHeight() + 1000);]]></bi:value>
+				</bi:property>
+				<bi:property name="WIDTH" value="200"/>
+			</bi:component>
+			<bi:component name="BUTTON_3" type="BUTTON_COMPONENT">
+				<bi:property name="TEXT" value="Reduce Height (-500)"/>
+				<bi:property name="LEFT_MARGIN" value="854"/>
+				<bi:property name="TOP_MARGIN" value="761"/>
+				<bi:property name="ON_CLICK">
+					<bi:value><![CDATA[CHART_1.setHeight(CHART_1.getHeight() - 500);]]></bi:value>
+				</bi:property>
+				<bi:property name="WIDTH" value="200"/>
+			</bi:component>
+			<bi:component name="BUTTON_4" type="BUTTON_COMPONENT">
+				<bi:property name="TEXT" value="Reduce Width (-500)"/>
+				<bi:property name="LEFT_MARGIN" value="854"/>
+				<bi:property name="TOP_MARGIN" value="722"/>
+				<bi:property name="ON_CLICK">
+					<bi:value><![CDATA[CHART_1.setWidth(CHART_1.getWidth() - 500);]]></bi:value>
+				</bi:property>
+				<bi:property name="WIDTH" value="200"/>
+			</bi:component>
+			<bi:component name="CHECKBOX_1" type="CHECKBOX_COMPONENT">
+				<bi:property name="TEXT" value="Auto Recalculate Width"/>
+				<bi:property name="LEFT_MARGIN" value="1075"/>
+				<bi:property name="TOP_MARGIN" value="647"/>
+				<bi:property name="WIDTH" value="272"/>
+				<bi:property name="ON_CLICK">
+					<bi:value><![CDATA[GLOBAL_SCRIPTS.adjustChart("W");]]></bi:value>
+				</bi:property>
+			</bi:component>
+			<bi:component name="CHECKBOX_2" type="CHECKBOX_COMPONENT">
+				<bi:property name="TEXT" value="Auto Recalculate Height"/>
+				<bi:property name="LEFT_MARGIN" value="1075"/>
+				<bi:property name="TOP_MARGIN" value="678"/>
+				<bi:property name="WIDTH" value="272"/>
+				<bi:property name="ON_CLICK">
+					<bi:value><![CDATA[GLOBAL_SCRIPTS.adjustChart("H");]]></bi:value>
+				</bi:property>
+			</bi:component>
+		</bi:component>
+		<bi:component name="CONTEXT_MENU" type="CONTEXT_MENU_COMPONENT"/>
+		<bi:component name="GLOBAL_SCRIPTS" type="GLOBAL_SCRIPTS_COMPONENT">
+			<bi:property name="FUNCTIONS" type="ORDEREDLIST">
+				<bi:property name="FUNCTION" index="0">
+					<bi:property name="NAME" value="adjustChart"/>
+					<bi:property name="FUNCTION_BODY">
+						<bi:value><![CDATA[var dims = DS_1.getDimensions(Axis.ROWS);
+//DS_1.getDimensionText();
+
+var newHeight = 600;
+var newWidth = 200;
+
+dims.forEach(function(element, index) {
+  if(element.name == "0D_DBSIC1"){
+  	newHeight = newHeight + 300;
+  	newWidth = newWidth + 25 * 20;
+  } else {
+  	newHeight = newHeight + 100;
+  	newWidth = newWidth + 5 * 20;
+  }
+});
+
+if(newHeight < PANEL_1.getHeight() - 20) {
+	newHeight = PANEL_1.getHeight() - 20;
+}
+if(newWidth < PANEL_1.getWidth() - 20) {
+	newWidth = PANEL_1.getWidth() - 20;
+}
+
+if(direction == "W" && CHECKBOX_1.isChecked()) {
+CHART_1.setWidth(newWidth);	
+}
+if(direction == "H" && CHECKBOX_2.isChecked()) {
+CHART_1.setHeight(newHeight);	
+}]]></bi:value>
+					</bi:property>
+					<bi:property name="INPUT_PARAMETERS" type="ORDEREDLIST">
+						<bi:property name="INPUT_PARAMETER" index="0">
+							<bi:property name="NAME" value="direction"/>
+							<bi:property name="PARAMETER_TYPE" value="String"/>
+							<bi:property name="PARAMETER_DESC" value="W for width, H for height"/>
+						</bi:property>
+					</bi:property>
+				</bi:property>
+			</bi:property>
+		</bi:component>
+	</bi:component>
+</bi:biapp>
