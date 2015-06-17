@@ -1,4 +1,4 @@
-<bi:biapp bi:version="1502" xmlns:bi="http://xml.sap.com/2011/biml/biapp" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns="http://www.w3.org/TR/REC-html40" xmlns:h="http://www.w3.org/TR/REC-html40" xmlns:sdk1="org.scn.community.basics" sdk1:version="2.0">
+<bi:biapp bi:version="1500" xmlns:bi="http://xml.sap.com/2011/biml/biapp" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns="http://www.w3.org/TR/REC-html40" xmlns:h="http://www.w3.org/TR/REC-html40" xmlns:sdk1="org.scn.community.basics" sdk1:version="2.0">
 	<bi:component name="APPLICATION_PROPERTIES" type="APPLICATION_PROPERTIES">
 		<bi:property name="THEME" value="sap_bluecrystal"/>
 		<bi:property name="MERGE_PROMPTS" value=""/>
