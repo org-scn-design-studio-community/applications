@@ -1,0 +1,118 @@
+<bi:biapp bi:version="1502" xmlns:bi="http://xml.sap.com/2011/biml/biapp" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns="http://www.w3.org/TR/REC-html40" xmlns:h="http://www.w3.org/TR/REC-html40" xmlns:sdk1="org.scn.community.basics" sdk1:version="2.0">
+	<bi:component name="APPLICATION_PROPERTIES" type="APPLICATION_PROPERTIES">
+		<bi:property name="THEME" value="sap_bluecrystal"/>
+		<bi:property name="MERGE_PROMPTS" value=""/>
+		<bi:property name="BACK_NAVIGATION_ENABLED_STEPS" value="20"/>
+	</bi:component>
+	<bi:data_source_alias name="DS_1" type="QUERY_DATA_SOURCE">
+		<bi:property name="DATA_SOURCE_DEFINITION">
+			<bi:property name="DATA_SOURCE_CONNECTION" value="Q93 [PUBLIC]"/>
+			<bi:property name="DATA_SOURCE_TYPE" type="CHOICE" value="QUERY"/>
+			<bi:property name="DATA_SOURCE_NAME" value="0BICS_C03_BEX_ALL_VARMDX_ZEN"/>
+			<bi:property name="DATA_SOURCE_INITIAL_STATE">
+				<bi:value><![CDATA[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]]></bi:value>
+			</bi:property>
+		</bi:property>
+		<bi:property name="ON_RESULTSETCHANGED">
+			<bi:value><![CDATA[GLOBAL_SCRIPTS.warmUp();]]></bi:value>
+		</bi:property>
+	</bi:data_source_alias>
+	<bi:component name="ROOT" type="ABSOLUTE_LAYOUT_COMPONENT">
+		<bi:component name="ACCORDION_BOUND_EMPTY" type="org_scn_community_basics_Accordion">
+			<bi:property name="LEFT_MARGIN" value="281"/>
+			<bi:property name="TOP_MARGIN" value="14"/>
+			<bi:property name="HEIGHT" value="444"/>
+			<bi:property name="WIDTH" value="252"/>
+			<bi:property name="onSelectionChanged">
+				<bi:value><![CDATA[APPLICATION.createErrorMessage("select");]]></bi:value>
+			</bi:property>
+			<bi:property name="CSS_CLASS">
+				<bi:binding name="DATA_CELL_1" type="DATA_CELL_BINDING">
+					<bi:property name="CALLBACK" value="GLOBAL_SCRIPTS.fillAccordionByScript"/>
+				</bi:binding>
+			</bi:property>
+		</bi:component>
+		<bi:component name="FILTERPANEL_1" type="FILTERPANEL_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="18"/>
+			<bi:property name="TOP_MARGIN" value="14"/>
+			<bi:property name="DATA_SOURCE_ALIAS_REF" value="DS_1"/>
+			<bi:property name="WIDTH" value="253"/>
+		</bi:component>
+		<bi:component name="CROSSTAB_1" type="CROSSTAB_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="540"/>
+			<bi:property name="TOP_MARGIN" value="17"/>
+			<bi:property name="DATA_SOURCE_ALIAS_REF" value="DS_1"/>
+			<bi:property name="HEIGHT" value="526"/>
+		</bi:component>
+		<bi:component name="CONTEXT_MENU" type="CONTEXT_MENU_COMPONENT"/>
+		<bi:component name="GLOBAL_SCRIPTS" type="GLOBAL_SCRIPTS_COMPONENT">
+			<bi:property name="FUNCTIONS" type="ORDEREDLIST">
+				<bi:property name="FUNCTION" index="0">
+					<bi:property name="NAME" value="warmUp"/>
+					<bi:property name="FUNCTION_BODY">
+						<bi:value><![CDATA[// execute here to avoid events in the bindign script
+var dimensions = DS_1.getDimensions();
+dimensions.forEach(function(dimension, index) {
+	DS_1.getMembers(dimension, 999);
+});]]></bi:value>
+					</bi:property>
+				</bi:property>
+				<bi:property name="FUNCTION" index="1">
+					<bi:property name="NAME" value="fillAccordionByScript"/>
+					<bi:property name="FUNCTION_DESC" value="Formatter function for property &quot;Elements&quot; for Accordion"/>
+					<bi:property name="RETURN_TYPE" value="String"/>
+					<bi:property name="FUNCTION_BODY">
+						<bi:value><![CDATA[var DS = DS_1;
+	
+var dimensions = DS.getDimensions();
+
+dimensions.forEach(function(dimension, index) {
+
+	var key = dimension.name;
+	var text = dimension.text;
+	var url = "";
+	
+	ACCORDION_BOUND_EMPTY.addSection(key, text, url);
+
+	var members = DS.getMembers(dimension, 999);
+	
+	members.forEach(function(member, index) {
+        var intKey = member.internalKey;
+
+        // hack for unassigned
+        if (intKey == "") {
+            intKey = "UNASSIGNED";
+        }
+
+        var parentKey = dimension.name;
+        var memberKey = dimension.name + "-" + intKey;
+        var memberText = member.text;
+        var memberUrl = "";
+
+		ACCORDION_BOUND_EMPTY.addElement(parentKey, memberKey, memberText, memberUrl);
+    });
+});
+
+APPLICATION.createErrorMessage("binding in button");
+
+// return some constant value for the CSS property
+return "";]]></bi:value>
+					</bi:property>
+					<bi:property name="INPUT_PARAMETERS" type="ORDEREDLIST">
+						<bi:property name="INPUT_PARAMETER" index="0">
+							<bi:property name="NAME" value="value"/>
+							<bi:property name="PARAMETER_TYPE" value="float"/>
+							<bi:property name="PARAMETER_DESC" value="The numerical value from the result set cell (can be undefined!)"/>
+						</bi:property>
+						<bi:property name="INPUT_PARAMETER" index="1">
+							<bi:property name="NAME" value="formattedValue"/>
+							<bi:property name="PARAMETER_TYPE" value="String"/>
+							<bi:property name="PARAMETER_DESC" value="The formatted value from the result set cell"/>
+						</bi:property>
+					</bi:property>
+					<bi:property name="FIX_SIGNATURE" value="X"/>
+				</bi:property>
+			</bi:property>
+		</bi:component>
+	</bi:component>
+</bi:biapp>
