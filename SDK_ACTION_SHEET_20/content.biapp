@@ -1,0 +1,38 @@
+<bi:biapp bi:version="1500" xmlns:bi="http://xml.sap.com/2011/biml/biapp" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns="http://www.w3.org/TR/REC-html40" xmlns:h="http://www.w3.org/TR/REC-html40" xmlns:sdk1="org.scn.community.basics" sdk1:version="2.0">
+	<bi:component name="APPLICATION_PROPERTIES" type="APPLICATION_PROPERTIES">
+		<bi:property name="THEME" value="sap_bluecrystal"/>
+	</bi:component>
+	<bi:component name="ROOT" type="ABSOLUTE_LAYOUT_COMPONENT">
+		<bi:component name="ACTIONSHEETBUTTON_1" type="org_scn_community_basics_ActionSheetButton">
+			<bi:property name="LEFT_MARGIN" value="445"/>
+			<bi:property name="TOP_MARGIN" value="86"/>
+			<bi:property name="items" value="[{&quot;parentKey&quot;:&quot;ROOT&quot;,&quot;key&quot;:&quot;KEY1&quot;,&quot;leaf&quot;:false,&quot;text&quot;:&quot;Firs Key&quot;,&quot;icon&quot;:&quot;sap-icon://menu2&quot;}]"/>
+			<bi:property name="text" value="Karol"/>
+			<bi:property name="WIDTH" value="200"/>
+			<bi:property name="onPopoverSelect">
+				<bi:value><![CDATA[APPLICATION.createErrorMessage("But " + ACTIONSHEETBUTTON_1.getSelectedItem() + " - " + ACTIONSHEETBUTTON_1.getSelectedKey());]]></bi:value>
+			</bi:property>
+			<bi:property name="buttonType" value="Transparent"/>
+			<bi:property name="placement" value="Left"/>
+		</bi:component>
+		<bi:component name="BUTTON_1" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Type by String"/>
+			<bi:property name="LEFT_MARGIN" value="111"/>
+			<bi:property name="TOP_MARGIN" value="177"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[ACTIONSHEETBUTTON_1.setButtonTypeByString("Reject");]]></bi:value>
+			</bi:property>
+			<bi:property name="WIDTH" value="220"/>
+		</bi:component>
+		<bi:component name="BUTTON_2" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Type By Choice"/>
+			<bi:property name="LEFT_MARGIN" value="112"/>
+			<bi:property name="TOP_MARGIN" value="219"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[ACTIONSHEETBUTTON_1.setButtonType(org_scn_community_shared_ButtonType.Reject);]]></bi:value>
+			</bi:property>
+			<bi:property name="WIDTH" value="220"/>
+		</bi:component>
+		<bi:component name="CONTEXT_MENU" type="CONTEXT_MENU_COMPONENT"/>
+	</bi:component>
+</bi:biapp>

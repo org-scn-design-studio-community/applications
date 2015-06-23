@@ -1,0 +1,122 @@
+<bi:biapp bi:version="1500" xmlns:bi="http://xml.sap.com/2011/biml/biapp" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns="http://www.w3.org/TR/REC-html40" xmlns:h="http://www.w3.org/TR/REC-html40" xmlns:sdk1="org.scn.community.databound" sdk1:version="2.0">
+	<bi:component name="APPLICATION_PROPERTIES" type="APPLICATION_PROPERTIES">
+		<bi:property name="THEME" value="sap_bluecrystal"/>
+	</bi:component>
+	<bi:data_source_alias name="DS_1" type="QUERY_DATA_SOURCE">
+		<bi:property name="DATA_SOURCE_DEFINITION">
+			<bi:property name="DATA_SOURCE_CONNECTION" value="Q99 [PUBLIC]"/>
+			<bi:property name="DATA_SOURCE_TYPE" type="CHOICE" value="QUERY"/>
+			<bi:property name="DATA_SOURCE_NAME" value="0BICS_009_BICSTEST_Q0007"/>
+			<bi:property name="DATA_SOURCE_INITIAL_STATE">
+				<bi:value><![CDATA[eNrtWm1v4zYM/itBvg9Om3RdAZ8BRaYTrbLlSnISdxiErM1uAXbp0OY+3H796NfYqfPSNsXuChdBYZESRel5KJFx7CGjykwYTB1bgZwwCsYFRSULNRMBCmOlwTeEM6Kcm6urzm9hNOSM/m5bNZXtEk0MkUAcFzwScW1bG9HxZm4ikLHTS93q9a5M8qBBaXPT6/UubSvT46gmZ1ngCRNKMWEuyM5q/mXxqVua6lq59W3F1hxdXEuEhokG57x3dtH7+byPaylEpQsKONBkXqNCgp4oITULRp31t3/Qer4JyaSVjhotHN2xIsj7UiLRT0aCZJFuRDX6SsdEEqpBMqVxHduCcrE0HXPWrVhVOKdV775j+MCb/kIH4VV/ML3o9/nFdBD0f70gInidudQbkOqwN9az5VnlgOpzsWMv340JUxFy75akZjhMgG8Y3KS0idaSDSNEovJcsUwFf5VdH/whSEMoBYWmQwkKAp122Wo6GmZopSaqN3FAM81SQ9hgAbgmm1EZITFecPtdJvOtJYpC4OJwZH4pxP3ObOLTlrMVUGpudP5Yru6Xq8+furUBCdurQNJIaeGbELHyAcFKuIBm0GGjQL99LzaQJRNXLVulqhnMkRRRi+ZHQdMnugXzo4AZSkbfG02XqZCT2FxD3IL64i15PbZTYKMW2x8fW6uaLNXc7nx5uMe9HApxjbs3ITwC1X0H7yrPTnFqNNPPKe77PWrM7fZo8XrZo004vXtzvneK1fE+wLcxA0kkHced+68Ld75Oojr/6+ZR3q3Rcgcb8g4Y6WzIONOxkz5yKBlXUR23lBMx/n3hqoXTmyu0Nt954/H5Yjo3MXfMXBeCkxH3/9/36nI9If2Ik8IcGqIC/WCBSiLLY6MIezvrx68L5HODxr4FKYyKwmQFKmFichCHyUTZoN36V3zncPqan4ygTVc+Zio6Fj60h+hHKRoV4W2gfsBApZGUENC4jdQfMVK/vzIxOfX31HJ43+/SFkzcMxoPobYQbAvBtxaCz1+ONUHgSsa5ccU0MFv9d7+JzE5Js/3mErN8U/WofT954P3kkftIZukBNGMqd0CKaULQMnpQieMn4Pw5//sJq6G8lWOb3WI95FClaVuV0Sr2kQ+SUZN18YVb2mrUFQEXCsXStQyFRmaVhCzlzwu3dHwgAmgo2jLbz8T4SX8rgDEmY/xPMLDdTESBc7WrBjw47hD7nBLpQ8xwSoa+Ng6tBN8aylTwyA+agc5W3ITzeYvzy3HeeUCcDk1PArQxe3osrb0AWNnZuRnfeVp+XoWPi6fFaj1fLx9WmEwAHrhggii5hrudfxePD/UOgZB+WheWZoostExHO3d/zR/nd+vF4/Jpvbzbd+XU7qTpzO+PI34z8M/i0NOXV+ClKXhp3gXKcHLl/IQnS9mwFcUqJRgZD3dCyFS5JbLBD8dEsVtwC1pUJLZiowAvmQlOQnjJm5oQ59aEcYN2acSzZCcjQYOiobPZ5Cyb33zt64VA+oW93KOKxCZhyGPTYEGL/LpUZTAd0TW3l3w1iVnfC8weNaKItueb16DAlE+R0UhmwZQiXRWU6mvm1rRJu5n9FaaemrQy6F+OeG/QD7zzc6FvvFnM+y1pW9KekrRW7cTPS2ajJQlUNn1eCNarQ5PwxHDmM53cnc2K/IYVmNeRInGHGYWwaFCBNVeZ0m9+AfsfQ257BA==]]></bi:value>
+			</bi:property>
+		</bi:property>
+		<bi:property name="ON_RESULTSETCHANGED">
+			<bi:value><![CDATA[FACETFILTER_1.reloadDataSource();
+FACETFILTER_1.reloadSelection();
+
+FACETSELECTOR_1.reloadDataSource();
+FACETSELECTOR_1.reloadSelection();]]></bi:value>
+		</bi:property>
+	</bi:data_source_alias>
+	<bi:component name="ROOT" type="ABSOLUTE_LAYOUT_COMPONENT">
+		<bi:component name="UI5TABLE_1" type="org_scn_community_databound_UI5Table">
+			<bi:property name="LEFT_MARGIN" value="46"/>
+			<bi:property name="TOP_MARGIN" value="25"/>
+			<bi:property name="HEIGHT" value="173"/>
+			<bi:property name="DATA_SOURCE_ALIAS_REF" value="DS_1"/>
+			<bi:property name="DVisibleRowCount" value="5"/>
+			<bi:property name="WIDTH" value="1190"/>
+			<bi:property name="DHeaderColWidth" value="160"/>
+		</bi:component>
+		<bi:component name="CROSSTAB_1" type="CROSSTAB_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="48"/>
+			<bi:property name="TOP_MARGIN" value="197"/>
+			<bi:property name="DATA_SOURCE_ALIAS_REF" value="DS_1"/>
+			<bi:property name="CROSSTAB_ENABLE_HIERARCHY_NAVIGATION" value=""/>
+			<bi:property name="WIDTH" value="1131"/>
+			<bi:property name="HEIGHT" value="209"/>
+		</bi:component>
+		<bi:component name="FILTERPANEL_1" type="FILTERPANEL_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="950"/>
+			<bi:property name="TOP_MARGIN" value="662"/>
+			<bi:property name="DATA_SOURCE_ALIAS_REF" value="DS_1"/>
+		</bi:component>
+		<bi:component name="FACETFILTER_1" type="org_scn_community_databound_FacetFilter">
+			<bi:property name="LEFT_MARGIN" value="70"/>
+			<bi:property name="TOP_MARGIN" value="797"/>
+			<bi:property name="DATA_SOURCE_ALIAS_REF" value="DS_1"/>
+			<bi:property name="data" value="{&quot;(MEASURES_DIMENSION)&quot;:&quot;4FW8C4WXM3HULQ4M1YPFT79EF&quot;}"/>
+			<bi:property name="DShowSecondValue" value="X"/>
+			<bi:property name="WIDTH" value="1057"/>
+			<bi:property name="DSortingDirection" value="Descending"/>
+			<bi:property name="DZeroValuesMode" value="HIDE"/>
+			<bi:property name="DDisplayText" value="Text_Value"/>
+			<bi:property name="DSecondValueContent" value="Key"/>
+			<bi:property name="DSortingType" value="Value"/>
+		</bi:component>
+		<bi:component name="BUTTON_1" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="more"/>
+			<bi:property name="LEFT_MARGIN" value="75"/>
+			<bi:property name="TOP_MARGIN" value="476"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[FACETSELECTOR_1.setMaxDisplayMembers(FACETSELECTOR_1.getMaxDisplayMembers() + 1);
+FACETSELECTOR_1.setHeight(FACETSELECTOR_1.getHeight() + 20);]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_3" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="count"/>
+			<bi:property name="LEFT_MARGIN" value="67"/>
+			<bi:property name="TOP_MARGIN" value="750"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[FACETFILTER_1.setSecondValueContentByString("Count");
+FACETFILTER_1.setShowSecondValue(true);]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_2" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="width"/>
+			<bi:property name="LEFT_MARGIN" value="75"/>
+			<bi:property name="TOP_MARGIN" value="432"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[FACETSELECTOR_1.setFacetWidth(FACETSELECTOR_1.getFacetWidth() + 5);]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_4" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="display"/>
+			<bi:property name="LEFT_MARGIN" value="76"/>
+			<bi:property name="TOP_MARGIN" value="524"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[FACETSELECTOR_1.setDisplayText(org_scn_community_shared_MemberDisplay.Text_Key);]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="PANEL_1" type="PANEL_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="201"/>
+			<bi:property name="TOP_MARGIN" value="432"/>
+			<bi:property name="WIDTH" value="640"/>
+			<bi:property name="HEIGHT" value="220"/>
+			<bi:property name="CSS_STYLE" value="background: white;"/>
+			<bi:component name="FACETSELECTOR_1" type="org_scn_community_databound_FacetSelector">
+				<bi:property name="LEFT_MARGIN" value="29"/>
+				<bi:property name="TOP_MARGIN" value="47"/>
+				<bi:property name="DATA_SOURCE_ALIAS_REF" value="DS_1"/>
+				<bi:property name="dataCellList" value="{&quot;(MEASURES_DIMENSION)&quot;:&quot;4FW8C4WXM3HULQ4M1YPFT79EF&quot;}"/>
+				<bi:property name="DSortingType" value="Value"/>
+				<bi:property name="DSortingDirection" value="Descending"/>
+				<bi:property name="HEIGHT" value="158"/>
+				<bi:property name="DDisplayText" value="Text_Value"/>
+				<bi:property name="WIDTH" value="auto"/>
+				<bi:property name="RIGHT_MARGIN" value="40"/>
+				<bi:property name="DZeroValuesMode" value="Hide"/>
+				<bi:property name="DContentMode" value="All"/>
+			</bi:component>
+			<bi:component name="TEXT_1" type="TEXT_COMPONENT">
+				<bi:property name="TEXT" value="Facet Selector 2.0"/>
+				<bi:property name="LEFT_MARGIN" value="33"/>
+				<bi:property name="TOP_MARGIN" value="8"/>
+				<bi:property name="WIDTH" value="229"/>
+				<bi:property name="STYLE" value="HEADING3"/>
+			</bi:component>
+		</bi:component>
+		<bi:component name="CONTEXT_MENU" type="CONTEXT_MENU_COMPONENT"/>
+	</bi:component>
+</bi:biapp>
