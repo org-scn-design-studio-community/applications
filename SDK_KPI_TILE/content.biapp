@@ -1,0 +1,93 @@
+<bi:biapp bi:version="1500" xmlns:bi="http://xml.sap.com/2011/biml/biapp" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns="http://www.w3.org/TR/REC-html40" xmlns:h="http://www.w3.org/TR/REC-html40" xmlns:sdk1="org.scn.community.basics" sdk1:version="2.0">
+	<bi:component name="APPLICATION_PROPERTIES" type="APPLICATION_PROPERTIES">
+		<bi:property name="THEME" value="sap_bluecrystal"/>
+		<bi:property name="MESSAGE_TYPES" value="ALL"/>
+	</bi:component>
+	<bi:component name="ROOT" type="ABSOLUTE_LAYOUT_COMPONENT">
+		<bi:component name="KPITILE_1" type="org_scn_community_basics_KpiTile">
+			<bi:property name="LEFT_MARGIN" value="38"/>
+			<bi:property name="TOP_MARGIN" value="82"/>
+			<bi:property name="WIDTH" value="440"/>
+			<bi:property name="HEIGHT" value="297"/>
+			<bi:property name="componentsSpec" value="[{&quot;parentKey&quot;:&quot;ROOT&quot;,&quot;key&quot;:&quot;VALUE&quot;,&quot;leaf&quot;:false,&quot;componentType&quot;:&quot;Label&quot;,&quot;top&quot;:&quot;100&quot;,&quot;left&quot;:&quot;-1&quot;,&quot;right&quot;:&quot;10&quot;,&quot;width&quot;:&quot;200&quot;,&quot;height&quot;:&quot;40&quot;},{&quot;parentKey&quot;:&quot;ROOT&quot;,&quot;key&quot;:&quot;CHART&quot;,&quot;leaf&quot;:false,&quot;specification&quot;:&quot;&lt;MicroAreaChart minXValue=&apos;0&apos; maxXValue=&apos;100&apos; minYValue=&apos;0&apos; maxYValue=&apos;100&apos; class=&apos;marginTopLeft&apos; press=&apos;press&apos;&gt;\n       &lt;firstXLabel&gt;\n         &lt;MicroAreaChartLabel label=&apos;June 1&apos; color=&apos;Good&apos;/&gt;\n       &lt;/firstXLabel&gt;\n       &lt;lastXLabel&gt;\n         &lt;MicroAreaChartLabel label=&apos;June 30&apos; color=&apos;Critical&apos;/&gt;\n       &lt;/lastXLabel&gt;\n       &lt;firstYLabel&gt;\n         &lt;MicroAreaChartLabel label=&apos;0M&apos; color=&apos;Good&apos;/&gt;\n       &lt;/firstYLabel&gt;\n       &lt;lastYLabel&gt;\n         &lt;MicroAreaChartLabel label=&apos;80M&apos; color=&apos;Critical&apos;/&gt;\n       &lt;/lastYLabel&gt;\n       &lt;target&gt;\n         &lt;MicroAreaChartItem&gt;\n           &lt;points&gt;\n            &lt;MicroAreaChartPoint x=&apos;0&apos; y=&apos;0&apos; /&gt;\n            &lt;MicroAreaChartPoint x=&apos;30&apos; y=&apos;30&apos; /&gt;\n            &lt;MicroAreaChartPoint x=&apos;60&apos; y=&apos;40&apos; /&gt;\n            &lt;MicroAreaChartPoint x=&apos;100&apos; y=&apos;90&apos; /&gt;\n          &lt;/points&gt;\n         &lt;/MicroAreaChartItem&gt;\n       &lt;/target&gt;\n\n       &lt;minThreshold&gt;\n         &lt;MicroAreaChartItem color=&apos;Error&apos;&gt;\n           &lt;points&gt;\n            &lt;MicroAreaChartPoint x=&apos;0&apos; y=&apos;0&apos; /&gt;\n            &lt;MicroAreaChartPoint x=&apos;30&apos; y=&apos;20&apos; /&gt;\n            &lt;MicroAreaChartPoint x=&apos;60&apos; y=&apos;30&apos; /&gt;\n            &lt;MicroAreaChartPoint x=&apos;100&apos; y=&apos;70&apos; /&gt;\n          &lt;/points&gt;\n         &lt;/MicroAreaChartItem&gt;\n       &lt;/minThreshold&gt;\n       &lt;/MicroAreaChart&gt;&quot;,&quot;componentType&quot;:&quot;MicroAreaChart&quot;,&quot;bottom&quot;:&quot;40&quot;,&quot;top&quot;:&quot;-1&quot;,&quot;left&quot;:&quot;10&quot;,&quot;right&quot;:&quot;10&quot;,&quot;width&quot;:&quot;auto&quot;,&quot;height&quot;:&quot;80&quot;},{&quot;parentKey&quot;:&quot;ROOT&quot;,&quot;key&quot;:&quot;FOOTER&quot;,&quot;leaf&quot;:false,&quot;componentType&quot;:&quot;Label&quot;,&quot;top&quot;:&quot;-1&quot;,&quot;bottom&quot;:&quot;10&quot;},{&quot;parentKey&quot;:&quot;VALUE&quot;,&quot;key&quot;:&quot;VALUE/text&quot;,&quot;leaf&quot;:true,&quot;value&quot;:&quot;Value&quot;},{&quot;parentKey&quot;:&quot;VALUE&quot;,&quot;key&quot;:&quot;VALUE/styleClass&quot;,&quot;leaf&quot;:true,&quot;value&quot;:&quot;scn-pack-KpiTile-Value&quot;},{&quot;parentKey&quot;:&quot;VALUE&quot;,&quot;key&quot;:&quot;VALUE/textAlign&quot;,&quot;leaf&quot;:true,&quot;value&quot;:&quot;sap.ui.core.TextAlign.Right&quot;},{&quot;parentKey&quot;:&quot;FOOTER&quot;,&quot;key&quot;:&quot;FOOTER/text&quot;,&quot;leaf&quot;:true,&quot;value&quot;:&quot;Footer&quot;},{&quot;parentKey&quot;:&quot;CHART&quot;,&quot;key&quot;:&quot;CHART/chart&quot;,&quot;leaf&quot;:true,&quot;value&quot;:&quot;&lt;chart&gt;\n         &lt;MicroAreaChartItem&gt;\n           &lt;points&gt;\n            &lt;MicroAreaChartPoint x=&apos;0&apos; y=&apos;0&apos; /&gt;\n            &lt;MicroAreaChartPoint x=&apos;30&apos; y=&apos;10&apos; /&gt;\n            &lt;MicroAreaChartPoint x=&apos;60&apos; y=&apos;80&apos; /&gt;\n            &lt;MicroAreaChartPoint x=&apos;100&apos; y=&apos;20&apos; /&gt;\n          &lt;/points&gt;\n         &lt;/MicroAreaChartItem&gt;\n       &lt;/chart&gt;&quot;},{&quot;parentKey&quot;:&quot;ROOT&quot;,&quot;key&quot;:&quot;NTEXT&quot;,&quot;leaf&quot;:false,&quot;componentType&quot;:&quot;Label&quot;,&quot;bottom&quot;:&quot;140&quot;,&quot;top&quot;:&quot;-1&quot;},{&quot;parentKey&quot;:&quot;NTEXT&quot;,&quot;key&quot;:&quot;NTEXT/text&quot;,&quot;leaf&quot;:true,&quot;value&quot;:&quot;Time View:&quot;},{&quot;parentKey&quot;:&quot;ROOT&quot;,&quot;key&quot;:&quot;NUMBER&quot;,&quot;leaf&quot;:false,&quot;componentType&quot;:&quot;NumericContent&quot;,&quot;right&quot;:&quot;10&quot;,&quot;left&quot;:&quot;-1&quot;,&quot;top&quot;:&quot;10&quot;},{&quot;parentKey&quot;:&quot;NUMBER&quot;,&quot;key&quot;:&quot;NUMBER/size&quot;,&quot;leaf&quot;:true,&quot;value&quot;:&quot;S&quot;},{&quot;parentKey&quot;:&quot;NUMBER&quot;,&quot;key&quot;:&quot;NUMBER/value&quot;,&quot;leaf&quot;:true,&quot;value&quot;:&quot;34.5&quot;},{&quot;parentKey&quot;:&quot;NUMBER&quot;,&quot;key&quot;:&quot;NUMBER/scale&quot;,&quot;leaf&quot;:true,&quot;value&quot;:&quot;MM&quot;},{&quot;parentKey&quot;:&quot;ROOT&quot;,&quot;key&quot;:&quot;CHART2&quot;,&quot;leaf&quot;:false,&quot;specification&quot;:&quot;&lt;ColumnMicroChart size=\&quot;S\&quot; press=\&quot;press\&quot; class=\&quot;marginTopLeft\&quot;&gt;\n      &lt;columns&gt;\n      &lt;ColumnData  value=\&quot;65\&quot; color=\&quot;Error\&quot;/&gt;\n      &lt;ColumnData  value=\&quot;90\&quot; color=\&quot;Error\&quot;/&gt;\n      &lt;ColumnData  value=\&quot;75\&quot; color=\&quot;Error\&quot;/&gt;\n      &lt;ColumnData  value=\&quot;95\&quot; color=\&quot;Error\&quot;/&gt;\n      &lt;ColumnData  value=\&quot;100\&quot; color=\&quot;Error\&quot;/&gt;\n      &lt;ColumnData  value=\&quot;90\&quot; color=\&quot;Error\&quot;/&gt;\n      &lt;ColumnData  value=\&quot;80\&quot; color=\&quot;Error\&quot;/&gt;\n      &lt;ColumnData  value=\&quot;35\&quot; color=\&quot;Neutral\&quot;/&gt;\n      &lt;ColumnData  value=\&quot;65\&quot; color=\&quot;Neutral\&quot;/&gt;\n      &lt;ColumnData  value=\&quot;55\&quot; color=\&quot;Neutral\&quot;/&gt;\n      &lt;ColumnData  value=\&quot;60\&quot; color=\&quot;Neutral\&quot;/&gt;\n      &lt;ColumnData  value=\&quot;5\&quot; color=\&quot;Neutral\&quot;/&gt;\n      &lt;ColumnData  value=\&quot;15\&quot; color=\&quot;Neutral\&quot;/&gt;\n      &lt;ColumnData  value=\&quot;15\&quot; color=\&quot;Neutral\&quot;/&gt;\n    &lt;/columns&gt;\n    &lt;/ColumnMicroChart&gt;\n&quot;,&quot;componentType&quot;:&quot;ColumnMicroChart&quot;,&quot;width&quot;:&quot;200&quot;,&quot;height&quot;:&quot;120&quot;,&quot;top&quot;:&quot;10&quot;,&quot;left&quot;:&quot;10&quot;},{&quot;parentKey&quot;:&quot;CHART&quot;,&quot;key&quot;:&quot;CHART/firstXLabel&quot;,&quot;leaf&quot;:true,&quot;value&quot;:&quot;&lt;firstXLabel&gt;\n         &lt;MicroAreaChartLabel label=&apos;June 1&apos; color=&apos;Good&apos;/&gt;\n       &lt;/firstXLabel&gt;&quot;}]"/>
+		</bi:component>
+		<bi:component name="BUTTON_1" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Change Chart Data"/>
+			<bi:property name="LEFT_MARGIN" value="38"/>
+			<bi:property name="TOP_MARGIN" value="39"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[var def = "";
+def = def + "<chart>";
+def = def + "         <MicroAreaChartItem>";
+def = def + "           <points>";
+def = def + "            <MicroAreaChartPoint x='0' y='100' />";
+def = def + "            <MicroAreaChartPoint x='30' y='40' />";
+def = def + "            <MicroAreaChartPoint x='60' y='20' />";
+def = def + "            <MicroAreaChartPoint x='100' y='60' />";
+def = def + "          </points>";
+def = def + "         </MicroAreaChartItem>";
+def = def + "       </chart>";
+
+KPITILE_1.setPropertyValue("CHART/chart", def);]]></bi:value>
+			</bi:property>
+			<bi:property name="WIDTH" value="140"/>
+		</bi:component>
+		<bi:component name="BUTTON_3" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Change Labels"/>
+			<bi:property name="LEFT_MARGIN" value="189"/>
+			<bi:property name="TOP_MARGIN" value="39"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[var def = "";
+
+def = def + "<firstXLabel>";
+def = def + "<MicroAreaChartLabel label='September 1' color='Good'/>";
+def = def + "</firstXLabel>";
+
+var propId = "CHART/firstXLabel";
+
+if(KPITILE_1.hasPropertyValue(propId)) {
+	KPITILE_1.setPropertyValue(propId, def);	
+} else {
+	KPITILE_1.addProperty("CHART", propId, def);
+}
+
+def = "";
+
+def = def + "{";
+def = def + "   \"lastXLabel\":{";
+def = def + "      \"MicroAreaChartLabel\":{";
+def = def + "         \"label\":\"September 30\",";
+def = def + "         \"color\":\"Critical\"";
+def = def + "      }";
+def = def + "   }";
+def = def + "}";
+
+propId = "CHART/lastXLabel";
+
+KPITILE_1.addProperty("CHART", propId, def);]]></bi:value>
+			</bi:property>
+			<bi:property name="WIDTH" value="140"/>
+		</bi:component>
+		<bi:component name="KPITILE_2" type="org_scn_community_basics_KpiTile">
+			<bi:property name="LEFT_MARGIN" value="38"/>
+			<bi:property name="TOP_MARGIN" value="458"/>
+			<bi:property name="componentsSpec" value="[{&quot;parentKey&quot;:&quot;ROOT&quot;,&quot;key&quot;:&quot;CHART&quot;,&quot;leaf&quot;:false,&quot;specification&quot;:&quot;&lt;ComparisonChart scale=\&quot;M\&quot; view=\&quot;Wide\&quot; class=\&quot;marginTopLeft\&quot; press=\&quot;press\&quot; width=\&quot;32rem\&quot;&gt;\n        &lt;data&gt;\n          &lt;ComparisonData  title=\&quot;Americas\&quot; value=\&quot;10\&quot; color=\&quot;Critical\&quot;/&gt;\n          &lt;ComparisonData  title=\&quot;EMEA\&quot; value=\&quot;50\&quot; color=\&quot;Good\&quot;/&gt;\n          &lt;ComparisonData  title=\&quot;APAC\&quot; value=\&quot;-20\&quot;  color=\&quot;Error\&quot;/&gt;\n          &lt;ComparisonData  title=\&quot;LTA\&quot; value=\&quot;60\&quot;  color=\&quot;Good\&quot;/&gt;\n          &lt;ComparisonData  title=\&quot;ALPS\&quot; value=\&quot;-20\&quot; color=\&quot;Error\&quot;/&gt;\n          &lt;ComparisonData  title=\&quot;Australia\&quot; value=\&quot;55\&quot; color=\&quot;Good\&quot;/&gt;        \n        &lt;/data&gt;\n    &lt;/ComparisonChart&gt;\n&quot;,&quot;componentType&quot;:&quot;ComparisonChart&quot;,&quot;width&quot;:&quot;auto&quot;,&quot;height&quot;:&quot;auto&quot;,&quot;top&quot;:&quot;40&quot;},{&quot;parentKey&quot;:&quot;ROOT&quot;,&quot;key&quot;:&quot;HEADER&quot;,&quot;leaf&quot;:false,&quot;componentType&quot;:&quot;Label&quot;,&quot;width&quot;:&quot;auto&quot;},{&quot;parentKey&quot;:&quot;HEADER&quot;,&quot;key&quot;:&quot;HEADER/text&quot;,&quot;leaf&quot;:true,&quot;value&quot;:&quot;Some Description\n&quot;}]"/>
+			<bi:property name="WIDTH" value="442"/>
+			<bi:property name="onClick">
+				<bi:value><![CDATA[APPLICATION.createInfoMessage("Click: " + KPITILE_2.getClickedComponent());]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_2" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Add New Label"/>
+			<bi:property name="LEFT_MARGIN" value="38"/>
+			<bi:property name="TOP_MARGIN" value="419"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[KPITILE_2.addComponent("LABEL", "Label", 10, 10, -1, 10, 200, 30, "");
+KPITILE_2.addProperty("LABEL", "LABEL/text", "KPI IS CHECKED");
+KPITILE_2.addProperty("LABEL", "LABEL/textAlign", "Right");]]></bi:value>
+			</bi:property>
+			<bi:property name="WIDTH" value="163"/>
+		</bi:component>
+		<bi:component name="CONTEXT_MENU" type="CONTEXT_MENU_COMPONENT"/>
+	</bi:component>
+</bi:biapp>
