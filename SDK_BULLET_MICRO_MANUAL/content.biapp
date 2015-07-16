@@ -1,0 +1,36 @@
+<bi:biapp bi:version="1500" xmlns:bi="http://xml.sap.com/2011/biml/biapp" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns="http://www.w3.org/TR/REC-html40" xmlns:h="http://www.w3.org/TR/REC-html40" xmlns:sdk1="org.scn.community.databound" sdk1:version="2.0" xmlns:sdk2="org.scn.community.datasource" sdk2:version="2.0">
+	<bi:component name="APPLICATION_PROPERTIES" type="APPLICATION_PROPERTIES">
+		<bi:property name="THEME" value="sap_bluecrystal"/>
+	</bi:component>
+	<bi:data_source_alias name="DS_1" type="org_scn_community_datasource_BYOData">
+		<bi:property name="kfIndex" value="1"/>
+		<bi:property name="data" value="Date,Hits,Unique Visitors&#10;01/2014,1020,23&#10;02/2014,929,19&#10;03/2014,837,20&#10;04/2014,940,22&#10;05/2014,736,13&#10;06/2014,674,10&#10;07/2014,910,25&#10;08/2014,1200,29&#10;09/2014,980,34&#10;10/2014,1087,45&#10;11/2014,1350,89&#10;12/2014,1510,102"/>
+	</bi:data_source_alias>
+	<bi:data_source_alias name="DS_2" type="org_scn_community_datasource_BYOData">
+		<bi:property name="kfIndex" value="1"/>
+		<bi:property name="data" value="Country,1960,1970,1980,1990,2000,2010&#10;Afghanistan,9671046,11964906,15303189.5,19023678,25950815.5,34385000&#10;Albania,1610565,2135599,2671300,3289483,3071856,3205000"/>
+	</bi:data_source_alias>
+	<bi:component name="ROOT" type="ABSOLUTE_LAYOUT_COMPONENT">
+		<bi:component name="BULLETMICROCHART_1" type="org_scn_community_databound_BulletMicroChart">
+			<bi:property name="LEFT_MARGIN" value="19"/>
+			<bi:property name="TOP_MARGIN" value="21"/>
+			<bi:property name="dataCellListActual" value="{&quot;(MEASURES_DIMENSION)&quot;:&quot;1990&quot;}"/>
+			<bi:property name="WIDTH" value="442"/>
+			<bi:property name="HEIGHT" value="350"/>
+			<bi:property name="dataCellListMaxValue" value="{&quot;(MEASURES_DIMENSION)&quot;:&quot;2000&quot;}"/>
+			<bi:property name="dataCellListForecastValue" value="{&quot;(MEASURES_DIMENSION)&quot;:&quot;2010&quot;}"/>
+			<bi:property name="dataCellListThresholds" value="{&quot;(MEASURES_DIMENSION)&quot;:[&quot;1970&quot;,&quot;1980&quot;,&quot;1990&quot;,&quot;2000&quot;]}"/>
+			<bi:property name="thresholds" value="[{&quot;parentKey&quot;:&quot;ROOT&quot;,&quot;key&quot;:&quot;ELEMENT&quot;,&quot;leaf&quot;:false,&quot;color&quot;:&quot;Critical&quot;,&quot;value&quot;:100},{&quot;parentKey&quot;:&quot;ROOT&quot;,&quot;key&quot;:&quot;ELEMENT1&quot;,&quot;leaf&quot;:false,&quot;color&quot;:&quot;Good&quot;,&quot;value&quot;:600},{&quot;parentKey&quot;:&quot;ROOT&quot;,&quot;key&quot;:&quot;ELEMENT2&quot;,&quot;leaf&quot;:false,&quot;color&quot;:&quot;Neutral&quot;,&quot;value&quot;:1200},{&quot;parentKey&quot;:&quot;ROOT&quot;,&quot;key&quot;:&quot;ELEMENT3&quot;,&quot;leaf&quot;:false,&quot;color&quot;:&quot;Neutral&quot;,&quot;value&quot;:1800}]"/>
+			<bi:property name="actual" value="[{&quot;parentKey&quot;:&quot;ROOT&quot;,&quot;key&quot;:&quot;ELEMENT&quot;,&quot;leaf&quot;:false,&quot;color&quot;:&quot;Good&quot;,&quot;value&quot;:1500}]"/>
+			<bi:property name="maxValue" value="1400"/>
+			<bi:property name="forecastValue" value="1000"/>
+			<bi:property name="targetValue" value="900"/>
+			<bi:property name="useContentWidth" value=""/>
+			<bi:property name="size" value="L"/>
+			<bi:property name="scale" value="M"/>
+			<bi:property name="scaleColor" value="Dark"/>
+			<bi:property name="showTargetValue" value=""/>
+		</bi:component>
+		<bi:component name="CONTEXT_MENU" type="CONTEXT_MENU_COMPONENT"/>
+	</bi:component>
+</bi:biapp>

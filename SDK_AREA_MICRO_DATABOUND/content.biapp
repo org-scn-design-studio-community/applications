@@ -1,0 +1,65 @@
+<bi:biapp bi:version="1500" xmlns:bi="http://xml.sap.com/2011/biml/biapp" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns="http://www.w3.org/TR/REC-html40" xmlns:h="http://www.w3.org/TR/REC-html40" xmlns:sdk1="org.scn.community.databound" sdk1:version="2.0" xmlns:sdk2="org.scn.community.datasource" sdk2:version="2.0">
+	<bi:component name="APPLICATION_PROPERTIES" type="APPLICATION_PROPERTIES">
+		<bi:property name="THEME" value="sap_bluecrystal"/>
+	</bi:component>
+	<bi:data_source_alias name="DS_1" type="org_scn_community_datasource_BYOData">
+		<bi:property name="kfIndex" value="1"/>
+		<bi:property name="data" value="Date,Hits,Unique Visitors&#10;01/2014,1020,23&#10;02/2014,929,19&#10;03/2014,837,20&#10;04/2014,940,22&#10;05/2014,736,13&#10;06/2014,674,10&#10;07/2014,910,25&#10;08/2014,1200,29&#10;09/2014,980,34&#10;10/2014,1087,45&#10;11/2014,1350,89&#10;12/2014,1510,102"/>
+	</bi:data_source_alias>
+	<bi:data_source_alias name="DS_2" type="org_scn_community_datasource_BYOData">
+		<bi:property name="kfIndex" value="1"/>
+		<bi:property name="data" value="Country,1960,1970,1980,1990,2000,2010&#10;Afghanistan,9671046,11964906,15303189.5,19023678,25950815.5,34385000&#10;Albania,1610565,2135599,2671300,3289483,3071856,3205000"/>
+	</bi:data_source_alias>
+	<bi:component name="ROOT" type="ABSOLUTE_LAYOUT_COMPONENT">
+		<bi:component name="AREAMICROCHART_2" type="org_scn_community_databound_AreaMicroChart">
+			<bi:property name="LEFT_MARGIN" value="40"/>
+			<bi:property name="TOP_MARGIN" value="43"/>
+			<bi:property name="maxYValue" value="2000"/>
+			<bi:property name="maxXValue" value="11"/>
+			<bi:property name="target" value="[{&quot;parentKey&quot;:&quot;ROOT&quot;,&quot;key&quot;:&quot;ELEMENT&quot;,&quot;leaf&quot;:false,&quot;color&quot;:&quot;Good&quot;},{&quot;parentKey&quot;:&quot;ELEMENT&quot;,&quot;key&quot;:&quot;ELEMENT_ITEM&quot;,&quot;leaf&quot;:true,&quot;x&quot;:10,&quot;y&quot;:20},{&quot;parentKey&quot;:&quot;ELEMENT&quot;,&quot;key&quot;:&quot;ELEMENT_ITEM1&quot;,&quot;leaf&quot;:true,&quot;x&quot;:20,&quot;y&quot;:80},{&quot;parentKey&quot;:&quot;ELEMENT&quot;,&quot;key&quot;:&quot;ELEMENT_ITEM2&quot;,&quot;leaf&quot;:true,&quot;x&quot;:30,&quot;y&quot;:40}]"/>
+			<bi:property name="dataCellListChart" value="{&quot;(MEASURES_DIMENSION)&quot;:&quot;Hits&quot;}"/>
+			<bi:property name="chart" value="[{&quot;parentKey&quot;:&quot;ROOT&quot;,&quot;key&quot;:&quot;ELEMENT&quot;,&quot;leaf&quot;:false,&quot;color&quot;:&quot;Good&quot;},{&quot;parentKey&quot;:&quot;ELEMENT&quot;,&quot;key&quot;:&quot;ELEMENT_ITEM&quot;,&quot;leaf&quot;:true,&quot;x&quot;:10,&quot;y&quot;:40},{&quot;parentKey&quot;:&quot;ELEMENT&quot;,&quot;key&quot;:&quot;ELEMENT_ITEM1&quot;,&quot;leaf&quot;:true,&quot;x&quot;:20,&quot;y&quot;:90},{&quot;parentKey&quot;:&quot;ELEMENT&quot;,&quot;key&quot;:&quot;ELEMENT_ITEM2&quot;,&quot;leaf&quot;:true,&quot;x&quot;:29,&quot;y&quot;:60}]"/>
+			<bi:property name="minThreshold" value="[{&quot;parentKey&quot;:&quot;ROOT&quot;,&quot;key&quot;:&quot;ELEMENT&quot;,&quot;leaf&quot;:false,&quot;color&quot;:&quot;Critical&quot;},{&quot;parentKey&quot;:&quot;ELEMENT&quot;,&quot;key&quot;:&quot;ELEMENT_ITEM&quot;,&quot;leaf&quot;:true,&quot;x&quot;:10,&quot;y&quot;:30},{&quot;parentKey&quot;:&quot;ELEMENT&quot;,&quot;key&quot;:&quot;ELEMENT_ITEM1&quot;,&quot;leaf&quot;:true,&quot;x&quot;:20,&quot;y&quot;:20},{&quot;parentKey&quot;:&quot;ELEMENT&quot;,&quot;key&quot;:&quot;ELEMENT_ITEM2&quot;,&quot;leaf&quot;:true,&quot;x&quot;:30,&quot;y&quot;:10}]"/>
+			<bi:property name="maxThreshold" value="[{&quot;parentKey&quot;:&quot;ROOT&quot;,&quot;key&quot;:&quot;ELEMENT&quot;,&quot;leaf&quot;:false,&quot;color&quot;:&quot;Good&quot;},{&quot;parentKey&quot;:&quot;ELEMENT&quot;,&quot;key&quot;:&quot;ELEMENT_ITEM&quot;,&quot;leaf&quot;:true,&quot;x&quot;:10,&quot;y&quot;:90},{&quot;parentKey&quot;:&quot;ELEMENT&quot;,&quot;key&quot;:&quot;ELEMENT_ITEM1&quot;,&quot;leaf&quot;:true,&quot;x&quot;:20,&quot;y&quot;:70},{&quot;parentKey&quot;:&quot;ELEMENT&quot;,&quot;key&quot;:&quot;ELEMENT_ITEM2&quot;,&quot;leaf&quot;:true,&quot;x&quot;:30,&quot;y&quot;:90}]"/>
+			<bi:property name="innerMinThreshold" value="[{&quot;parentKey&quot;:&quot;ROOT&quot;,&quot;key&quot;:&quot;ELEMENT&quot;,&quot;leaf&quot;:false,&quot;color&quot;:&quot;Good&quot;},{&quot;parentKey&quot;:&quot;ELEMENT&quot;,&quot;key&quot;:&quot;ELEMENT_ITEM&quot;,&quot;leaf&quot;:true,&quot;x&quot;:10,&quot;y&quot;:20},{&quot;parentKey&quot;:&quot;ELEMENT&quot;,&quot;key&quot;:&quot;ELEMENT_ITEM1&quot;,&quot;leaf&quot;:true,&quot;x&quot;:20,&quot;y&quot;:40},{&quot;parentKey&quot;:&quot;ELEMENT&quot;,&quot;key&quot;:&quot;ELEMENT_ITEM2&quot;,&quot;leaf&quot;:true,&quot;x&quot;:30,&quot;y&quot;:60}]"/>
+			<bi:property name="HEIGHT" value="216"/>
+			<bi:property name="useChart" value=""/>
+			<bi:property name="DATA_SOURCE_ALIAS_REF" value="DS_1"/>
+			<bi:property name="dataCellListTarget" value="{&quot;(MEASURES_DIMENSION)&quot;:&quot;Hits&quot;}"/>
+			<bi:property name="dataCellListMinThreshold" value="{&quot;(MEASURES_DIMENSION)&quot;:&quot;Hits&quot;}"/>
+			<bi:property name="dataCellListInnerMaxThreshold" value=""/>
+			<bi:property name="dataCellListInnerMinThreshold" value=""/>
+			<bi:property name="useMinThreshold" value=""/>
+			<bi:property name="useMaxThreshold" value=""/>
+			<bi:property name="useInnerMinThreshold" value=""/>
+			<bi:property name="useInnerMaxThreshold" value=""/>
+			<bi:property name="useTarget" value=""/>
+			<bi:property name="dataCellListMaxThreshold" value=""/>
+			<bi:property name="useMinLabel" value=""/>
+			<bi:property name="useMaxLabel" value=""/>
+			<bi:property name="useLastYLabel" value=""/>
+			<bi:property name="useLastXLabel" value=""/>
+			<bi:property name="useFirstYLabel" value=""/>
+			<bi:property name="useFirstXLabel" value=""/>
+			<bi:property name="dataCellListLastXLabel" value="{&quot;Date&quot;:&quot;12/2014&quot;}"/>
+			<bi:property name="useContentHeight" value=""/>
+			<bi:property name="dataCellListLastYLabel" value="{&quot;(MEASURES_DIMENSION)&quot;:&quot;Hits&quot;,&quot;Date&quot;:&quot;12/2014&quot;}"/>
+			<bi:property name="dataCellListFirstXLabel" value="{&quot;(MEASURES_DIMENSION)&quot;:&quot;Unique Visitors&quot;,&quot;Date&quot;:&quot;01/2014&quot;}"/>
+			<bi:property name="dataCellListFirstYLabel" value="{&quot;(MEASURES_DIMENSION)&quot;:&quot;Unique Visitors&quot;,&quot;Date&quot;:&quot;01/2014&quot;}"/>
+			<bi:property name="dataCellListMaxLabel" value="{&quot;(MEASURES_DIMENSION)&quot;:&quot;Hits&quot;}"/>
+			<bi:property name="dataCellListMinLabel" value="{&quot;(MEASURES_DIMENSION)&quot;:&quot;Hits&quot;}"/>
+			<bi:property name="dataCellListMinXValue" value=""/>
+			<bi:property name="useMinXValue" value=""/>
+			<bi:property name="useMaxYValue" value=""/>
+			<bi:property name="dataCellListMinYValue" value="{&quot;(MEASURES_DIMENSION)&quot;:&quot;Hits&quot;}"/>
+			<bi:property name="dataCellListMaxXValue" value="{&quot;(MEASURES_DIMENSION)&quot;:&quot;Hits&quot;}"/>
+			<bi:property name="minXValue" value="0"/>
+		</bi:component>
+		<bi:component name="BUTTON_1" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Button"/>
+			<bi:property name="LEFT_MARGIN" value="532"/>
+			<bi:property name="TOP_MARGIN" value="56"/>
+		</bi:component>
+		<bi:component name="CONTEXT_MENU" type="CONTEXT_MENU_COMPONENT"/>
+	</bi:component>
+</bi:biapp>

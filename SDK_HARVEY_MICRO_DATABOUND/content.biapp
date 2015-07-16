@@ -1,0 +1,26 @@
+<bi:biapp bi:version="1500" xmlns:bi="http://xml.sap.com/2011/biml/biapp" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns="http://www.w3.org/TR/REC-html40" xmlns:h="http://www.w3.org/TR/REC-html40" xmlns:sdk1="org.scn.community.databound" sdk1:version="2.0" xmlns:sdk2="org.scn.community.datasource" sdk2:version="2.0">
+	<bi:component name="APPLICATION_PROPERTIES" type="APPLICATION_PROPERTIES">
+		<bi:property name="THEME" value="sap_bluecrystal"/>
+	</bi:component>
+	<bi:data_source_alias name="DS_1" type="org_scn_community_datasource_BYOData"/>
+	<bi:component name="ROOT" type="ABSOLUTE_LAYOUT_COMPONENT">
+		<bi:component name="HARVEYBALLMICROCHART_3" type="org_scn_community_databound_HarveyBallMicroChart">
+			<bi:property name="LEFT_MARGIN" value="57"/>
+			<bi:property name="TOP_MARGIN" value="48"/>
+			<bi:property name="items" value="[{&quot;parentKey&quot;:&quot;ROOT&quot;,&quot;key&quot;:&quot;ELEMENT&quot;,&quot;leaf&quot;:false,&quot;formattedLabel&quot;:false,&quot;color&quot;:&quot;Good&quot;,&quot;fraction&quot;:20,&quot;fractionLabel&quot;:&quot;sold &quot;,&quot;fractionScale&quot;:&quot;20T&quot;}]"/>
+			<bi:property name="total" value="40"/>
+			<bi:property name="WIDTH" value="174"/>
+			<bi:property name="HEIGHT" value="262"/>
+			<bi:property name="size" value="L"/>
+			<bi:property name="contentWidth" value="400"/>
+			<bi:property name="totalLabel" value="$"/>
+			<bi:property name="useTotal" value=""/>
+			<bi:property name="DATA_SOURCE_ALIAS_REF" value="DS_1"/>
+			<bi:property name="dataCellListItems" value="{&quot;(MEASURES_DIMENSION)&quot;:&quot;Quantity&quot;}"/>
+			<bi:property name="dataCellListTotal" value="{&quot;(MEASURES_DIMENSION)&quot;:&quot;Sales&quot;}"/>
+			<bi:property name="useItems" value=""/>
+			<bi:property name="showTotal" value=""/>
+		</bi:component>
+		<bi:component name="CONTEXT_MENU" type="CONTEXT_MENU_COMPONENT"/>
+	</bi:component>
+</bi:biapp>
