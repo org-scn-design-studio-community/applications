@@ -1,0 +1,38 @@
+<bi:biapp bi:version="1500" xmlns:bi="http://xml.sap.com/2011/biml/biapp" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns="http://www.w3.org/TR/REC-html40" xmlns:h="http://www.w3.org/TR/REC-html40" xmlns:sdk1="org.scn.community.databound" sdk1:version="2.0">
+	<bi:component name="APPLICATION_PROPERTIES" type="APPLICATION_PROPERTIES">
+		<bi:property name="THEME" value="sap_bluecrystal"/>
+	</bi:component>
+	<bi:component name="ROOT" type="ABSOLUTE_LAYOUT_COMPONENT">
+		<bi:component name="PANEL_1" type="PANEL_COMPONENT">
+			<bi:property name="RIGHT_MARGIN" value="0"/>
+			<bi:property name="BOTTOM_MARGIN" value="0"/>
+			<bi:property name="WIDTH" value="auto"/>
+			<bi:property name="HEIGHT" value="auto"/>
+			<bi:property name="CSS_STYLE" value="background: white;"/>
+			<bi:component name="RADIOBUTTONGROUP_1" type="org_scn_community_databound_RadioButtonGroup">
+				<bi:property name="LEFT_MARGIN" value="64"/>
+				<bi:property name="TOP_MARGIN" value="45"/>
+				<bi:property name="buttons" value="[{&quot;parentKey&quot;:&quot;ROOT&quot;,&quot;key&quot;:&quot;ELEMENT&quot;,&quot;leaf&quot;:false,&quot;activeHandling&quot;:true,&quot;valueState&quot;:&quot;Success&quot;,&quot;textDirection&quot;:&quot;LTR&quot;,&quot;editable&quot;:true,&quot;enabled&quot;:true,&quot;contentWidth&quot;:200,&quot;groupName&quot;:&quot;GROUP0&quot;,&quot;selected&quot;:true,&quot;text&quot;:&quot;The Text Group 0&quot;,&quot;textAlign&quot;:&quot;Begin&quot;},{&quot;parentKey&quot;:&quot;ROOT&quot;,&quot;key&quot;:&quot;ELEMENT1&quot;,&quot;leaf&quot;:false,&quot;text&quot;:&quot;Text Group 1&quot;,&quot;valueState&quot;:&quot;Success&quot;,&quot;textDirection&quot;:&quot;LTR&quot;,&quot;activeHandling&quot;:true,&quot;groupName&quot;:&quot;GROUP1&quot;,&quot;contentWidth&quot;:200},{&quot;parentKey&quot;:&quot;ROOT&quot;,&quot;key&quot;:&quot;ELEMENT2&quot;,&quot;leaf&quot;:false,&quot;text&quot;:&quot;Text Group 1/2&quot;,&quot;groupName&quot;:&quot;GROUP1&quot;,&quot;textAlign&quot;:&quot;End&quot;,&quot;textDirection&quot;:&quot;LTR&quot;,&quot;valueState&quot;:&quot;Error&quot;,&quot;contentWidth&quot;:200,&quot;activeHandling&quot;:false}]"/>
+				<bi:property name="WIDTH" value="442"/>
+				<bi:property name="selectedIndex" value="1"/>
+				<bi:property name="onSelected">
+					<bi:value><![CDATA[APPLICATION.createErrorMessage("Selected: " + RADIOBUTTONGROUP_1.getSelectedKey());]]></bi:value>
+				</bi:property>
+				<bi:property name="contentWidth" value="600"/>
+				<bi:property name="HEIGHT" value="307"/>
+				<bi:property name="columns" value="2"/>
+			</bi:component>
+			<bi:component name="BUTTON_1" type="BUTTON_COMPONENT">
+				<bi:property name="TEXT" value="Button"/>
+				<bi:property name="LEFT_MARGIN" value="545"/>
+				<bi:property name="TOP_MARGIN" value="90"/>
+				<bi:property name="ON_CLICK">
+					<bi:value><![CDATA[RADIOBUTTONGROUP_1.addButton("BUT2", false, 
+		200, false, true, "G", true, "The Next", "End", "LTR", "Warning"
+);]]></bi:value>
+				</bi:property>
+			</bi:component>
+		</bi:component>
+		<bi:component name="CONTEXT_MENU" type="CONTEXT_MENU_COMPONENT"/>
+	</bi:component>
+</bi:biapp>
