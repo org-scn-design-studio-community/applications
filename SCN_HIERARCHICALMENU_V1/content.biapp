@@ -1,0 +1,335 @@
+<bi:biapp bi:version="1502" xmlns:bi="http://xml.sap.com/2011/biml/biapp" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns="http://www.w3.org/TR/REC-html40" xmlns:h="http://www.w3.org/TR/REC-html40" xmlns:sdk1="org.scn.community.basics" sdk1:version="2.0" xmlns:sdk2="org.scn.community.databound" sdk2:version="2.0">
+	<bi:component name="APPLICATION_PROPERTIES" type="APPLICATION_PROPERTIES">
+		<bi:property name="THEME" value="sap_bluecrystal"/>
+		<bi:property name="ON_STARTUP">
+			<bi:value><![CDATA[IF_ROOT_NAME.setValue(DD1.getSingleRootNodeName());
+TA_CLASS_BREAKS.setValue(DD1.getColorClass());
+
+var mesDim = DS_MENU.getMeasuresDimension();
+DD_MESURE.setItems(DS_MENU.getMemberList(mesDim, MemberPresentation.INTERNAL_KEY, MemberDisplay.TEXT, 100));
+DD_MESURE.setSelectedValue(DD1.getSelMeasure());
+
+DD1.setNotAssignedText(IF_NODE_NA.getValue());
+
+//RDG_ROOT_NODE.setSelectedValue(DD1.isSingleNodeActivated());]]></bi:value>
+		</bi:property>
+		<bi:property name="CUSTOM_CSS" value="MultiLevelDropDownv3.css"/>
+	</bi:component>
+	<bi:data_source_alias name="DS_MENU" type="QUERY_DATA_SOURCE">
+		<bi:property name="DATA_SOURCE_DEFINITION">
+			<bi:property name="DATA_SOURCE_TYPE" type="CHOICE" value="QUERY"/>
+			<bi:property name="DATA_SOURCE_NAME" value=""/>
+			<bi:property name="DATA_SOURCE_CONNECTION" value="&lt;unknown&gt;"/>
+		</bi:property>
+		<bi:property name="ON_RESULTSETCHANGED">
+			<bi:value><![CDATA[var dimsrow = DS_1.getDimensions();
+var count = 0;
+dimsrow.forEach(function(element, index) {
+	     /* Check if Filter is set */
+         if (DS_1.getFilterText(element.name) != "") {
+    	    count = count + 1;            
+         }   
+});
+
+if (count > 0) {
+
+ 	   BUTTON_HEADER_FILTER.setText(TEXT_POOL.Filtered + count + "" + ")");
+}
+else {
+ 	   BUTTON_HEADER_FILTER.setText(TEXT_POOL.NoFilters); 
+} 
+]]></bi:value>
+		</bi:property>
+		<bi:property name="LOAD_IN_SCRIPT" value="X"/>
+	</bi:data_source_alias>
+	<bi:data_source_alias name="DS_DATA" type="QUERY_DATA_SOURCE">
+		<bi:property name="DATA_SOURCE_DEFINITION">
+			<bi:property name="DATA_SOURCE_TYPE" type="CHOICE" value="QUERY"/>
+			<bi:property name="DATA_SOURCE_NAME" value=""/>
+			<bi:property name="DATA_SOURCE_CONNECTION" value="&lt;unknown&gt;"/>
+		</bi:property>
+		<bi:property name="ON_RESULTSETCHANGED">
+			<bi:value><![CDATA[var dimsrow = DS_1.getDimensions();
+var count = 0;
+dimsrow.forEach(function(element, index) {
+	     /* Check if Filter is set */
+         if (DS_1.getFilterText(element.name) != "") {
+    	    count = count + 1;            
+         }   
+});
+
+if (count > 0) {
+
+ 	   BUTTON_HEADER_FILTER.setText(TEXT_POOL.Filtered + count + "" + ")");
+}
+else {
+ 	   BUTTON_HEADER_FILTER.setText(TEXT_POOL.NoFilters); 
+} 
+]]></bi:value>
+		</bi:property>
+		<bi:property name="LOAD_IN_SCRIPT" value="X"/>
+	</bi:data_source_alias>
+	<bi:component name="ROOT" type="ABSOLUTE_LAYOUT_COMPONENT">
+		<bi:component name="POPUP_1" type="POPUP_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="34"/>
+			<bi:property name="TOP_MARGIN" value="37"/>
+			<bi:property name="WIDTH" value="620"/>
+			<bi:property name="HEIGHT" value="504"/>
+			<bi:property name="DESIGNER_VISIBLE" value=""/>
+			<bi:property name="AUTOCLOSE" value="X"/>
+			<bi:component name="CROSSTAB_2" type="CROSSTAB_COMPONENT">
+				<bi:property name="BOTTOM_MARGIN" value="0"/>
+				<bi:property name="RIGHT_MARGIN" value="0"/>
+				<bi:property name="WIDTH" value="auto"/>
+				<bi:property name="HEIGHT" value="auto"/>
+				<bi:property name="DATA_SOURCE_ALIAS_REF" value="DS_MENU"/>
+			</bi:component>
+		</bi:component>
+		<bi:component name="PANEL_PARAM" type="PANEL_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="20"/>
+			<bi:property name="TOP_MARGIN" value="75"/>
+			<bi:property name="HEIGHT" value="268"/>
+			<bi:property name="WIDTH" value="741"/>
+			<bi:property name="CSS_STYLE" value="border: 1px black solid"/>
+			<bi:component name="RDG_ROOT_NODE" type="RADIOBUTTONGROUP_COMPONENT">
+				<bi:property name="ITEMS" type="ORDEREDLIST">
+					<bi:property name="SELECTION_ITEM" index="0">
+						<bi:property name="VALUE" value="X"/>
+						<bi:property name="TEXT" value="True"/>
+						<bi:property name="SELECTED" value="X"/>
+					</bi:property>
+					<bi:property name="SELECTION_ITEM" index="1">
+						<bi:property name="TEXT" value="False"/>
+					</bi:property>
+				</bi:property>
+				<bi:property name="LEFT_MARGIN" value="9"/>
+				<bi:property name="TOP_MARGIN" value="27"/>
+				<bi:property name="ON_SELECT">
+					<bi:value><![CDATA[DD1.setAddSingleRootNode(RDG_ROOT_NODE.getSelectedValue());]]></bi:value>
+				</bi:property>
+			</bi:component>
+			<bi:component name="RDG_ADD_MESURE" type="RADIOBUTTONGROUP_COMPONENT">
+				<bi:property name="ITEMS" type="ORDEREDLIST">
+					<bi:property name="SELECTION_ITEM" index="0">
+						<bi:property name="VALUE" value="X"/>
+						<bi:property name="TEXT" value="True"/>
+					</bi:property>
+					<bi:property name="SELECTION_ITEM" index="1">
+						<bi:property name="TEXT" value="False"/>
+						<bi:property name="SELECTED" value="X"/>
+					</bi:property>
+				</bi:property>
+				<bi:property name="LEFT_MARGIN" value="auto"/>
+				<bi:property name="TOP_MARGIN" value="30"/>
+				<bi:property name="ON_SELECT">
+					<bi:value><![CDATA[DD1.activateDisplayMeasure(RDG_ADD_MESURE.getSelectedValue());]]></bi:value>
+				</bi:property>
+				<bi:property name="RIGHT_MARGIN" value="230"/>
+			</bi:component>
+			<bi:component name="RDG_RESET" type="RADIOBUTTONGROUP_COMPONENT">
+				<bi:property name="ITEMS" type="ORDEREDLIST">
+					<bi:property name="SELECTION_ITEM" index="0">
+						<bi:property name="VALUE" value="No"/>
+					</bi:property>
+					<bi:property name="SELECTION_ITEM" index="1">
+						<bi:property name="VALUE" value="Left"/>
+					</bi:property>
+					<bi:property name="SELECTION_ITEM" index="2">
+						<bi:property name="VALUE" value="Right"/>
+						<bi:property name="SELECTED" value="X"/>
+					</bi:property>
+				</bi:property>
+				<bi:property name="LEFT_MARGIN" value="10"/>
+				<bi:property name="TOP_MARGIN" value="145"/>
+				<bi:property name="ON_SELECT">
+					<bi:value><![CDATA[DD1.setResetButton(RDG_RESET.getSelectedValue());]]></bi:value>
+				</bi:property>
+			</bi:component>
+			<bi:component name="TEXT_3" type="TEXT_COMPONENT">
+				<bi:property name="TEXT" value="Display Reset Button"/>
+				<bi:property name="LEFT_MARGIN" value="10"/>
+				<bi:property name="TOP_MARGIN" value="128"/>
+				<bi:property name="STYLE" value="HEADING4"/>
+				<bi:property name="WIDTH" value="217"/>
+				<bi:property name="HEIGHT" value="17"/>
+			</bi:component>
+			<bi:component name="TEXT_4" type="TEXT_COMPONENT">
+				<bi:property name="TEXT" value="Value Display Type"/>
+				<bi:property name="LEFT_MARGIN" value="206"/>
+				<bi:property name="TOP_MARGIN" value="10"/>
+				<bi:property name="STYLE" value="HEADING4"/>
+				<bi:property name="WIDTH" value="191"/>
+				<bi:property name="HEIGHT" value="17"/>
+			</bi:component>
+			<bi:component name="TEXT_8" type="TEXT_COMPONENT">
+				<bi:property name="TEXT" value="Replace the &quot;Not Assigned&quot; node Text"/>
+				<bi:property name="LEFT_MARGIN" value="206"/>
+				<bi:property name="TOP_MARGIN" value="100"/>
+				<bi:property name="STYLE" value="HEADING4"/>
+				<bi:property name="WIDTH" value="186"/>
+				<bi:property name="HEIGHT" value="36"/>
+			</bi:component>
+			<bi:component name="TEXT_7" type="TEXT_COMPONENT">
+				<bi:property name="TEXT" value="Coloration (JSON)"/>
+				<bi:property name="LEFT_MARGIN" value="410"/>
+				<bi:property name="TOP_MARGIN" value="127"/>
+				<bi:property name="STYLE" value="HEADING4"/>
+				<bi:property name="WIDTH" value="217"/>
+				<bi:property name="HEIGHT" value="17"/>
+			</bi:component>
+			<bi:component name="RDG_VALUE_DISP" type="RADIOBUTTONGROUP_COMPONENT">
+				<bi:property name="ITEMS" type="ORDEREDLIST">
+					<bi:property name="SELECTION_ITEM" index="0">
+						<bi:property name="VALUE" value="NodeKey"/>
+					</bi:property>
+					<bi:property name="SELECTION_ITEM" index="1">
+						<bi:property name="VALUE" value="Left"/>
+					</bi:property>
+					<bi:property name="SELECTION_ITEM" index="2">
+						<bi:property name="VALUE" value="Right"/>
+						<bi:property name="SELECTED" value="X"/>
+					</bi:property>
+				</bi:property>
+				<bi:property name="LEFT_MARGIN" value="206"/>
+				<bi:property name="TOP_MARGIN" value="27"/>
+				<bi:property name="ON_SELECT">
+					<bi:value><![CDATA[DD1.setLabelDisplay(RDG_VALUE_DISP.getSelectedValue());]]></bi:value>
+				</bi:property>
+			</bi:component>
+			<bi:component name="TEXT_2" type="TEXT_COMPONENT">
+				<bi:property name="TEXT" value="Root Node Name"/>
+				<bi:property name="LEFT_MARGIN" value="8"/>
+				<bi:property name="TOP_MARGIN" value="75"/>
+				<bi:property name="STYLE" value="HEADING4"/>
+				<bi:property name="WIDTH" value="217"/>
+				<bi:property name="HEIGHT" value="17"/>
+			</bi:component>
+			<bi:component name="TEXT_1" type="TEXT_COMPONENT">
+				<bi:property name="TEXT" value="Display a Mesure"/>
+				<bi:property name="LEFT_MARGIN" value="411"/>
+				<bi:property name="TOP_MARGIN" value="10"/>
+				<bi:property name="STYLE" value="HEADING4"/>
+				<bi:property name="WIDTH" value="140"/>
+				<bi:property name="HEIGHT" value="17"/>
+			</bi:component>
+			<bi:component name="TEXT_6" type="TEXT_COMPONENT">
+				<bi:property name="TEXT" value="Mesure Selection"/>
+				<bi:property name="LEFT_MARGIN" value="409"/>
+				<bi:property name="TOP_MARGIN" value="80"/>
+				<bi:property name="STYLE" value="HEADING4"/>
+				<bi:property name="WIDTH" value="217"/>
+				<bi:property name="HEIGHT" value="17"/>
+			</bi:component>
+			<bi:component name="IF_ROOT_NAME" type="INPUTFIELD_COMPONENT">
+				<bi:property name="LEFT_MARGIN" value="9"/>
+				<bi:property name="TOP_MARGIN" value="91"/>
+				<bi:property name="WIDTH" value="169"/>
+				<bi:property name="ON_CHANGE">
+					<bi:value><![CDATA[DD1.setSingleRootNodeName(IF_ROOT_NAME.getValue());]]></bi:value>
+				</bi:property>
+			</bi:component>
+			<bi:component name="IF_NODE_NA" type="INPUTFIELD_COMPONENT">
+				<bi:property name="LEFT_MARGIN" value="206"/>
+				<bi:property name="TOP_MARGIN" value="137"/>
+				<bi:property name="WIDTH" value="169"/>
+				<bi:property name="ON_CHANGE">
+					<bi:value><![CDATA[DD1.setNotAssignedText(IF_NODE_NA.getValue());]]></bi:value>
+				</bi:property>
+				<bi:property name="VALUE" value="Others"/>
+			</bi:component>
+			<bi:component name="DD_MESURE" type="DROPDOWN_COMPONENT">
+				<bi:property name="LEFT_MARGIN" value="408"/>
+				<bi:property name="TOP_MARGIN" value="96"/>
+				<bi:property name="WIDTH" value="189"/>
+				<bi:property name="ON_SELECT">
+					<bi:value><![CDATA[DD1.setSelMeasure(DD_MESURE.getSelectedValue());]]></bi:value>
+				</bi:property>
+			</bi:component>
+			<bi:component name="BUTTON_1" type="BUTTON_COMPONENT">
+				<bi:property name="TEXT" value="Display Hier. Source data"/>
+				<bi:property name="LEFT_MARGIN" value="555"/>
+				<bi:property name="TOP_MARGIN" value="10"/>
+				<bi:property name="WIDTH" value="162"/>
+				<bi:property name="ON_CLICK">
+					<bi:value><![CDATA[POPUP_1.show();]]></bi:value>
+				</bi:property>
+			</bi:component>
+			<bi:component name="TA_CLASS_BREAKS" type="org_scn_community_basics_TextArea">
+				<bi:property name="LEFT_MARGIN" value="408"/>
+				<bi:property name="TOP_MARGIN" value="144"/>
+				<bi:property name="HEIGHT" value="108"/>
+				<bi:property name="onValueChanged">
+					<bi:value><![CDATA[DD1.setColorClass(TA_CLASS_BREAKS.getValue());]]></bi:value>
+				</bi:property>
+			</bi:component>
+			<bi:component name="TEXT_5" type="TEXT_COMPONENT">
+				<bi:property name="TEXT" value="Add Single Root Node"/>
+				<bi:property name="LEFT_MARGIN" value="10"/>
+				<bi:property name="TOP_MARGIN" value="11"/>
+				<bi:property name="STYLE" value="HEADING4"/>
+				<bi:property name="WIDTH" value="217"/>
+				<bi:property name="HEIGHT" value="17"/>
+			</bi:component>
+		</bi:component>
+		<bi:component name="PANEL_DATA" type="PANEL_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="17"/>
+			<bi:property name="TOP_MARGIN" value="350"/>
+			<bi:property name="WIDTH" value="900"/>
+			<bi:property name="HEIGHT" value="400"/>
+			<bi:property name="CSS_STYLE" value="border: 1px black solid"/>
+			<bi:component name="NAVIGATIONPANEL_1" type="NAVIGATIONPANEL_COMPONENT">
+				<bi:property name="LEFT_MARGIN" value="5"/>
+				<bi:property name="TOP_MARGIN" value="5"/>
+				<bi:property name="WIDTH" value="300"/>
+				<bi:property name="HEIGHT" value="auto"/>
+				<bi:property name="BOTTOM_MARGIN" value="5"/>
+				<bi:property name="DATA_SOURCE_ALIAS_REF" value="DS_DATA"/>
+			</bi:component>
+			<bi:component name="CROSSTAB_1" type="CROSSTAB_COMPONENT">
+				<bi:property name="LEFT_MARGIN" value="auto"/>
+				<bi:property name="TOP_MARGIN" value="5"/>
+				<bi:property name="WIDTH" value="574"/>
+				<bi:property name="HEIGHT" value="auto"/>
+				<bi:property name="BOTTOM_MARGIN" value="5"/>
+				<bi:property name="RIGHT_MARGIN" value="5"/>
+				<bi:property name="DATA_SOURCE_ALIAS_REF" value="DS_DATA"/>
+			</bi:component>
+		</bi:component>
+		<bi:component name="CB_DISPLAY_MENU" type="CHECKBOX_COMPONENT">
+			<bi:property name="TEXT" value="Display Menu parameters"/>
+			<bi:property name="LEFT_MARGIN" value="20"/>
+			<bi:property name="TOP_MARGIN" value="50"/>
+			<bi:property name="CHECKED" value="X"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[PANEL_PARAM.setVisible(CB_DISPLAY_MENU.isChecked());
+
+if (CB_DISPLAY_MENU.isChecked()) {
+	PANEL_DATA.setTopMargin(PANEL_PARAM.getTopMargin() + PANEL_PARAM.getHeight() + 20);
+} else {
+	PANEL_DATA.setTopMargin(PANEL_PARAM.getTopMargin());
+}]]></bi:value>
+			</bi:property>
+			<bi:property name="WIDTH" value="194"/>
+		</bi:component>
+		<bi:component name="DD1" type="org_scn_community_databound_MultiLevelDropDown">
+			<bi:property name="LEFT_MARGIN" value="20"/>
+			<bi:property name="TOP_MARGIN" value="2"/>
+			<bi:property name="addSingleRootNode" value="X"/>
+			<bi:property name="singleRootNodeName" value="Hierarchy"/>
+			<bi:property name="resetButton" value="Right"/>
+			<bi:property name="selChar" value="0D_NW_BP"/>
+			<bi:property name="HEIGHT" value="40"/>
+			<bi:property name="colorClass" value="[  {&quot;cssClass&quot;:&quot;DD_RED&quot;, &quot;low&quot;:&quot;0&quot;, &quot;high&quot;:&quot;10&quot;}, &#10;{&quot;cssClass&quot;:&quot;DD_YEL&quot;, &quot;low&quot;:&quot;10&quot;, &quot;high&quot;:&quot;40&quot;},&#10;{&quot;cssClass&quot;:&quot;DD_GREEN&quot;,&quot;low&quot;:&quot;40&quot;, &quot;high&quot;:&quot;100&quot;} &#10;]"/>
+			<bi:property name="onClick">
+				<bi:value><![CDATA[DS_DATA.setFilter("0D_NW_BP", DD1.getSelectedElemKey());]]></bi:value>
+			</bi:property>
+			<bi:property name="onReset">
+				<bi:value><![CDATA[DS_DATA.clearFilter("0D_NW_BP");]]></bi:value>
+			</bi:property>
+			<bi:property name="WIDTH" value="626"/>
+			<bi:property name="selMesure" value="A83Y2FPNS2H75XV657S6WMTOY"/>
+			<bi:property name="DATA_SOURCE_ALIAS_REF" value="DS_MENU"/>
+		</bi:component>
+		<bi:component name="CONTEXT_MENU" type="CONTEXT_MENU_COMPONENT"/>
+	</bi:component>
+</bi:biapp>
