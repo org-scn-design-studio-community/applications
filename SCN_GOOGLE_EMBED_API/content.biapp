@@ -1,0 +1,246 @@
+<bi:biapp bi:version="1600" xmlns:bi="http://xml.sap.com/2011/biml/biapp" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns="http://www.w3.org/TR/REC-html40" xmlns:h="http://www.w3.org/TR/REC-html40" xmlns:sdk1="com.sap.ip.bi" sdk1:version="16.0" xmlns:sdk2="org.scn.community.basics" sdk2:version="3.0">
+	<bi:component name="APPLICATION_PROPERTIES" type="APPLICATION_PROPERTIES">
+		<bi:property name="THEME" value="sap_bluecrystal"/>
+		<bi:property name="GLOBALVARIABLES" type="UNORDEREDLIST">
+			<bi:property name="GLOBALVARIABLE" index="0">
+				<bi:property name="NAME" value="GV_TRANSPORT"/>
+				<bi:property name="GLOBAL_VAR_TYPE" value="String"/>
+				<bi:property name="VALUE" value="&apos;bicycling&apos;"/>
+			</bi:property>
+			<bi:property name="GLOBALVARIABLE" index="1">
+				<bi:property name="NAME" value="X_ORIGIN"/>
+				<bi:property name="GLOBAL_VAR_TYPE" value="String"/>
+				<bi:property name="VALUE" value="&apos;&apos;"/>
+				<bi:property name="URL_PARAM" value="X"/>
+			</bi:property>
+			<bi:property name="GLOBALVARIABLE" index="2">
+				<bi:property name="NAME" value="X_DESTINATION"/>
+				<bi:property name="GLOBAL_VAR_TYPE" value="String"/>
+				<bi:property name="VALUE" value="&apos;&apos;"/>
+				<bi:property name="URL_PARAM" value="X"/>
+			</bi:property>
+		</bi:property>
+		<bi:property name="CUSTOM_CSS" value="custom_style.css"/>
+		<bi:property name="ON_STARTUP">
+			<bi:value><![CDATA[if(X_ORIGIN !== "" && X_DESTINATION !== ""){
+	INPUTFIELD_1.setValue(X_ORIGIN);
+	INPUTFIELD_2.setValue(X_DESTINATION);
+	
+	var orig = X_ORIGIN;
+	var dest = X_DESTINATION;
+
+var api_key= "";
+
+var request_url = "https://www.google.com/maps/embed/v1/directions"+
+						  "?key="+api_key+
+						  "&origin="+orig+
+						  "&destination="+dest+
+						  "&mode=driving"+
+						  "&avoid=tolls|highways";
+
+EMBEDDEDFRAME_1.setUrl(request_url);
+}]]></bi:value>
+		</bi:property>
+	</bi:component>
+	<bi:component name="ROOT" type="ABSOLUTE_LAYOUT_COMPONENT">
+		<bi:component name="EMBEDDEDFRAME_1" type="org_scn_community_basics_EmbeddedFrame">
+			<bi:property name="LEFT_MARGIN" value="5"/>
+			<bi:property name="TOP_MARGIN" value="140"/>
+			<bi:property name="WIDTH" value="auto"/>
+			<bi:property name="RIGHT_MARGIN" value="5"/>
+			<bi:property name="HEIGHT" value="auto"/>
+			<bi:property name="BOTTOM_MARGIN" value="5"/>
+		</bi:component>
+		<bi:component name="INPUTFIELD_1" type="INPUTFIELD_COMPONENT">
+			<bi:property name="TOP_MARGIN" value="20"/>
+			<bi:property name="LEFT_MARGIN" value="120"/>
+			<bi:property name="WIDTH" value="200"/>
+			<bi:property name="VALUE" value="Cologne"/>
+		</bi:component>
+		<bi:component name="INPUTFIELD_2" type="INPUTFIELD_COMPONENT">
+			<bi:property name="TOP_MARGIN" value="50"/>
+			<bi:property name="LEFT_MARGIN" value="120"/>
+			<bi:property name="WIDTH" value="200"/>
+			<bi:property name="VALUE" value="Koblenz"/>
+		</bi:component>
+		<bi:component name="INPUTFIELD_3" type="INPUTFIELD_COMPONENT">
+			<bi:property name="TOP_MARGIN" value="80"/>
+			<bi:property name="LEFT_MARGIN" value="120"/>
+			<bi:property name="WIDTH" value="200"/>
+		</bi:component>
+		<bi:component name="DROPDOWN_4" type="DROPDOWN_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="440"/>
+			<bi:property name="TOP_MARGIN" value="50"/>
+			<bi:property name="WIDTH" value="100"/>
+			<bi:property name="ITEMS" type="ORDEREDLIST">
+				<bi:property name="SELECTION_ITEM" index="0">
+					<bi:property name="VALUE" value="u1"/>
+					<bi:property name="TEXT" value="metric"/>
+					<bi:property name="SELECTED" value="X"/>
+				</bi:property>
+				<bi:property name="SELECTION_ITEM" index="1">
+					<bi:property name="VALUE" value="u2"/>
+					<bi:property name="TEXT" value="imperial"/>
+				</bi:property>
+			</bi:property>
+		</bi:component>
+		<bi:component name="TEXT_1" type="TEXT_COMPONENT">
+			<bi:property name="TEXT" value="Origin"/>
+			<bi:property name="TOP_MARGIN" value="22"/>
+			<bi:property name="LEFT_MARGIN" value="20"/>
+			<bi:property name="HEIGHT" value="20"/>
+		</bi:component>
+		<bi:component name="TEXT_2" type="TEXT_COMPONENT">
+			<bi:property name="TEXT" value="Desitination"/>
+			<bi:property name="TOP_MARGIN" value="52"/>
+			<bi:property name="LEFT_MARGIN" value="20"/>
+			<bi:property name="HEIGHT" value="20"/>
+		</bi:component>
+		<bi:component name="TEXT_5" type="TEXT_COMPONENT">
+			<bi:property name="TEXT" value="Waypoints"/>
+			<bi:property name="TOP_MARGIN" value="82"/>
+			<bi:property name="LEFT_MARGIN" value="20"/>
+			<bi:property name="HEIGHT" value="20"/>
+		</bi:component>
+		<bi:component name="TEXT_4" type="TEXT_COMPONENT">
+			<bi:property name="TEXT" value="Units"/>
+			<bi:property name="TOP_MARGIN" value="52"/>
+			<bi:property name="LEFT_MARGIN" value="350"/>
+			<bi:property name="HEIGHT" value="20"/>
+		</bi:component>
+		<bi:component name="BUTTON_1" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Get Directions"/>
+			<bi:property name="LEFT_MARGIN" value="600"/>
+			<bi:property name="TOP_MARGIN" value="20"/>
+			<bi:property name="WIDTH" value="120"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[var orig = INPUTFIELD_1.getValue();
+var dest = INPUTFIELD_2.getValue();
+var transport = GV_TRANSPORT;
+var units = DROPDOWN_4.getSelectedText();
+
+var waypoint = INPUTFIELD_3.getValue();
+
+var api_key = "";
+
+var request_url = "https://www.google.com/maps/embed/v1/directions"+
+						  "?key="+api_key+
+						  "&origin="+orig+
+						  "&destination="+dest+
+						  "&mode="+transport+
+						  "&avoid=tolls|highways"+
+						  "&units="+units;
+
+if(waypoint !== ""){
+	request_url = request_url+"&waypoints="+waypoint;
+}
+
+EMBEDDEDFRAME_1.setUrl(request_url);]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="ICON_CAR" type="com_sap_ip_bi_Icon">
+			<bi:property name="LEFT_MARGIN" value="350"/>
+			<bi:property name="TOP_MARGIN" value="10"/>
+			<bi:property name="WIDTH" value="30"/>
+			<bi:property name="HEIGHT" value="30"/>
+			<bi:property name="iconUri" value="sap-icon://car-rental"/>
+			<bi:property name="color" value="#000040"/>
+			<bi:property name="onclick">
+				<bi:value><![CDATA[GV_TRANSPORT = "driving";
+
+GLOBAL_SCRIPTS_1.resetIconLayout();
+
+me.setBackgroundColor("#408080");
+me.setColor("#000040");]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="ICON_WALK" type="com_sap_ip_bi_Icon">
+			<bi:property name="LEFT_MARGIN" value="430"/>
+			<bi:property name="TOP_MARGIN" value="10"/>
+			<bi:property name="WIDTH" value="30"/>
+			<bi:property name="HEIGHT" value="30"/>
+			<bi:property name="iconUri" value="sap-icon://physical-activity"/>
+			<bi:property name="onclick">
+				<bi:value><![CDATA[GV_TRANSPORT = "walking";
+
+GLOBAL_SCRIPTS_1.resetIconLayout();
+
+me.setBackgroundColor("#408080");
+me.setColor("#000040");]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="ICON_PUBLIC" type="com_sap_ip_bi_Icon">
+			<bi:property name="LEFT_MARGIN" value="470"/>
+			<bi:property name="TOP_MARGIN" value="10"/>
+			<bi:property name="WIDTH" value="30"/>
+			<bi:property name="HEIGHT" value="30"/>
+			<bi:property name="iconUri" value="sap-icon://subway-train"/>
+			<bi:property name="onclick">
+				<bi:value><![CDATA[GV_TRANSPORT = "transit";
+
+GLOBAL_SCRIPTS_1.resetIconLayout();
+
+me.setBackgroundColor("#408080");
+me.setColor("#000040");]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="ICON_PLANE" type="com_sap_ip_bi_Icon">
+			<bi:property name="LEFT_MARGIN" value="510"/>
+			<bi:property name="TOP_MARGIN" value="10"/>
+			<bi:property name="WIDTH" value="30"/>
+			<bi:property name="HEIGHT" value="30"/>
+			<bi:property name="iconUri" value="sap-icon://flight"/>
+			<bi:property name="onclick">
+				<bi:value><![CDATA[GV_TRANSPORT = "flying";
+
+GLOBAL_SCRIPTS_1.resetIconLayout();
+
+me.setBackgroundColor("#408080");
+me.setColor("#000040");]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="PANEL_ICON_CYCLE" type="PANEL_COMPONENT">
+			<bi:property name="WIDTH" value="30"/>
+			<bi:property name="HEIGHT" value="30"/>
+			<bi:property name="TOP_MARGIN" value="10"/>
+			<bi:property name="LEFT_MARGIN" value="390"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[GV_TRANSPORT = "bicycling";
+
+GLOBAL_SCRIPTS_1.resetIconLayout();
+
+me.setCSSClass("active");]]></bi:value>
+			</bi:property>
+			<bi:property name="CSS_CLASS" value="active"/>
+			<bi:component name="IMAGE_1" type="IMAGE_COMPONENT">
+				<bi:property name="WIDTH" value="auto"/>
+				<bi:property name="RIGHT_MARGIN" value="1"/>
+				<bi:property name="HEIGHT" value="auto"/>
+				<bi:property name="BOTTOM_MARGIN" value="2"/>
+				<bi:property name="IMAGE" value="bike.png"/>
+				<bi:property name="LEFT_MARGIN" value="1"/>
+			</bi:component>
+		</bi:component>
+		<bi:component name="CONTEXT_MENU" type="CONTEXT_MENU_COMPONENT"/>
+		<bi:component name="GLOBAL_SCRIPTS_1" type="GLOBAL_SCRIPTS_COMPONENT">
+			<bi:property name="FUNCTIONS" type="ORDEREDLIST">
+				<bi:property name="FUNCTION" index="0">
+					<bi:property name="NAME" value="resetIconLayout"/>
+					<bi:property name="FUNCTION_BODY">
+						<bi:value><![CDATA[var background = "#0080C0";
+
+ICON_CAR.setBackgroundColor(background);
+
+ICON_PLANE.setBackgroundColor(background);
+
+ICON_PUBLIC.setBackgroundColor(background);
+
+ICON_WALK.setBackgroundColor(background);
+
+PANEL_ICON_CYCLE.setCSSClass("inactive");]]></bi:value>
+					</bi:property>
+				</bi:property>
+			</bi:property>
+		</bi:component>
+	</bi:component>
+</bi:biapp>
